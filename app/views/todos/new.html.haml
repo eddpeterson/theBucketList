@@ -1,0 +1,10 @@
+= form_for(@todo) do |f| 
+  %div{:class => "field"}
+    = f.label "Title" 
+    = f.text_field :title
+  %div{:class => "field"}
+    = f.label "Due date" 
+    = f.text_field :due_date
+    
+  %div{:class => "actions"}
+    = f.submit "Add"
