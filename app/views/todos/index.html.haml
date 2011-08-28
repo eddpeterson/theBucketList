@@ -1,4 +1,61 @@
+
+unclassified
 %ul
-  - @todos.each do |t|
+  - @no_frame_todos.each do |t|
     %li
-      = t.title
+      = t.title 
+      ,
+      = t.due_date
+      ,
+      = t.frame
+
+personal
+%ul
+  - @personal_todos.each do |t|
+    %li
+      = t.title 
+      ,
+      = t.due_date
+      ,
+      = t.frame
+
+family
+%ul
+  - @family_todos.each do |t|
+    %li
+      = t.title 
+      ,
+      = t.due_date
+      ,
+      = t.frame
+
+
+friends
+%ul
+  - @friends_todos.each do |t|
+    %li
+      = t.title 
+      ,
+      = t.due_date
+      ,
+      = t.frame
+
+work
+todo
+
+social
+todo
+ 
+/ No category
+/ = render :partial => "frame"
+/ personal, 
+/ = render :partial => "frame", :locals => { :todos => @personal.build }
+/ 
+/ family, 
+/ = render :partial => "frame", :locals => { :dada => @a }
+/ 
+/ friends, 
+/ 
+/ work, 
+/ 
+/ social 

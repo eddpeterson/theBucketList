@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
+gem 'rails', '3.1.0.rc6'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -18,7 +18,9 @@ gem "mongoid", "~> 2.0"
 gem "bson_ext", "~> 1.2"
 
 group :development do
-	gem "cheat"  
+	gem "cheat"
+	gem "rspec"  
+	gem "rspec-rails"
 end
 
 group :test  do

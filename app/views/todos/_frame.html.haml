@@ -1,0 +1,10 @@
+dada:
+- @dada
+%ul
+  - @todos.each do |t|
+    %li
+      = t.title 
+      ,
+      = t.due_date
+      ,
+      = t.frame
