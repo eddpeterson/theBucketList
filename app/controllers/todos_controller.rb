@@ -37,37 +37,13 @@ class TodosController < ApplicationController
   end
   
   def index
-    todos = Todo.all
-    
-    @no_frame_todos = Array.new
-    @personal_todos = Array.new
-    @family_todos = Array.new
-    @friends_todos = Array.new
-    @work_todos = Array.new
-    @social_todos = Array.new
-    
-    todos.each do |doc| 
-      puts doc.frame
-      if doc.frame == nil 
-        @no_frame_todos << doc 
-      end
-      if doc.frame == "personal" 
-        @personal_todos << doc 
-      end
-      if doc.frame == "family" 
-        @family_todos << doc 
-      end
-      if doc.frame == "friends" 
-        @friends_todos << doc 
-      end
-      if doc.frame == "work" 
-        @work_todos << doc 
-      end
-      if doc.frame == "social" 
-        @social_todos << doc 
-      end
-    end  
-    
+    todos_by_frame = Todo.all.group_by(&:frame)
+    @no_frame_todos = todos_by_frame[nil]
+    @personal_todos = todos_by_frame["personal"]
+    @family_todos = todos_by_frame["family"]
+    @friends_todos = todos_by_frame["friends"]
+    @work_todos = todos_by_frame["work"]
+    @social_todos = todos_by_frame["social"]
   end
 
 end
