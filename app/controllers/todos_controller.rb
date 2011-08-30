@@ -37,14 +37,8 @@ class TodosController < ApplicationController
     end
     todo = Todo.find(id)
     todo.frame = frame
-    respond_to do |format|
-      if todo.save
-        flash[:notice] = "wadaaaaaaaaaaaa!!!"
-        format.html { redirect_to :action => "index" }
-      else
-        format.html { render :action => "new" }
-      end
-    end
+    todo.save
+    render :nothing => true
   end
   
   def set_sorting
@@ -57,6 +51,7 @@ class TodosController < ApplicationController
       order_number += 1
       todo.save
     end
+    render :nothing => true
   end
   
 private

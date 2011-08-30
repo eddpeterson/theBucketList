@@ -2,9 +2,9 @@
 DONE: 
 Add todo, with title, due date, status (not a dropdown)
 Drop todo in one of the categories:personal, family, friends, work, social 
+Allow users to change the sorting and persist it in the datastore
 
 TODO:
-Allow users to change the sorting and persist it in the datastore
 Allow user to rename the todo by double clicking on it
 Allow user to rename the todo by showing "rename" button when mouse over
 Allow user to set status of a todo from none to active, completed wen mouse over
