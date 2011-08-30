@@ -19,6 +19,23 @@ class TodosController < ApplicationController
     
   end
   
+  
+  def set_frame
+    id = params[:id]
+    frame = params[:frame]
+    todo = Todo.find(id)
+    todo.frame = frame
+    respond_to do |format|
+      if todo.save
+        flash[:notice] = "wadaaaaaaaaaaaa!!!"
+        format.html { redirect_to :action => "index" }
+      else
+        format.html { render :action => "new" }
+      end
+    end
+    
+  end
+  
   def index
     todos = Todo.all
     
@@ -30,7 +47,7 @@ class TodosController < ApplicationController
     @social_todos = Array.new
     
     todos.each do |doc| 
-      
+      puts doc.frame
       if doc.frame == nil 
         @no_frame_todos << doc 
       end
@@ -49,7 +66,6 @@ class TodosController < ApplicationController
       if doc.frame == "social" 
         @social_todos << doc 
       end
-      
     end  
     
   end

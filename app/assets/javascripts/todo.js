@@ -1,6 +1,6 @@
 $(function() {
         
-  $( "#frame_none, #frame_personal, #frame_family, #frame_friends, #frame_work, #frame_social" ).sortable({
+  $( "#none, #personal, #family, #friends, #work, #social" ).sortable({
   	connectWith: ".frame",
   	opacity: 0.45,
   	update: function(event, ui) { 
@@ -12,6 +12,11 @@ $(function() {
   	  //debugger;
   	  var droppedElement = event.srcElement.id; 
   	  var newFrame = event.target.id;
+  	  //var result = $('#'+newFrame).sortable('toArray');
+  	  //alert(result[0]);
+  	  //alert(result[1]);
+  	  
+  	  $.post("todos/set_frame", { id: droppedElement, frame: newFrame } );
   	},
     
   }).disableSelection();
