@@ -4,7 +4,10 @@ $(function() {
   	connectWith: ".frame",
   	opacity: 0.45,
   	update: function(event, ui) { 
-  	  //alert(event.target.id); 
+  	  var frame = event.target.id;
+      var sorted_todos = $('#'+frame).sortable('toArray');
+      $.post("todos/set_sorting", {sorted_todos: sorted_todos, frame: frame});
+      //alert(event.target.id); 
       //debugger;
   	},
   	receive: function(event, ui) { 

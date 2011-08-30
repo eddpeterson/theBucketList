@@ -3,6 +3,7 @@ class Todo
   field :title, type: String
   field :due_date, type: Date
   field :frame, type: String
+  field :frame_order_number, type: Integer
   
   # scope :no_frame_todos, where(:frame => nil)
   # scope :personal_todos, where(:frame => "personal")

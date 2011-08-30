@@ -13,6 +13,8 @@ Catch up on how to test jquery dudes and then refactor mercilessly views, javasc
  
 Add blueprint css
 
+Add this nice datetime gem that translated words to dates
+
 Use facebook, twitter to authorize
 
 List facebook, twitter, etc. friends todos (use capped collections)
