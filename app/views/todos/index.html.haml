@@ -1,61 +1,12 @@
 
-unclassified
-%ul
-  - @no_frame_todos.each do |t|
-    %li
-      = t.title 
-      ,
-      = t.due_date
-      ,
-      = t.frame
+= render :partial => "frame", :locals => { :title => "", :frame_id => "frame_none", :todos => @no_frame_todos }
 
-personal
-%ul
-  - @personal_todos.each do |t|
-    %li
-      = t.title 
-      ,
-      = t.due_date
-      ,
-      = t.frame
+= render :partial => "frame", :locals => { :title => "Personal", :frame_id => "frame_personal", :todos => @personal_todos }
 
-family
-%ul
-  - @family_todos.each do |t|
-    %li
-      = t.title 
-      ,
-      = t.due_date
-      ,
-      = t.frame
+= render :partial => "frame", :locals => { :title => "Family", :frame_id => "frame_family", :todos => @family_todos }
 
+= render :partial => "frame", :locals => { :title => "Friends", :frame_id => "frame_friends", :todos => @friends_todos }
 
-friends
-%ul
-  - @friends_todos.each do |t|
-    %li
-      = t.title 
-      ,
-      = t.due_date
-      ,
-      = t.frame
+= render :partial => "frame", :locals => { :title => "Work", :frame_id => "frame_work", :todos => @work_todos }
 
-work
-todo
-
-social
-todo
- 
-/ No category
-/ = render :partial => "frame"
-/ personal, 
-/ = render :partial => "frame", :locals => { :todos => @personal.build }
-/ 
-/ family, 
-/ = render :partial => "frame", :locals => { :dada => @a }
-/ 
-/ friends, 
-/ 
-/ work, 
-/ 
-/ social 
+= render :partial => "frame", :locals => { :title => "Social", :frame_id => "frame_social", :todos => @social_todos }

@@ -1,10 +1,10 @@
-dada:
-- @dada
-%ul
-  - @todos.each do |t|
-    %li
-      = t.title 
-      ,
-      = t.due_date
-      ,
-      = t.frame
+=title
+%ul{:id => frame_id, :class => "frame"}
+  - unless todos.nil?
+    - todos.each do |t| 
+      %li{:id => t.id, :class => "frame"}
+        = t.title 
+        ,
+        = t.due_date
+        ,
+        = t.frame

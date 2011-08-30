@@ -19,27 +19,35 @@ class TodosController < ApplicationController
     
   end
   
-  
   def index
-    @todos = Todo.all
+    todos = Todo.all
     
     @no_frame_todos = Array.new
     @personal_todos = Array.new
     @family_todos = Array.new
     @friends_todos = Array.new
-    @todos.each do |doc| 
+    @work_todos = Array.new
+    @social_todos = Array.new
+    
+    todos.each do |doc| 
       
       if doc.frame == nil 
         @no_frame_todos << doc 
       end
       if doc.frame == "personal" 
-        @family_todos << doc 
+        @personal_todos << doc 
       end
       if doc.frame == "family" 
         @family_todos << doc 
       end
       if doc.frame == "friends" 
         @friends_todos << doc 
+      end
+      if doc.frame == "work" 
+        @work_todos << doc 
+      end
+      if doc.frame == "social" 
+        @social_todos << doc 
       end
       
     end  
