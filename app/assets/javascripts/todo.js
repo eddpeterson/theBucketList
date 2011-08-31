@@ -24,7 +24,17 @@ $(function() {
     
   }).disableSelection();
     
-    
+  $(".frame_item").dblclick(function() {
+    var text = $.trim($(this).text());
+    var id = $(this).attr('id');
+    $(this).text('');
+    $('<input type="text" class="rename_todo" size="55"/>').appendTo($(this)).val(text).select().blur(
+      function(){
+        var newText = $(this).val();
+        $.post("todos/rename", { id: id, title: newText});
+        $(this).parent().text(newText).find('input:text').remove();
+      });
+  });  
     // $("ul.frame").each(function(){      
     //       $('#'+this.id).sortable({revert:true});
     //     })  

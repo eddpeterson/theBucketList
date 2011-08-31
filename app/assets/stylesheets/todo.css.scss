@@ -1,5 +1,15 @@
 .frame { 
   background-color: #eee;
   padding: 1px; 
+  cursor: pointer;
 }
 
+.frame_item {
+  color: green;
+  list-style-type: none;
+}
+
+.rename_todo {
+  color: blue;
+  font-size: 1em;
+}

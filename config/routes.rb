@@ -2,6 +2,7 @@ TheBucketList::Application.routes.draw do
   resources :todos
   post 'todos/set_frame'
   post 'todos/set_sorting'
+  post 'todos/rename'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

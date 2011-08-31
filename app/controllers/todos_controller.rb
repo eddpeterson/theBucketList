@@ -54,6 +54,15 @@ class TodosController < ApplicationController
     render :nothing => true
   end
   
+  def rename
+    id = params[:id]
+    title = params[:title]
+    todo = Todo.find(id)
+    todo.title = title
+    todo.save
+    render :nothing => true
+  end
+  
 private
   def sort (todos)
     unless todos.nil?
