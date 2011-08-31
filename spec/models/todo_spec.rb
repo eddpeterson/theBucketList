@@ -12,5 +12,12 @@ describe Todo, "Save model" do
     todo.frame = :family
     todo.save.should be true
   end
+  
+  it "should validate presence of title" do
+    todo = Factory(:todo)
+    todo.title = nil
+    todo.save.should be false
+  end
+  
     
 end

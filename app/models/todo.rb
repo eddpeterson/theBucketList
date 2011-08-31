@@ -5,6 +5,8 @@ class Todo
   field :frame, type: String
   field :frame_order_number, type: Integer
   
+  validates_presence_of :title
+  
   # scope :no_frame_todos, where(:frame => nil)
   # scope :personal_todos, where(:frame => "personal")
   # and then use them in code like:

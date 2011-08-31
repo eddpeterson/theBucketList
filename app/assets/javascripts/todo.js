@@ -33,7 +33,9 @@ $(function() {
     if (e.which == 27) { cancelHandler() }
   })
   function saveHandler() { 
-    var newTitle = $(".rename_todo_text").val() 
+    var newTitle = $.trim($(".rename_todo_text").val())
+    if (newTitle.length == 0)
+      return
     var id = $(".rename_todo_id").val()
     $.post("todos/rename", { id: id, title: newTitle})
     $('#'+id).text(newTitle)
