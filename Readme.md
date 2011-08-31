@@ -13,6 +13,7 @@
 
 ## Technical debt
 * Catch up on how to test jquery dudes and then refactor mercilessly views, javascript, models, controller, trests
+* Check out how to introduce jasmine
 
 ## Beautifying
 * Add blueprint css
