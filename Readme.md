@@ -7,7 +7,7 @@
 * Improve todo rename functionality by adding: Cancel button + Esc key and Save buttone + Enter key
 
 # TODO:
-* Add unit test for title validation and add appropriate handling in rename functionality
+* Add unit test for title validation and add appropriate error handling in jquery rename functionality
 * Allow user to rename the todo by showing "rename" button when mouse over
 * Allow user to set status of a todo from none to active, completed wen mouse over
 
