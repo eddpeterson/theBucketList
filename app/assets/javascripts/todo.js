@@ -39,11 +39,13 @@ $(function() {
     var id = $(".rename_todo_id").val()
     $.post("todos/rename", { id: id, title: newTitle})
     $('#'+id).text(newTitle)
+    cancelRenameInProgress()
   }
   function cancelHandler() {
     var originalTitle = $(".rename_todo_original_title").val() 
     var id = $(".rename_todo_id").val()
     $('#'+id).text(originalTitle)
+    cancelRenameInProgress()
   }
   $('.save_rename').live('click', saveHandler)
   $('.cancel_rename').live('click', cancelHandler)
@@ -52,9 +54,17 @@ $(function() {
   // })
   
   $(".frame_item").dblclick(function() {
+    
+    if (isRenameInProgress())
+      return
+      
     var text = $.trim($(this).text())
     var id = $(this).attr('id')
     $(this).text('')
+    
+    // set rename in progress to avoid double click error on textbox
+    setRenameInProgress()
+    
     $('<input type="hidden" class="rename_todo_original_title">').appendTo($(this)).val(text)
     $('<input type="hidden" class="rename_todo_id">').appendTo($(this)).val(id)
 
@@ -62,5 +72,45 @@ $(function() {
     $('<span class="save_rename">Save</span>').appendTo($(this))
     $('<span class="cancel_rename">Cancel</span>').appendTo($(this))      
   })  
-   
+  function isRenameInProgress(){
+    return $('#is_rename_in_edit_mode').val() == "true"    
+  } 
+  function setRenameInProgress(){
+    $('#is_rename_in_edit_mode').val("true")
+  }
+  function cancelRenameInProgress(){
+    $('#is_rename_in_edit_mode').val("false")
+  }
+  //
+  // Rename functionality on mouse over
+  //
+  
+  // $('.rename').live('click', function() { 
+  //       if (isRenameInProgress())
+  //         return
+  // 
+  //       var text = $.trim($(this).text())
+  //       var id = $(this).attr('id')
+  //       $(this).text('')
+  // 
+  //       // set rename in progress to avoid double click error on textbox
+  //       setRenameInProgress()
+  // 
+  //       $('<input type="hidden" class="rename_todo_original_title">').appendTo($(this)).val(text)
+  //       $('<input type="hidden" class="rename_todo_id">').appendTo($(this)).val(id)
+  // 
+  //       $('<input type="text" class="rename_todo_text" size="55"/>').appendTo($(this)).val(text).select()
+  //       $('<span class="save_rename">Save</span>').appendTo($(this))
+  //       $('<span class="cancel_rename">Cancel</span>').appendTo($(this))
+  //     })
+  //     $(".frame_item").hover(handlerIn, handlerOut) 
+  //     function handlerIn(){
+  //       
+  //       $('<span class="rename">Rename</span>').appendTo($(this))      
+  //     }
+  //     function handlerOut(){
+  //       cancelHandler()
+  //       $(this).text($(this).text().replace('Rename', ''))
+  //       
+  //     }
 })
