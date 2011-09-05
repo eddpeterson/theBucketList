@@ -4,3 +4,5 @@
     - todos.each do |t| 
       %li{:id => t.id, :class => "frame_item"}
         = t.title
+        %button{:value => t.id, :class => "remove"} Remove  
+        //%span{:id => "rename_button_#{t.id}", :class => "rename_button_hidden"} Rename

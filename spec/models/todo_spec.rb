@@ -19,5 +19,7 @@ describe Todo, "Save model" do
     todo.save.should be false
   end
   
+  
+  
     
 end

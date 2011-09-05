@@ -63,6 +63,13 @@ class TodosController < ApplicationController
     render :nothing => true
   end
   
+  def destroy
+    id = params[:id]
+    todo = Todo.find(id)
+    todo.delete
+    render :nothing => true    
+  end
+  
 private
   def sort (todos)
     unless todos.nil?

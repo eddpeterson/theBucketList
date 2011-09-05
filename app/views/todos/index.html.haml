@@ -1,5 +1,10 @@
 
 %input{:id => "is_rename_in_edit_mode", :type => "hidden"}
+%div{:id => "dialog-confirm", :title => "Delete permanenly?"}
+  %p
+    %span{:class => "ui-icon ui-icon-alert"} 
+    This item will be permanently deleted and cannot be recovered. Are you sure?
+
 
 = render :partial => "frame", :locals => { :title => "", :frame_id => "none", :todos => @no_frame_todos }
 

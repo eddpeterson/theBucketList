@@ -8,12 +8,15 @@
 * Add unit test for title validation and add appropriate error handling in jquery rename functionality
 
 # TODO:
-* Allow user to rename the todo by showing "rename" button when mouse over
-* Allow user to set status of a todo from none to active, completed wen mouse over
 
 ## Technical debt
 * Catch up on how to test jquery dudes and then refactor mercilessly views, javascript, models, controller, trests
 * Check out how to introduce jasmine
+
+## BUGS
+* Remove is added to title of todo when double clicking
+* Modal message box is crappy and buggy - find another one
+* Remove public/assets library and figure out how to use jquery plugins in rails 3.1
 
 ## Beautifying
 * Add blueprint css
@@ -23,3 +26,9 @@
 ## Become socially aware
 * Use facebook, twitter to authorize
 * List facebook, twitter, etc. friends todos (use capped collections)
+
+
+## Defered
+* Allow user to rename the todo by showing "rename" button when mouse over
+* Allow user to set status of a todo from none to active, completed wen mouse over
+* Allow users to remove item on mouse over and show confirmation

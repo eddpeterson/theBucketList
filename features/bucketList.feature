@@ -9,3 +9,4 @@ Feature: Bucket list
     And I fill in "todo_due_date" with "1/1/2020"
     And I press "Add"
     Then I should see "Travel to Thaiti added to your bucket list"
+
