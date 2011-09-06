@@ -20,7 +20,7 @@ gem "bson_ext", "~> 1.2"
 gem "rspec-rails", :group => [:test, :development]
 
 group :development do
-	gem "cheat"
+  gem "cheat"
 end
 
 group :test  do
@@ -28,8 +28,11 @@ group :test  do
   gem "capybara"
   gem "database_cleaner"
   gem "factory_girl_rails"
-	gem "shoulda"
+  gem "shoulda"
   gem "guard-rspec"
+  gem 'guard-cucumber'
+  gem 'rb-fsevent'
+  gem 'growl_notify'
 end
 
 
