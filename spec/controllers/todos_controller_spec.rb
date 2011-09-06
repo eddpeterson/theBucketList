@@ -17,5 +17,14 @@ describe TodosController do
     @todo.should_receive(:save).and_return(true)
     post :create, :todo => {:title=>"Travel to Hawaii"}
   end
+  
+  it "should return sorted no frame todos" do
+    t1 = Factory(:todo, :frame => nil, :title => "First", :frame_order_number => 1)
+    t2 = Factory(:todo, :frame => nil, :title => "Second", :frame_order_number => 2)
+    todos = [t2, t1]
+    Todo.stub!(:all).and_return(todos)
+    get :index
+    assigns(:no_frame_todos).should eq([t1, t2])
+  end
     
 end

@@ -19,6 +19,7 @@ class TodosController < ApplicationController
   end
   
   def index
+    
     todos_by_frame = Todo.all.group_by(&:frame)
     @no_frame_todos = sort todos_by_frame[nil]
     @personal_todos = sort todos_by_frame["personal"]
