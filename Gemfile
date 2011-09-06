@@ -17,20 +17,19 @@ gem "haml"
 gem "mongoid", "~> 2.0"
 gem "bson_ext", "~> 1.2"
 
+gem "rspec-rails", :group => [:test, :development]
+
 group :development do
 	gem "cheat"
-	gem "rspec"  
-	gem "rspec-rails"
 end
 
 group :test  do
   gem "cucumber-rails"
   gem "capybara"
   gem "database_cleaner"
-	gem "rspec"
-	gem "rspec-rails"
   gem "factory_girl_rails"
 	gem "shoulda"
+  gem "guard-rspec"
 end
 
 
