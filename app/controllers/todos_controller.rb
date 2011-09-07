@@ -28,7 +28,6 @@ class TodosController < ApplicationController
     @social_todos = sort todos_by_frame["social"]
   end
   
-
   def set_frame
     id = params[:id]
     frame = params[:frame]

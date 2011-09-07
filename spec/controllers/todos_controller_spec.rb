@@ -55,7 +55,6 @@ describe TodosController do
       t3 = Factory(:todo, :frame => "other")
       group_and_sort_by_frame [t2,t1,t3], [t1,t2], :social_todos
     end
-
     def group_and_sort_by_frame unsorted, sorted, name
       Todo.stub!(:all).and_return(unsorted)
       get :index
@@ -64,5 +63,13 @@ describe TodosController do
 
   end
 
+  # it "should save with new frame" do
+  #   todo = Factory(:todo, :frame => "social")
+  #   Todo.stub!(:find).and_return(todo)
+  #   #todo.should_receive(:frame).with("personal")
+  #   #@todo.should_receive(:save).and_return(true)
+  #   post :set_frame, :id => todo.id, :frame => "personal" 
+  #   assigns(todo.frame).should eq("personal")
+  # end
 
 end

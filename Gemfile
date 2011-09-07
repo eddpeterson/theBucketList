@@ -18,6 +18,7 @@ gem "mongoid", "~> 2.0"
 gem "bson_ext", "~> 1.2"
 
 gem "rspec-rails", :group => [:test, :development]
+gem 'simplecov', :require => false, :group => :test
 
 group :development do
   gem "cheat"
