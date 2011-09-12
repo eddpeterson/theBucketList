@@ -7,7 +7,9 @@ class TodosController < ApplicationController
   end
   
   def create 
-    @todo = Todo.new(params[:todo])
+    @todo = Todo.new
+    @todo.title = params[:title]
+    @todo.due_date = params[:due_date]
     respond_to do |format|
       if @todo.save
         flash[:notice] = "#{@todo.title} added to your bucket list"
@@ -34,9 +36,9 @@ class TodosController < ApplicationController
     if frame == "none"
       frame = nil
     end
-    todo = Todo.find(id)
-    todo.frame = frame
-    todo.save
+    @todo = Todo.find(id)
+    @todo.frame = frame
+    @todo.save
     render :nothing => true
   end
   

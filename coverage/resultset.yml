@@ -104,7 +104,7 @@ RSpec:
     - !!null 
     - !!null 
     - !!null 
-  :created_at: 2011-09-07 21:38:17.783219000 +02:00
+  :created_at: 2011-09-12 17:29:40.285875000 +02:00
 Cucumber Features:
   :original_result:
     /Users/edijs/Projects/theBucketList/app/controllers/application_controller.rb:
@@ -210,4 +210,4 @@ Cucumber Features:
     - !!null 
     - !!null 
     - !!null 
-  :created_at: 2011-09-07 21:38:26.991916000 +02:00
+  :created_at: 2011-09-12 13:11:41.876786000 +02:00
