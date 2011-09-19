@@ -6,12 +6,12 @@
 * Allow user to rename the todo by double clicking on it
 * Improve todo rename functionality by adding: Cancel button + Esc key and Save buttone + Enter key
 * Add unit test for title validation and add appropriate error handling in jquery rename functionality
+* Got test coverage > 95%
 
 # TODO:
 
 ## Technical debt
-* Catch up on how to test jquery dudes and then refactor mercilessly views, javascript, models, controller, trests
-* Check out how to introduce jasmine
+* Catch up on how to test jquery dudes and then refactor mercilessly views, javascript, models, controller, tests with jasmine
 
 ## BUGS
 * Remove is added to title of todo when double clicking

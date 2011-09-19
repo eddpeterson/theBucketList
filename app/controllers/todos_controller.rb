@@ -44,7 +44,6 @@ class TodosController < ApplicationController
   
   def set_sorting
     sorted_todos = params[:sorted_todos]
-    frame = params[:frame]
     order_number = 1
     sorted_todos.each do |id|
       todo = Todo.find(id)

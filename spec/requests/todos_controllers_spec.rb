@@ -1,13 +1,11 @@
 require 'spec_helper'
 
+
+# Read more on capybara here:
+# https://github.com/jnicklas/capybara
+
 describe "TodosControllers" do
-  # describe "GET /todo_controllers" do
-  #     it "works! (now write some real specs)" do
-  #       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-  #       get todos_controllers_path
-  #       response.status.should be(200)
-  #     end
-  #   end
+
   it "Add new item" do
     todo = Factory(:todo)
     visit new_todo_path
@@ -18,17 +16,39 @@ describe "TodosControllers" do
     page.should have_content("#{todo.title} added to your bucket list")
   end
   
+  it "Should set frame" do
+    todo = Todo.create!(:title => "title")
+    post todos_set_frame_path, {:id => todo.id, :frame => "family" }
+    visit todos_path
+    #todo should be placed under family category
+    find('#family').should have_content("#{todo.title}")
+    #page.should have_content("#{todo.title}")    
+  end
   
-  # Feature: Bucket list 
-  #   In order to add new items to bucket list
-  #   As a website visitor
-  #   I want to be able to fill in title and due date of a new item
-  # 
-  #   Scenario: Add new todo
-  #     Given I am on the home page
-  #     When I fill in "todo_title" with "Travel to Thaiti"
-  #     And I fill in "todo_due_date" with "1/1/2020"
-  #     And I press "Add"
-  #     Then I should see "Travel to Thaiti added to your bucket list"
+  it "Should rename todo" do
+    todo = Todo.create!(:title => "title")
+    post todos_rename_path, {:id => todo.id, :title => "new title"}
+    visit todos_path
+    page.should have_content("new title")
+  end
+  
+  it "Should remove todo" do
+    todo = Todo.create!(:title => "title")
+    delete "#{todos_path}/#{todo.id}"
+    visit todos_path
+    page.should_not have_content("#{todo.title}")
+  end
+  
+  it "Should set sorting" do
+    t1 = Todo.create!(:title => "title 1", :frame_order_number => 1)
+    t2 = Todo.create!(:title => "title 2", :frame_order_number => 2)
+    t3 = Todo.create!(:title => "title 3", :frame_order_number => 3)
+    
+    post todos_set_sorting_path, {:sorted_todos => [t3.id, t2.id, t1.id]}
+    
+    Todo.find(t1.id).frame_order_number == 3
+    Todo.find(t2.id).frame_order_number == 2
+    Todo.find(t3.id).frame_order_number == 1
+  end
   
 end
