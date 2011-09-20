@@ -22,96 +22,97 @@ $(function() {
       $.post("todos/set_frame", { id: droppedElement, frame: newFrame } )
     },
 
-    }).disableSelection()
+  }).disableSelection()
 
 
-    //
-    // Rename functionality
-    //
-    $('.rename_todo_text').live('keyup', function(e) {    
-      if (e.which == 13) { saveHandler() } 
-      if (e.which == 27) { cancelHandler() }
-    })
-    function saveHandler() { 
-      var newTitle = $.trim($(".rename_todo_text").val())
-      if (newTitle.length == 0)
+  //
+  // Rename functionality
+  //
+  $('.rename_title').live('keyup', function(e) { 
+    if (e.which == 13) { saveHandler($(this).attr('id')) } 
+    if (e.which == 27) { cancelHandler($(this).attr('id')) }
+  })
+  function saveHandler(id) { 
+    //id = $(this).attr('id')
+    var newTitle = $('.rename_title[id="'+ id + '"]').val()
+    if (newTitle.length == 0)
       return
-      var id = $(".rename_todo_id").val()
-      $.post("todos/rename", { id: id, title: newTitle})
-      $('#'+id).text(newTitle)
-      cancelRenameInProgress()
-    }
-    function cancelHandler() {
-      var originalTitle = $(".rename_todo_original_title").val() 
-      var id = $(".rename_todo_id").val()
-      $('#'+id).text(originalTitle)
-      cancelRenameInProgress()
-    }
-    $('.save_rename').live('click', saveHandler)
-    $('.cancel_rename').live('click', cancelHandler)
-    // $('.insertedDude').live('click', function() {
-      //     saveHandler()
-      // })
-
-      $(".frame_item").dblclick(function() {
-
-        if (isRenameInProgress())
-        return
-
-        var text = $.trim($(this).text())
-        var id = $(this).attr('id')
-        $(this).text('')
-
-        // set rename in progress to avoid double click error on textbox
-        setRenameInProgress()
-
-        $('<input type="hidden" class="rename_todo_original_title">').appendTo($(this)).val(text)
-        $('<input type="hidden" class="rename_todo_id">').appendTo($(this)).val(id)
-
-        $('<input id="rename_todo_text" type="text" class="rename_todo_text" size="55"/>').appendTo($(this)).val(text).select()
-        $('<span class="save_rename">Save</span>').appendTo($(this))
-        $('<span class="cancel_rename">Cancel</span>').appendTo($(this))      
-      })  
-
-      function isRenameInProgress(){
-        return $('#is_rename_in_edit_mode').val() == "true"    
-      } 
-      function setRenameInProgress(){
-        $('#is_rename_in_edit_mode').val("true")
-      }
-      function cancelRenameInProgress(){
-        $('#is_rename_in_edit_mode').val("false")
-      }
+    
+    $.post("todos/rename", { id: id, title: newTitle})
+    
+    $('.frame_item_edit[id="'+ id + '"]').toggle()
+    $('.frame_item[id="'+ id + '"]').toggle()
+    $('.todo_title[id="'+ id + '"]').text(newTitle)
+    
+    cancelRenameInProgress()
+  }
+  function cancelHandler(id) {
+    
+    $('.frame_item_edit[id="'+ id + '"]').toggle()
+    $('.frame_item[id="'+ id + '"]').toggle()
+    
+    cancelRenameInProgress()
+  }
+ $('.save_rename').live('click', function(){ saveHandler($(this).attr('id')) })
+ $('.cancel_rename').live('click', function(){ cancelHandler($(this).attr('id')) })
 
 
-      $('button.remove').click(function(){
-        var id = $(this).val()
+  $(".frame_item").dblclick(function() {
+    
+    if (isRenameInProgress())
+      return
+    setRenameInProgress()
+    
+    var text = $.trim($(this).text())
+    var id = $(this).attr('id')
+    
+    
+    $('.frame_item_edit[id="'+ id + '"]').toggle()
+    $('.frame_item[id="'+ id + '"]').toggle()
+    
+    $('.rename_title').select()     
+  })  
 
-        $( "#dialog-confirm" ).dialog({
-          resizable: false,
-          height:200,
-          modal: true,
-          buttons: {
-            Delete: function() {
-              $.ajax({
-                url: "todos/" + id,
-                global: false,
-                type: "DELETE",
-                //data: {id : this.getAttribute('id')},
-                dataType: "html",
-                async:false,
-                success: function(msg){
-                  alert('removed')
-                }
-              }) 
+  function isRenameInProgress(){
+    return $('#is_rename_in_edit_mode').val() == "true"    
+  } 
+  function setRenameInProgress(){
+    $('#is_rename_in_edit_mode').val("true")
+  }
+  function cancelRenameInProgress(){
+    $('#is_rename_in_edit_mode').val("false")
+  }
 
-              $( this ).dialog( "close" );
-            },
-            Cancel: function() {
-              $( this ).dialog( "close" );
+
+  $('button.remove').click(function(){
+    var id = $(this).val()
+
+    $( "#dialog-confirm" ).dialog({
+      resizable: false,
+      height:200,
+      modal: true,
+      buttons: {
+        Delete: function() {
+          $.ajax({
+            url: "todos/" + id,
+            global: false,
+            type: "DELETE",
+            //data: {id : this.getAttribute('id')},
+            dataType: "html",
+            async:false,
+            success: function(msg){
+              alert('removed')
             }
-          }
-        });
-      })
+          }) 
 
+          $( this ).dialog( "close" );
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  })
+  
+   
 })

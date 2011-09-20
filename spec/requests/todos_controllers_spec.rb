@@ -64,7 +64,7 @@ describe "TodosControllers" do
     # page.should have_content("Save")
     # save_and_open_page
     
-    fill_in 'rename_todo_text', :with => "new title"
+    fill_in 'rename_title', :with => "new title"
     save_element = find('.save_rename')
     page.driver.browser.mouse.click(save_element.native)
     page.should have_content("new title")
@@ -79,7 +79,7 @@ describe "TodosControllers" do
     todo_element = find("##{todo.id}") 
     page.driver.browser.mouse.double_click(todo_element.native)
     
-    fill_in 'rename_todo_text', :with => "new title"
+    fill_in 'rename_title', :with => "new title"
     cancel_element = find('.cancel_rename')
     page.driver.browser.mouse.click(cancel_element.native)
     page.should have_content("my todo")

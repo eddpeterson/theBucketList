@@ -2,7 +2,17 @@
 %ul{:id => frame_id, :class => "frame"}
   - unless todos.nil?
     - todos.each do |t| 
-      %li{:id => t.id, :class => "frame_item"}
-        = t.title
+      %div{:id => t.id, :class => "frame_item"}
+        %label{:id => t.id, :class => "todo_title"}= t.title
+        //.rename_button Rename
         //%button{:value => t.id, :class => "remove"} Remove  
         //%span{:id => "rename_button_#{t.id}", :class => "rename_button_hidden"} Rename
+      %div{:id => t.id, :class => "frame_item_edit"}
+        %input{:type => "text", :class => "rename_title", :name => "rename_title", :id => t.id, :value => t.title, :size => 55}
+        %span.save_rename{:id => t.id} Save
+        %span.cancel_rename{:id => t.id} Cancel
+      / %div{:id => t.id, :class => "frame_item_mouseover"}
+      /   %input{:type => "text", :value => t.title} t.title
+      /   .rename_button Rename
+
+      
