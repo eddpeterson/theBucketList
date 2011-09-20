@@ -68,7 +68,7 @@ $(function() {
         $('<input type="hidden" class="rename_todo_original_title">').appendTo($(this)).val(text)
         $('<input type="hidden" class="rename_todo_id">').appendTo($(this)).val(id)
 
-        $('<input type="text" class="rename_todo_text" size="55"/>').appendTo($(this)).val(text).select()
+        $('<input id="rename_todo_text" type="text" class="rename_todo_text" size="55"/>').appendTo($(this)).val(text).select()
         $('<span class="save_rename">Save</span>').appendTo($(this))
         $('<span class="cancel_rename">Cancel</span>').appendTo($(this))      
       })  

@@ -25,12 +25,7 @@ describe "TodosControllers" do
     #page.should have_content("#{todo.title}")    
   end
   
-  it "Should rename todo" do
-    todo = Todo.create!(:title => "title")
-    post todos_rename_path, {:id => todo.id, :title => "new title"}
-    visit todos_path
-    page.should have_content("new title")
-  end
+
   
   it "Should remove todo" do
     todo = Todo.create!(:title => "title")
@@ -51,4 +46,46 @@ describe "TodosControllers" do
     Todo.find(t3.id).frame_order_number == 1
   end
   
+  
+  # it "Should rename todo" do
+  #   todo = Todo.create!(:title => "title")
+  #   post todos_rename_path, {:id => todo.id, :title => "new title"}
+  #   visit todos_path
+  #   page.should have_content("new title")
+  # end
+  
+  it "should allow user to edit todo's title when double clicked and save todo with new title", :js => true do
+    todo = Todo.create!(:title => "my todo")
+    visit todos_path
+    
+    todo_element = find("##{todo.id}") 
+    page.driver.browser.mouse.double_click(todo_element.native)
+    
+    # page.should have_content("Save")
+    # save_and_open_page
+    
+    fill_in 'rename_todo_text', :with => "new title"
+    save_element = find('.save_rename')
+    page.driver.browser.mouse.click(save_element.native)
+    page.should have_content("new title")
+    # verify after refreshing the page we stil see newly added title
+    visit todos_path
+    page.should have_content("new title")
+  end
+  it "should allow user to edit todo's title when double clicked, but do not save new title if user cancels operation", :js => true do
+    todo = Todo.create!(:title => "my todo")
+    visit todos_path
+    
+    todo_element = find("##{todo.id}") 
+    page.driver.browser.mouse.double_click(todo_element.native)
+    
+    fill_in 'rename_todo_text', :with => "new title"
+    cancel_element = find('.cancel_rename')
+    page.driver.browser.mouse.click(cancel_element.native)
+    page.should have_content("my todo")
+    # verify after refreshing the page we stil see previous title
+    visit todos_path
+    page.should have_content("my todo")
+  end
+
 end
