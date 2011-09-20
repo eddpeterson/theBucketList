@@ -87,5 +87,6 @@ describe "TodosControllers" do
     visit todos_path
     page.should have_content("my todo")
   end
+  
 
 end
