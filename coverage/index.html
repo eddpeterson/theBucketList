@@ -23,14 +23,14 @@
       <img src="./assets/0.5.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2011-09-21T21:23:56+02:00">2011-09-21T21:23:56+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2011-09-21T21:30:34+02:00">2011-09-21T21:30:34+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.31%</span></span>
+    (<span class="covered_percent"><span class="green">98.33%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -41,8 +41,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>59</b> relevant lines. 
-    <span class="green"><b>58</b> lines covered</span> and
+    <b>60</b> relevant lines. 
+    <span class="green"><b>59</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -71,10 +71,10 @@
       
       <tr>
         <td class="strong"><a href="#a04711a34b8026d14530f9e9de9f29be7a425a90" class="src_link" title="app/controllers/todos_controller.rb">app/controllers/todos_controller.rb</a></td>
-        <td class="green strong">97.96 %</td>
-        <td>72</td>
+        <td class="green strong">98.0 %</td>
+        <td>74</td>
+        <td>50</td>
         <td>49</td>
-        <td>48</td>
         <td>1</td>
         <td>4.8</td>
       </tr>
@@ -108,7 +108,7 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="green">98.04%</span></span>
+    (<span class="covered_percent"><span class="green">98.08%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -119,8 +119,8 @@
   <a name="Controllers"></a>
   <div>
     <b>2</b> files in total.
-    <b>51</b> relevant lines. 
-    <span class="green"><b>50</b> lines covered</span> and
+    <b>52</b> relevant lines. 
+    <span class="green"><b>51</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -149,10 +149,10 @@
       
       <tr>
         <td class="strong"><a href="#a04711a34b8026d14530f9e9de9f29be7a425a90" class="src_link" title="app/controllers/todos_controller.rb">app/controllers/todos_controller.rb</a></td>
-        <td class="green strong">97.96 %</td>
-        <td>72</td>
+        <td class="green strong">98.0 %</td>
+        <td>74</td>
+        <td>50</td>
         <td>49</td>
-        <td>48</td>
         <td>1</td>
         <td>4.8</td>
       </tr>
@@ -379,10 +379,10 @@
         <div class="source_table" id="a04711a34b8026d14530f9e9de9f29be7a425a90">
   <div class="header">
     <h3>app/controllers/todos_controller.rb</h3>
-    <h4><span class="green">97.96 %</span> covered</h4>
+    <h4><span class="green">98.0 %</span> covered</h4>
     <div>
-      <b>49</b> relevant lines. 
-      <span class="green"><b>48</b> lines covered</span> and
+      <b>50</b> relevant lines. 
+      <span class="green"><b>49</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -601,223 +601,235 @@
         </li>
       
         
-        <li class="hit" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
+        <li class="hit" data-hits="2" data-linenumber="36">
+          <span class="hits">2</span>
           <code class="ruby">    sorted_todos = params[:sorted_todos]</code>
         </li>
       
         
-        <li class="hit" data-hits="1" data-linenumber="37">
-          <span class="hits">1</span>
-          <code class="ruby">    frame = params[:frame]</code>
+        <li class="hit" data-hits="2" data-linenumber="37">
+          <span class="hits">2</span>
+          <code class="ruby">    unless sorted_todos.nil?</code>
         </li>
       
         
         <li class="hit" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
-          <code class="ruby">    order_number = 1</code>
+          <code class="ruby">      frame = params[:frame]</code>
         </li>
       
         
         <li class="hit" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
-          <code class="ruby">    sorted_todos.each do |id|</code>
+          <code class="ruby">      order_number = 1</code>
         </li>
       
         
-        <li class="hit" data-hits="3" data-linenumber="40">
-          <span class="hits">3</span>
-          <code class="ruby">      todo = Todo.find(id)</code>
+        <li class="hit" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          <code class="ruby">      sorted_todos.each do |id|</code>
         </li>
       
         
         <li class="hit" data-hits="3" data-linenumber="41">
           <span class="hits">3</span>
-          <code class="ruby">      todo.frame = frame</code>
+          <code class="ruby">        todo = Todo.find(id)</code>
         </li>
       
         
         <li class="hit" data-hits="3" data-linenumber="42">
           <span class="hits">3</span>
-          <code class="ruby">      todo.frame_order_number = order_number</code>
+          <code class="ruby">        todo.frame = frame</code>
         </li>
       
         
         <li class="hit" data-hits="3" data-linenumber="43">
           <span class="hits">3</span>
-          <code class="ruby">      order_number += 1</code>
+          <code class="ruby">        todo.frame_order_number = order_number</code>
         </li>
       
         
         <li class="hit" data-hits="3" data-linenumber="44">
           <span class="hits">3</span>
-          <code class="ruby">      todo.save</code>
+          <code class="ruby">        order_number += 1</code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="hit" data-hits="3" data-linenumber="45">
+          <span class="hits">3</span>
+          <code class="ruby">        todo.save</code>
+        </li>
+      
+        
+        <li class="never" data-hits="" data-linenumber="46">
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        
-        <li class="hit" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
-          <code class="ruby">    render :nothing =&gt; true</code>
+          <code class="ruby">      end</code>
         </li>
       
         
         <li class="never" data-hits="" data-linenumber="47">
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        
+        <li class="hit" data-hits="2" data-linenumber="48">
+          <span class="hits">2</span>
+          <code class="ruby">    render :nothing =&gt; true</code>
+        </li>
+      
+        
+        <li class="never" data-hits="" data-linenumber="49">
+          
           <code class="ruby">  end</code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="50">
           
           <code class="ruby">  </code>
         </li>
       
         
-        <li class="hit" data-hits="2" data-linenumber="49">
+        <li class="hit" data-hits="2" data-linenumber="51">
           <span class="hits">2</span>
           <code class="ruby">  def rename</code>
         </li>
       
         
-        <li class="hit" data-hits="1" data-linenumber="50">
-          <span class="hits">1</span>
-          <code class="ruby">    id = params[:id]</code>
-        </li>
-      
-        
-        <li class="hit" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          <code class="ruby">    title = params[:title]</code>
-        </li>
-      
-        
         <li class="hit" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
-          <code class="ruby">    todo = Todo.find(id)</code>
+          <code class="ruby">    id = params[:id]</code>
         </li>
       
         
         <li class="hit" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
-          <code class="ruby">    todo.title = title</code>
+          <code class="ruby">    title = params[:title]</code>
         </li>
       
         
         <li class="hit" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
-          <code class="ruby">    todo.save</code>
+          <code class="ruby">    todo = Todo.find(id)</code>
         </li>
       
         
         <li class="hit" data-hits="1" data-linenumber="55">
           <span class="hits">1</span>
+          <code class="ruby">    todo.title = title</code>
+        </li>
+      
+        
+        <li class="hit" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          <code class="ruby">    todo.save</code>
+        </li>
+      
+        
+        <li class="hit" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
           <code class="ruby">    render :nothing =&gt; true</code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="58">
           
           <code class="ruby">  end</code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="59">
           
           <code class="ruby">  </code>
         </li>
       
         
-        <li class="hit" data-hits="2" data-linenumber="58">
+        <li class="hit" data-hits="2" data-linenumber="60">
           <span class="hits">2</span>
           <code class="ruby">  def destroy</code>
         </li>
       
         
-        <li class="hit" data-hits="1" data-linenumber="59">
+        <li class="hit" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           <code class="ruby">    id = params[:id]</code>
         </li>
       
         
-        <li class="hit" data-hits="1" data-linenumber="60">
+        <li class="hit" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           <code class="ruby">    todo = Todo.find(id)</code>
         </li>
       
         
-        <li class="hit" data-hits="1" data-linenumber="61">
+        <li class="hit" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           <code class="ruby">    todo.delete</code>
         </li>
       
         
-        <li class="hit" data-hits="1" data-linenumber="62">
+        <li class="hit" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           <code class="ruby">    render :nothing =&gt; true    </code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="65">
           
           <code class="ruby">  end</code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="66">
           
           <code class="ruby">  </code>
         </li>
       
         
-        <li class="hit" data-hits="2" data-linenumber="65">
+        <li class="hit" data-hits="2" data-linenumber="67">
           <span class="hits">2</span>
           <code class="ruby">private</code>
         </li>
       
         
-        <li class="hit" data-hits="2" data-linenumber="66">
+        <li class="hit" data-hits="2" data-linenumber="68">
           <span class="hits">2</span>
           <code class="ruby">  def sort (todos)</code>
         </li>
       
         
-        <li class="hit" data-hits="72" data-linenumber="67">
+        <li class="hit" data-hits="72" data-linenumber="69">
           <span class="hits">72</span>
           <code class="ruby">    unless todos.nil?</code>
         </li>
       
         
-        <li class="hit" data-hits="17" data-linenumber="68">
+        <li class="hit" data-hits="17" data-linenumber="70">
           <span class="hits">17</span>
           <code class="ruby">      todos.sort {|a,b| a.frame_order_number &lt;=&gt; b.frame_order_number}</code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="71">
           
           <code class="ruby">    end</code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="72">
           
           <code class="ruby">  end</code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="73">
           
           <code class="ruby">  </code>
         </li>
       
         
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="74">
           
           <code class="ruby">end</code>
         </li>

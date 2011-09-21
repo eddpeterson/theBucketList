@@ -39,6 +39,10 @@ describe "TodosControllers" do
     Todo.find(t3.id).frame == "family"
   end
   
+  it "should ignore set sorting for empty array" do
+    post todos_set_sorting_path, {:sorted_todos => [], :frame => "family"}
+  end
+  
   
   # it "Should rename todo" do
   #   todo = Todo.create!(:title => "title")
