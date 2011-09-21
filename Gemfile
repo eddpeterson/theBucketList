@@ -20,13 +20,17 @@ gem "bson_ext", "~> 1.2"
 gem "rspec-rails", :group => [:test, :development]
 gem 'simplecov', :require => false, :group => :test
 
+gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git', :group => [:test, :development]
+gem 'launchy', :group => [:test, :development]
+
+
 group :development do
   gem "cheat"
 end
 
 group :test  do
   gem "cucumber-rails"
-  gem "capybara"
+  #gem "capybara"
   gem "database_cleaner"
   gem "factory_girl_rails"
   gem "shoulda"

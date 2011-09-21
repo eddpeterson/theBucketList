@@ -5,21 +5,26 @@ $(function() {
     opacity: 0.45,
     update: function(event, ui) { 
       var frame = event.target.id
-      var sorted_todos = $('#'+frame).sortable('toArray')
-      $.post("todos/set_sorting", {sorted_todos: sorted_todos, frame: frame})
-      //alert(event.target.id) 
+      
+      var sorted_todos = new Array(); //$('#'+frame).sortable('toArray')
+      $('#'+frame+ ' > li').children().each(function(index){sorted_todos[index] = ($(this).attr('id'))})
       //debugger
+      //alert(sorted_todos.count)
+      //alert(sorted_todos[0])
+      $.post("todos/set_sorting", {sorted_todos: sorted_todos, frame: frame})
+      
     },
     receive: function(event, ui) { 
       //alert('receive')
       //debugger
-      var droppedElement = event.srcElement.id 
-      var newFrame = event.target.id
+      //var droppedElement = event.srcElement.parent().attr('id') 
+      //alert(droppedElement)
+      //var newFrame = event.target.id
       //var result = $('#'+newFrame).sortable('toArray')
       //alert(result[0])
       //alert(result[1])
 
-      $.post("todos/set_frame", { id: droppedElement, frame: newFrame } )
+      //$.post("todos/set_frame", { id: droppedElement, frame: newFrame } )
     },
 
   }).disableSelection()
@@ -28,51 +33,38 @@ $(function() {
   //
   // Rename functionality
   //
+  $('.save_rename').live('click', function(){ saveHandler(frame_item_context = $(this).parent().parent())})
+  $('.cancel_rename').live('click', function(){ cancelHandler(frame_item_context = $(this).parent().parent())})
   $('.rename_title').live('keyup', function(e) { 
-    if (e.which == 13) { saveHandler($(this).attr('id')) } 
-    if (e.which == 27) { cancelHandler($(this).attr('id')) }
+    if (e.which == 13) { saveHandler(frame_item_context = $(this).parent().parent()) } 
+    if (e.which == 27) { cancelHandler(frame_item_context = $(this).parent().parent()) }
   })
-  function saveHandler(id) { 
-    //id = $(this).attr('id')
-    var newTitle = $('.rename_title[id="'+ id + '"]').val()
+  function saveHandler(frame_item_context) { 
+    newTitle = $('.rename_title', frame_item_context).val()
     if (newTitle.length == 0)
       return
     
+    id = frame_item_context.attr('id')
     $.post("todos/rename", { id: id, title: newTitle})
     
-    $('.frame_item_edit[id="'+ id + '"]').toggle()
-    $('.frame_item[id="'+ id + '"]').toggle()
-    $('.todo_title[id="'+ id + '"]').text(newTitle)
-    
+    $(".frame_item_rename", frame_item_context).toggle()
+    $(".frame_item_readonly", frame_item_context).toggle()
+    $(".frame_item_readonly", frame_item_context).text(newTitle)
     cancelRenameInProgress()
   }
-  function cancelHandler(id) {
-    
-    $('.frame_item_edit[id="'+ id + '"]').toggle()
-    $('.frame_item[id="'+ id + '"]').toggle()
-    
+  function cancelHandler(frame_item_context) {
+    $(".frame_item_readonly", frame_item_context).toggle()
+    $(".frame_item_rename", frame_item_context).toggle()
     cancelRenameInProgress()
   }
- $('.save_rename').live('click', function(){ saveHandler($(this).attr('id')) })
- $('.cancel_rename').live('click', function(){ cancelHandler($(this).attr('id')) })
-
-
   $(".frame_item").dblclick(function() {
-    
     if (isRenameInProgress())
       return
-    setRenameInProgress()
-    
-    var text = $.trim($(this).text())
-    var id = $(this).attr('id')
-    
-    
-    $('.frame_item_edit[id="'+ id + '"]').toggle()
-    $('.frame_item[id="'+ id + '"]').toggle()
-    
+    setRenameInProgress()   
+    $(".frame_item_readonly", this).toggle()
+    $(".frame_item_rename", this).toggle()
     $('.rename_title').select()     
   })  
-
   function isRenameInProgress(){
     return $('#is_rename_in_edit_mode').val() == "true"    
   } 
@@ -84,8 +76,22 @@ $(function() {
   }
 
 
-  $('button.remove').click(function(){
-    var id = $(this).val()
+ 
+  // $(".frame_dude").hoverIntent(
+  //        function(e){ 
+  //          id = e.target.id
+  //          $('.frame_item_mouseover[id="'+ id + '"]').show()
+  //          
+  //        },
+  //        function(e){
+  //          
+  //          id = e.target.id
+  //          $('.frame_item_mouseover[id="'+ id + '"]').hide()
+  //          
+  //        })
+   
+  $('.remove_todo').click(function(){
+    var id = $(this).attr('id')
 
     $( "#dialog-confirm" ).dialog({
       resizable: false,
@@ -101,7 +107,7 @@ $(function() {
             dataType: "html",
             async:false,
             success: function(msg){
-              alert('removed')
+              $('.frame_item[id="'+ id + '"]').hide()
             }
           }) 
 

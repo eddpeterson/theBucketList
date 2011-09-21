@@ -30,23 +30,15 @@ class TodosController < ApplicationController
     @social_todos = sort todos_by_frame["social"]
   end
   
-  def set_frame
-    id = params[:id]
-    frame = params[:frame]
-    if frame == "none"
-      frame = nil
-    end
-    @todo = Todo.find(id)
-    @todo.frame = frame
-    @todo.save
-    render :nothing => true
-  end
+  
   
   def set_sorting
     sorted_todos = params[:sorted_todos]
+    frame = params[:frame]
     order_number = 1
     sorted_todos.each do |id|
       todo = Todo.find(id)
+      todo.frame = frame
       todo.frame_order_number = order_number
       order_number += 1
       todo.save

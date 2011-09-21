@@ -1,6 +1,6 @@
 .frame { 
   background-color: #eee;
-  padding: 1px; 
+  padding: 10px; 
   cursor: pointer;
 }
 
@@ -18,3 +18,16 @@
 .rename_button_hidden { display:none; }
 .rename_button { background-color: yellow;}
 .frame_item_edit { display:none;}
+.frame_item_mouseover { display:none; font-weight:bold;}
+.frame_dude { cursor: pointer;}
+.drag_todo_link { 
+  cursor: move; 
+ // background-image:url('../assets/drag_icon.gif');
+ //  background-repeat:no-repeat;
+ //    height:40px;
+ //    width: 40px;
+  }
+  
+
+.rename_title{}
+.frame_item_rename{display:none;}

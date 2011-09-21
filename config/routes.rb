@@ -1,6 +1,5 @@
 TheBucketList::Application.routes.draw do
   resources :todos
-  post 'todos/set_frame'
   post 'todos/set_sorting'
   post 'todos/rename'
   

@@ -1,18 +1,27 @@
 =title
 %ul{:id => frame_id, :class => "frame"}
   - unless todos.nil?
-    - todos.each do |t| 
-      %div{:id => t.id, :class => "frame_item"}
-        %label{:id => t.id, :class => "todo_title"}= t.title
-        //.rename_button Rename
-        //%button{:value => t.id, :class => "remove"} Remove  
-        //%span{:id => "rename_button_#{t.id}", :class => "rename_button_hidden"} Rename
-      %div{:id => t.id, :class => "frame_item_edit"}
-        %input{:type => "text", :class => "rename_title", :name => "rename_title", :id => t.id, :value => t.title, :size => 55}
-        %span.save_rename{:id => t.id} Save
-        %span.cancel_rename{:id => t.id} Cancel
-      / %div{:id => t.id, :class => "frame_item_mouseover"}
-      /   %input{:type => "text", :value => t.title} t.title
-      /   .rename_button Rename
-
-      
+    - todos.each do |t|
+      %li
+        %span{:id => t.id, :class => "frame_item"}
+          %span{:class => "frame_item_readonly"}
+            =t.title
+          %span{:class => "frame_item_rename"}
+            %input{:type => "text", :class => "rename_title", :name => "rename_title", :value => t.title, :size => 55}
+            %span.save_rename Save
+            %span.cancel_rename Cancel
+        / =title
+        / %ul{:id => frame_id, :class => "frame"}
+        /   - unless todos.nil?
+        /     - todos.each do |t| 
+        /       %span{:id => t.id, :class => "frame_dude"}
+        /         %span{:id => t.id, :class => "frame_item"}
+        /           %span{:id => t.id, :class => "todo_title"}= t.title
+        /           %span{:id => t.id, :class => "frame_item_mouseover"}
+        /             %span{:id => t.id, :class => "remove_todo"} Remove
+        /             %span.drag_todo_link  Drag
+        /         %span{:id => t.id, :class => "frame_item_edit"}
+        /           %input{:type => "text", :class => "rename_title", :name => "rename_title", :id => t.id, :value => t.title, :size => 55}
+        /           %span.save_rename{:id => t.id} Save
+        /           %span.cancel_rename{:id => t.id} Cancel
+        /         %div
