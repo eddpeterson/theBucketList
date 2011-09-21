@@ -14,7 +14,7 @@ $(function() {
       $.post("todos/set_sorting", {sorted_todos: sorted_todos, frame: frame})
       
     },
-    receive: function(event, ui) { 
+    //receive: function(event, ui) { 
       //alert('receive')
       //debugger
       //var droppedElement = event.srcElement.parent().attr('id') 
@@ -25,7 +25,7 @@ $(function() {
       //alert(result[1])
 
       //$.post("todos/set_frame", { id: droppedElement, frame: newFrame } )
-    },
+    //},
 
   }).disableSelection()
 
@@ -91,8 +91,7 @@ $(function() {
   //        })
    
   $('.remove_todo').click(function(){
-    var id = $(this).attr('id')
-
+    var id = $(this).parent().parent().attr('id')
     $( "#dialog-confirm" ).dialog({
       resizable: false,
       height:200,
@@ -107,7 +106,7 @@ $(function() {
             dataType: "html",
             async:false,
             success: function(msg){
-              $('.frame_item[id="'+ id + '"]').hide()
+              $('.frame_item[id="'+ id + '"]').parent().hide('slow')
             }
           }) 
 
