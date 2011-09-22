@@ -1,110 +1,8 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/edijs/Projects/theBucketList/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/edijs/Projects/theBucketList/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/edijs/Projects/theBucketList/app/controllers/todos_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/edijs/Projects/theBucketList/app/models/todo.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ]
     },
-    "timestamp": 1316717844
+    "timestamp": 1316718234
   },
   "RSpec": {
     "coverage": {
@@ -211,6 +109,6 @@
         null
       ]
     },
-    "timestamp": 1316717837
+    "timestamp": 1316718647
   }
 }

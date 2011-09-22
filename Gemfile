@@ -29,13 +29,10 @@ group :development do
 end
 
 group :test  do
-  gem "cucumber-rails"
-  #gem "capybara"
   gem "database_cleaner"
   gem "factory_girl_rails"
   gem "shoulda"
   gem "guard-rspec"
-  gem 'guard-cucumber'
   gem 'rb-fsevent'
   gem 'growl_notify'
 end
