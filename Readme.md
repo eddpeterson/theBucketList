@@ -11,6 +11,7 @@
 # TODO:
 
 ## Technical debt
+* Jquery drag and drop testing 
 * Catch up on how to test jquery dudes and then refactor mercilessly views, javascript, models, controller, tests with jasmine
 
 ## BUGS
