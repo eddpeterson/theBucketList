@@ -92,32 +92,34 @@ $(function() {
    
   $('.remove_todo').click(function(){
     var id = $(this).parent().parent().attr('id')
-    $( "#dialog-confirm" ).dialog({
-      resizable: false,
-      height:200,
-      modal: true,
-      buttons: {
-        Delete: function() {
-          $.ajax({
-            url: "todos/" + id,
-            global: false,
-            type: "DELETE",
-            //data: {id : this.getAttribute('id')},
-            dataType: "html",
-            async:false,
-            success: function(msg){
-              $('.frame_item[id="'+ id + '"]').parent().hide('slow')
-            }
-          }) 
-
-          $( this ).dialog( "close" );
-        },
-        Cancel: function() {
-          $( this ).dialog( "close" );
-        }
-      }
-    });
+    $dialog.data('id', id).dialog('open')
   })
-  
+  var $dialog = $( "#dialog-confirm" ).dialog({
+    autoOpen: false,
+    resizable: false,
+    height:200,
+    modal: true,
+    buttons: {
+      Delete: function() {
+        id = $(this).data('id')
+        $.ajax({
+          url: "todos/" + id,
+          global: false,
+          type: "DELETE",
+          //data: {id : this.getAttribute('id')},
+          dataType: "html",
+          async:false,
+          success: function(msg){
+            $('.frame_item[id="'+ id + '"]').parent().hide('slow')
+          }
+        }) 
+
+        $( this ).dialog( "close" );
+      },
+      Cancel: function() {
+        $( this ).dialog( "close" );
+      }
+    }
+  });
    
 })
