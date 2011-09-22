@@ -14,8 +14,6 @@
 * Catch up on how to test jquery dudes and then refactor mercilessly views, javascript, models, controller, tests with jasmine
 
 ## BUGS
-* Remove is added to title of todo when double clicking
-* Modal message box is crappy and buggy - find another one
 * Remove public/assets library and figure out how to use jquery plugins in rails 3.1
 
 ## Beautifying
