@@ -15,7 +15,7 @@ describe "TodosControllers" do
     page.should have_content("#{todo.title} added to your bucket list")
   end
   
-
+  
   
   it "Should remove todo" do
     todo = Todo.create!(:title => "title")
@@ -83,7 +83,25 @@ describe "TodosControllers" do
     visit todos_path
     page.should have_content("my todo")
   end
-  
+    
 
+  it "should drag todo from family frame to personal frame and remember it when page is reloaded", :js => true do
+    todo = Todo.create!(:title => "title 1", :frame => "family")
+    
+    visit todos_path
+    within("#family") do 
+      page.should have_content("title 1")
+    end
+    
+    todo_element = find("##{todo.id}") 
+    friends_frame_element = find("#personal")
+    todo_element.drag_to friends_frame_element
+    
+    visit todos_path
+    within("#personal") do 
+      page.should have_content("title 1")
+    end
+    
+  end
  
 end

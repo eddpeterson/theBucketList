@@ -7,11 +7,11 @@
 * Improve todo rename functionality by adding: Cancel button + Esc key and Save buttone + Enter key
 * Add unit test for title validation and add appropriate error handling in jquery rename functionality
 * Got test coverage > 95%
+* Jquery drag and drop testing 
 
 # TODO:
 
 ## Technical debt
-* Jquery drag and drop testing 
 * Catch up on how to test jquery dudes and then refactor mercilessly views, javascript, models, controller, tests with jasmine
 
 ## BUGS
@@ -25,7 +25,7 @@
 ## Become socially aware
 * Use facebook, twitter to authorize
 * List facebook, twitter, etc. friends todos (use capped collections)
-
+* Timeline to integrate with Facebook and show not only past, bit future
 
 ## Defered
 * Allow user to rename the todo by showing "rename" button when mouse over
