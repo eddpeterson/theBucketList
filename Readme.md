@@ -10,6 +10,11 @@
 
 # TODO:
 
+#remove forcing users to select frame and due date when adding a new todo.
+# instead provide two different views
+- one when users can add new item and place it frame 
+- other when user can drag and drop items on visible timescale
+
 ## Beautifying
 * Add blueprint css
 * Add effects when moving todo from one list to another
@@ -25,6 +30,7 @@
 * Add icons to Personal, Family, Friends, Work, Social
 * Emphasize those frames, that have more items than others
 * While draging, make it visible where it will be placed and add animation when placing item in todo list (like in pudding)
+* Make it feel like you are writing with a hand when adding a new todo
 
 ## Defered
 * Allow user to rename the todo by showing "rename" button when mouse over

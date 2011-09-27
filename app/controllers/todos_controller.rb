@@ -10,6 +10,8 @@ class TodosController < ApplicationController
     @todo = Todo.new
     @todo.title = params[:title]
     @todo.due_date = params[:due_date]
+    @todo.frame_order_number = 0
+    @todo.frame = params[:frame]
     respond_to do |format|
       if @todo.save
         flash[:notice] = "#{@todo.title} added to your bucket list"

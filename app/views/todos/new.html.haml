@@ -1,13 +1,20 @@
-= form_tag todos_path, :method => :post do 
-  .field
-    = label_tag :title
-    = text_field_tag :title, params[:title]
-  .field
-    = label_tag :due_date  
-    = text_field_tag :due_date, params[:due_date]
+= form_tag todos_path, :method => :post do
+  / = select(:frame, nil, [['I', :personal], ['Me and my family', 'family']])
+  %select{:name => "frame", :id => "frame"}
+    %option{:value => "personal"} Me personally
+    %option{:value => "family"} Together with my family
+    %option{:value => "friends"} Together with my friends
+    %option{:value => "work"} At work I
+    %option{:value => "social"} In social life I 
+  will
+  /= label_tag :title
+  = text_field_tag :title, params[:title]
+  by 
+  
+  /= label_tag :due_date  
+  = text_field_tag :due_date, params[:due_date]
     
-  .actions
-    = submit_tag "Add"
+  = submit_tag "Add"
 
 / = form_for(@todo) do |f| 
 /   / %label{:for => "title"} Title

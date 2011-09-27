@@ -1,8 +1,15 @@
 $(function() {
-
+  $( "#due_date" ).datepicker({
+		showOn: "button",
+		buttonImage: "assets/calendar.jpeg",
+		buttonImageOnly: true
+	});
+  		
   $( "#none, #personal, #family, #friends, #work, #social" ).sortable({
     connectWith: ".frame",
-    opacity: 0.45,
+    opacity: 0.35,
+    placeholder: "ui-state-highlight",
+    hoverClass: "ui-state-hover",
     update: function(event, ui) { 
       var frame = event.target.id
       
@@ -28,6 +35,7 @@ $(function() {
     //},
 
   }).disableSelection()
+ 
 
 
   //
