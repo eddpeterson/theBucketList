@@ -1,5 +1,4 @@
-# DONE: 
-## Basic operations to manage todos
+# What's DONE: 
 * Add todo, with title, due date, status (not a dropdown)
 * Drop todo in one of the categories:personal, family, friends, work, social 
 * Allow users to change the sorting and persist it in the datastore
@@ -10,12 +9,6 @@
 * Jquery drag and drop testing 
 
 # TODO:
-
-## Technical debt
-* Catch up on how to test jquery dudes and then refactor mercilessly views, javascript, models, controller, tests with jasmine
-
-## BUGS
-* Remove public/assets library and figure out how to use jquery plugins in rails 3.1
 
 ## Beautifying
 * Add blueprint css
@@ -31,3 +24,4 @@
 * Allow user to rename the todo by showing "rename" button when mouse over
 * Allow user to set status of a todo from none to active, completed wen mouse over
 * Allow users to remove item on mouse over and show confirmation
+* Have to look how to place external plugin js and css assets. Maybe something missing in configs because I upgraded from rails 3.1.rc to 3.1

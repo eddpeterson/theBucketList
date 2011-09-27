@@ -36,6 +36,9 @@ class TodosController < ApplicationController
     sorted_todos = params[:sorted_todos]
     unless sorted_todos.nil?
       frame = params[:frame]
+      if frame == "none" 
+        frame = nil
+      end
       order_number = 1
       sorted_todos.each do |id|
         todo = Todo.find(id)

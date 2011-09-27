@@ -8,6 +8,27 @@
   <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
 %body
-  - unless notice.blank?
-    = notice
-  = yield
+  .container
+    / HEAD
+    %div{:class => "span-4 colborder"}
+      .huxap
+        =link_to "The Bucket List", "/"
+      .quiet
+        %i Manage your future
+    %div{:class => "span-12 menu"}
+      %li=link_to "Home", "/" #new_interest_path
+      %li=link_to "About", "/home/about"
+    %div{:class => "span-6 last"}
+
+    %hr
+
+    / MAIN
+    - unless notice.blank?
+      = notice
+    = yield
+    / FOOT 
+    %hr
+    / %div{:class => "span-24 centerText"}
+    /   = render :partial => "foot"
+    / %div{:class => "span-24 centerText"}
+    /   = render :partial => "/interests/new"

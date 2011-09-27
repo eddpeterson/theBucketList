@@ -6,14 +6,20 @@
     This item will be permanently deleted and cannot be recovered. Are you sure?
 
 
-= render :partial => "frame", :locals => { :title => "", :frame_id => "none", :todos => @no_frame_todos }
+%div{:class => "span-24 last"}
+  = render :partial => "frame", :locals => { :title => "", :frame_id => "none", :todos => @no_frame_todos }
 
-= render :partial => "frame", :locals => { :title => "Personal", :frame_id => "personal", :todos => @personal_todos }
+%div{:class => "span-5"}
+  = render :partial => "frame", :locals => { :title => "Personal", :frame_id => "personal", :todos => @personal_todos }
 
-= render :partial => "frame", :locals => { :title => "Family", :frame_id => "family", :todos => @family_todos }
+%div{:class => "span-5"}
+  = render :partial => "frame", :locals => { :title => "Family", :frame_id => "family", :todos => @family_todos }
 
-= render :partial => "frame", :locals => { :title => "Friends", :frame_id => "friends", :todos => @friends_todos }
+%div{:class => "span-5"}
+  = render :partial => "frame", :locals => { :title => "Friends", :frame_id => "friends", :todos => @friends_todos }
 
-= render :partial => "frame", :locals => { :title => "Work", :frame_id => "work", :todos => @work_todos }
+%div{:class => "span-5"}
+  = render :partial => "frame", :locals => { :title => "Work", :frame_id => "work", :todos => @work_todos }
 
-= render :partial => "frame", :locals => { :title => "Social", :frame_id => "social", :todos => @social_todos }
+%div{:class => "span-4 last"}
+  = render :partial => "frame", :locals => { :title => "Social", :frame_id => "social", :todos => @social_todos }

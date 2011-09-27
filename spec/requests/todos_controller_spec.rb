@@ -94,11 +94,30 @@ describe "TodosControllers" do
     end
     
     todo_element = find("##{todo.id}") 
-    friends_frame_element = find("#personal")
-    todo_element.drag_to friends_frame_element
+    personal_frame_element = find("#personal")
+    todo_element.drag_to personal_frame_element
     
     visit todos_path
     within("#personal") do 
+      page.should have_content("title 1")
+    end
+    
+  end
+  
+  it "should drag todo to from family frame to none frame and set frame to nil", :js => true do
+    todo = Todo.create!(:title => "title 1", :frame => "family")
+    
+    visit todos_path
+    within("#family") do 
+      page.should have_content("title 1")
+    end
+    
+    todo_element = find("##{todo.id}") 
+    none_frame_element = find("#none")
+    todo_element.drag_to none_frame_element
+    
+    visit todos_path
+    within("#none") do 
       page.should have_content("title 1")
     end
     
