@@ -18,7 +18,13 @@
 ## Become socially aware
 * Use facebook, twitter to authorize
 * List facebook, twitter, etc. friends todos (use capped collections)
-* Timeline to integrate with Facebook and show not only past, bit future
+* Timeline to integrate with Facebook and show not only past, but future
+
+## Design
+* It needs to be warm
+* Add icons to Personal, Family, Friends, Work, Social
+* Emphasize those frames, that have more items than others
+* While draging, make it visible where it will be placed and add animation when placing item in todo list (like in pudding)
 
 ## Defered
 * Allow user to rename the todo by showing "rename" button when mouse over
