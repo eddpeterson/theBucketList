@@ -9,7 +9,6 @@ describe "TodosControllers" do
     todo = Factory(:todo)
     visit new_todo_path
     fill_in "title", :with => todo.title
-    fill_in "due_date", :with => todo.due_date
     click_button "Add"
     current_path.should eq(todos_path)
     page.should have_content("#{todo.title} added to your bucket list")

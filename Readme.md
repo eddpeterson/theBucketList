@@ -10,7 +10,7 @@
 
 # TODO:
 
-#remove forcing users to select frame and due date when adding a new todo.
+# remove forcing users to select frame and due date when adding a new todo.
 # instead provide two different views
 - one when users can add new item and place it frame 
 - other when user can drag and drop items on visible timescale
