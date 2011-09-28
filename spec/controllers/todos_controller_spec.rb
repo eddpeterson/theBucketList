@@ -6,10 +6,10 @@ describe TodosController do
   #@request.env['HTTP_REFERER'] = 'http://localhost' # otherwise you get error: No HTTP_REFERER was set in the request to this action, so redirect_to :back could not be called successfully. If this is a test, make sure to specify request.env["HTTP_REFERER"].
   #end
 
-  it "should return new todo object on creation" do
-    Todo.should_receive(:new)
-    get :new
-  end
+  # it "should return new todo object on creation" do
+  #   Todo.should_receive(:new)
+  #   get :new
+  # end
   # 
   # it "should save new todo object with passed in fields" do
   #   Todo.stub!(:new).and_return(@todo = mock_model(Todo, :save => true, :title => "Travel to Hawaii"))
@@ -19,12 +19,6 @@ describe TodosController do
   # end
 
   context "should return sorted " do
-    it "no frame todos" do
-      t1 = Factory(:todo, :frame => nil, :title => "First", :frame_order_number => 1)
-      t2 = Factory(:todo, :frame => nil, :title => "Second", :frame_order_number => 2)
-      t3 = Factory(:todo, :frame => "other")
-      group_and_sort_by_frame [t2,t1,t3], [t1,t2], :no_frame_todos
-    end
     it "personal todos" do
       t1 = Factory(:todo, :frame => "personal", :title => "First", :frame_order_number => 1)
       t2 = Factory(:todo, :frame => "personal", :title => "Second", :frame_order_number => 2)

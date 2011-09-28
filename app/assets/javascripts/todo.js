@@ -1,9 +1,19 @@
 $(function() {
-  $( "#due_date" ).datepicker({
-		showOn: "button",
-		buttonImage: "assets/calendar.jpeg",
-		buttonImageOnly: true
-	});
+  $(".new_todo_button").click(function() {
+    frame_context = $(this).parent().parent()
+    frame = frame_context.attr('id')
+    //alert(frame)
+    title = $("#new_title", frame_context).val()
+    //alert(new_title)
+    $.post(
+      "todos/", 
+      {title: title, frame: frame}, 
+      function(data) { 
+        //alert(data._id)
+        $("#"+frame).prepend('<li>wadaaa</li>')
+      })
+  })
+  
   		
   $( "#none, #personal, #family, #friends, #work, #social" ).sortable({
     connectWith: ".frame",
@@ -14,7 +24,9 @@ $(function() {
       var frame = event.target.id
       
       var sorted_todos = new Array(); //$('#'+frame).sortable('toArray')
-      $('#'+frame+ ' > li').children().each(function(index){sorted_todos[index] = ($(this).attr('id'))})
+      frame_context = $('#'+frame)
+      $('.frame_item', frame_context).each(function(index){sorted_todos[index] = ($(this).attr('id'))})
+      
       //debugger
       //alert(sorted_todos.count)
       //alert(sorted_todos[0])

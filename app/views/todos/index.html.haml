@@ -5,10 +5,6 @@
     %span{:class => "ui-icon ui-icon-alert"} 
     This item will be permanently deleted and cannot be recovered. Are you sure?
 
-
-%div{:class => "span-24 last"}
-  = render :partial => "frame", :locals => { :title => "", :frame_id => "none", :todos => @no_frame_todos }
-
 %div{:class => "span-5"}
   = render :partial => "frame", :locals => { :title => "Personal", :frame_id => "personal", :todos => @personal_todos }
 

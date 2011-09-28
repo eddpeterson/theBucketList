@@ -9,19 +9,13 @@ class TodosController < ApplicationController
   def create 
     @todo = Todo.new
     @todo.title = params[:title]
-    respond_to do |format|
-      if @todo.save
-        flash[:notice] = "#{@todo.title} added to your bucket list"
-        format.html { redirect_to :action => "index" }
-      else
-        format.html { render :action => "new" }
-      end
-    end
+    @todo.frame = params[:frame]
+    @todo.save
+    render :json => @todo
   end
   
   def index
     todos_by_frame = Todo.all.group_by(&:frame)
-    @no_frame_todos = sort todos_by_frame[nil]
     @personal_todos = sort todos_by_frame["personal"]
     @family_todos = sort todos_by_frame["family"]
     @friends_todos = sort todos_by_frame["friends"]
@@ -35,9 +29,6 @@ class TodosController < ApplicationController
     sorted_todos = params[:sorted_todos]
     unless sorted_todos.nil?
       frame = params[:frame]
-      if frame == "none" 
-        frame = nil
-      end
       order_number = 1
       sorted_todos.each do |id|
         todo = Todo.find(id)
@@ -69,8 +60,8 @@ class TodosController < ApplicationController
 private
   def sort (todos)
     unless todos.nil?
-      todos.sort {|a,b| a.frame_order_number <=> b.frame_order_number}
-    end
+          todos.sort {|a,b| a.frame_order_number <=> b.frame_order_number}
+        end
   end
   
 end

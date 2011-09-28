@@ -5,13 +5,19 @@ require 'spec_helper'
 
 describe "TodosControllers" do
 
-  it "Add new item" do
+  it "Add new item", :js => true do
     todo = Factory(:todo)
-    visit new_todo_path
-    fill_in "title", :with => todo.title
-    click_button "Add"
-    current_path.should eq(todos_path)
-    page.should have_content("#{todo.title} added to your bucket list")
+    visit todos_path
+    within("#family") do 
+      fill_in "new_title", :with => todo.title
+      click_button "Add"
+      page.should have_content("wadaaa")
+    end
+
+    visit todos_path
+    within("#family") do 
+      page.should have_content("#{todo.title}")
+    end
   end
   
   
@@ -42,6 +48,7 @@ describe "TodosControllers" do
     post todos_set_sorting_path, {:sorted_todos => [], :frame => "family"}
   end
   
+
   
   # it "Should rename todo" do
   #   todo = Todo.create!(:title => "title")
@@ -50,37 +57,47 @@ describe "TodosControllers" do
   #   page.should have_content("new title")
   # end
   it "should allow user to edit todo's title when double clicked and save todo with new title", :js => true do
-    todo = Todo.create!(:title => "my todo")
+    todo = Todo.create!(:title => "my todo", :frame => "family")
     visit todos_path
     
-    todo_element = find(".frame_item") 
-    page.driver.browser.mouse.double_click(todo_element.native)
+    within("#family") do 
+      todo_element = find(".frame_item") 
+      page.driver.browser.mouse.double_click(todo_element.native)
+       
+      # page.should have_content("Save")
+      #save_and_open_page
     
-    # page.should have_content("Save")
-    #save_and_open_page
-    
-    fill_in "rename_title", :with => "new title"
-    save_element = find('.save_rename')
-    page.driver.browser.mouse.click(save_element.native)
-    page.should have_content("new title")
+      fill_in "rename_title", :with => "new title"
+      save_element = find('.save_rename')
+      page.driver.browser.mouse.click(save_element.native)
+      page.should have_content("new title")
+    end 
+
     # verify after refreshing the page we stil see newly added title
     visit todos_path
-    page.should have_content("new title")
+    within("#family") do 
+      page.should have_content("new title")
+    end
   end
   it "should allow user to edit todo's title when double clicked, but do not save new title if user cancels operation", :js => true do
-    todo = Todo.create!(:title => "my todo")
+    todo = Todo.create!(:title => "my todo", :frame => "family")
     visit todos_path
     
-    todo_element = find(".frame_item") 
-    page.driver.browser.mouse.double_click(todo_element.native)
+    within("#family") do 
+      todo_element = find(".frame_item") 
+      page.driver.browser.mouse.double_click(todo_element.native)
     
-    fill_in 'rename_title', :with => "new title"
-    cancel_element = find('.cancel_rename')
-    page.driver.browser.mouse.click(cancel_element.native)
-    page.should have_content("my todo")
+      fill_in 'rename_title', :with => "new title"
+      cancel_element = find('.cancel_rename')
+      page.driver.browser.mouse.click(cancel_element.native)
+      page.should have_content("my todo")
+    end
+
     # verify after refreshing the page we stil see previous title
     visit todos_path
-    page.should have_content("my todo")
+    within("#family") do 
+      page.should have_content("my todo")
+    end
   end
     
 
@@ -103,23 +120,6 @@ describe "TodosControllers" do
     
   end
   
-  it "should drag todo to from family frame to none frame and set frame to nil", :js => true do
-    todo = Todo.create!(:title => "title 1", :frame => "family")
-    
-    visit todos_path
-    within("#family") do 
-      page.should have_content("title 1")
-    end
-    
-    todo_element = find("##{todo.id}") 
-    none_frame_element = find("#none")
-    todo_element.drag_to none_frame_element
-    
-    visit todos_path
-    within("#none") do 
-      page.should have_content("title 1")
-    end
-    
-  end
- 
+  
+  
 end
