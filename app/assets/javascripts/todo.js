@@ -1,5 +1,5 @@
 $(function() {
-  $(".new_todo_button").click(function() {
+  $(".new_todo_button").live('click', function() {
     frame_context = $(this).parent().parent()
     frame = frame_context.attr('id')
     //alert(frame)
@@ -10,44 +10,35 @@ $(function() {
       {title: title, frame: frame}, 
       function(data) { 
         //alert(data._id)
-        $("#"+frame).prepend('<li>wadaaa</li>')
+        parent = $("#"+frame).parent()
+        $("#"+frame).remove()
+        parent.append(data)
+        //$("#"+frame).prepend('<li>wadaaa</li>')
       })
   })
   
-  		
-  $( "#none, #personal, #family, #friends, #work, #social" ).sortable({
-    connectWith: ".frame",
-    opacity: 0.35,
-    placeholder: "ui-state-highlight",
-    hoverClass: "ui-state-hover",
-    update: function(event, ui) { 
-      var frame = event.target.id
-      
-      var sorted_todos = new Array(); //$('#'+frame).sortable('toArray')
-      frame_context = $('#'+frame)
-      $('.frame_item', frame_context).each(function(index){sorted_todos[index] = ($(this).attr('id'))})
-      
-      //debugger
-      //alert(sorted_todos.count)
-      //alert(sorted_todos[0])
-      $.post("todos/set_sorting", {sorted_todos: sorted_todos, frame: frame})
-      
-    },
-    //receive: function(event, ui) { 
-      //alert('receive')
-      //debugger
-      //var droppedElement = event.srcElement.parent().attr('id') 
-      //alert(droppedElement)
-      //var newFrame = event.target.id
-      //var result = $('#'+newFrame).sortable('toArray')
-      //alert(result[0])
-      //alert(result[1])
-
-      //$.post("todos/set_frame", { id: droppedElement, frame: newFrame } )
-    //},
-
-  }).disableSelection()
- 
+  $("#personal, #family, #friends, #work, #social").livequery(function(){
+     $(this).sortable({
+       connectWith: ".frame",
+       opacity: 0.35,
+       placeholder: "ui-state-highlight",
+       hoverClass: "ui-state-hover",
+       update: function(event, ui) { 
+         var frame = event.target.id
+         
+         var sorted_todos = new Array(); //$('#'+frame).sortable('toArray')
+         frame_context = $('#'+frame)
+         $('.frame_item', frame_context).each(function(index){sorted_todos[index] = ($(this).attr('id'))})
+         
+         //debugger
+         //alert(sorted_todos.count)
+         //alert(sorted_todos[0])
+         $.post("todos/set_sorting", {sorted_todos: sorted_todos, frame: frame})
+         
+       }
+     
+     }).disableSelection()
+  });
 
 
   //
@@ -69,7 +60,7 @@ $(function() {
     
     $(".frame_item_rename", frame_item_context).toggle()
     $(".frame_item_readonly", frame_item_context).toggle()
-    $(".frame_item_readonly", frame_item_context).text(newTitle)
+    $(".title", frame_item_context).text(newTitle)
     cancelRenameInProgress()
   }
   function cancelHandler(frame_item_context) {
@@ -77,7 +68,7 @@ $(function() {
     $(".frame_item_rename", frame_item_context).toggle()
     cancelRenameInProgress()
   }
-  $(".frame_item").dblclick(function() {
+  $(".frame_item").live('dblclick', function() {
     if (isRenameInProgress())
       return
     setRenameInProgress()   
@@ -110,7 +101,7 @@ $(function() {
   //          
   //        })
    
-  $('.remove_todo').click(function(){
+  $('.remove_todo').live('click', function(){
     var id = $(this).parent().parent().attr('id')
     $dialog.data('id', id).dialog('open')
   })

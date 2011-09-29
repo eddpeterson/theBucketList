@@ -1,4 +1,3 @@
-=title
 %ul{:id => frame_id, :class => "frame"}
   %li{:id => "new_todo"}
     %input{:id => "new_title", :type => "text"}
@@ -8,7 +7,7 @@
       %li
         %span{:id => t.id, :class => "frame_item"}
           %span{:class => "frame_item_readonly"}
-            =t.title
+            %span.title= t.title
             %span.remove_todo Remove
           %span{:class => "frame_item_rename"}
             %input{:type => "text", :class => "rename_title", :name => "rename_title", :value => t.title, :size => 55}

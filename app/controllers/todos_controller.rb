@@ -7,12 +7,22 @@ class TodosController < ApplicationController
   end
   
   def create 
-    @todo = Todo.new
-    @todo.title = params[:title]
-    @todo.frame = params[:frame]
-    @todo.save
-    render :json => @todo
+    frame = params[:frame]
+    todo = Todo.new
+    todo.title = params[:title]
+    todo.frame = frame
+    todo.frame_order_number = 0
+    todo.save
+    
+    #render :json => @todo
+    #render "_frame", :frame_id => @frame_id
+    todos = sort Todo.where(frame: frame)
+    render :partial => "frame", :locals => { :frame_id => frame, :todos => todos }
   end
+  
+
+
+  
   
   def index
     todos_by_frame = Todo.all.group_by(&:frame)
@@ -60,8 +70,8 @@ class TodosController < ApplicationController
 private
   def sort (todos)
     unless todos.nil?
-          todos.sort {|a,b| a.frame_order_number <=> b.frame_order_number}
-        end
+      todos.sort {|a,b| a.frame_order_number <=> b.frame_order_number}
+    end
   end
   
 end

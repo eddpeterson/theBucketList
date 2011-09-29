@@ -11,7 +11,7 @@ describe "TodosControllers" do
     within("#family") do 
       fill_in "new_title", :with => todo.title
       click_button "Add"
-      page.should have_content("wadaaa")
+      page.should have_content(todo.title)
     end
 
     visit todos_path
