@@ -1,6 +1,8 @@
 $(function() {
-  $(".new_todo_button").live('click', function() {
-    frame_context = $(this).parent().parent()
+  $('.new_title').live('keyup', function(e) { 
+    if (e.which == 13) { add_new_todo(frame_context = $(this).parent().parent()) } 
+  })
+  function add_new_todo(frame_context){
     frame = frame_context.attr('id')
     //alert(frame)
     title = $("#new_title", frame_context).val()
@@ -15,6 +17,9 @@ $(function() {
         parent.append(data)
         //$("#"+frame).prepend('<li>wadaaa</li>')
       })
+  }
+  $(".new_todo_button").live('click', function() {
+    add_new_todo(frame_context = $(this).parent().parent()) 
   })
   
   $("#personal, #family, #friends, #work, #social").livequery(function(){
