@@ -9,16 +9,14 @@
 * Jquery drag and drop testing 
 * Remove forcing users to select frame and due date when adding a new todo.
 * Place new todo adding under each frame
+* Provide timeline view for user to add todo. The idea of concentrating on current next 10 months and next 10+ years.
+* Beautifying: Add blueprint css
 
 # TODO:
 
 # instead provide two different views
-* Provide timeline view for user to add todo. The idea of concentrating on current next 10 months and next 10+ years.
-
-## Beautifying
-* Add blueprint css
-* Add effects when moving todo from one list to another
-* Add this nice datetime gem that translated words to dates
+* On the top of the page under Timeline link show percentage of done todos (introduce status done / undone) and when clicking on it take user to timeline
+* Allow user to set due_date in Timeline view
 
 ## Become socially aware
 * Use facebook, twitter to authorize
@@ -30,7 +28,6 @@
 * Add icons to Personal, Family, Friends, Work, Social
 * Emphasize those frames, that have more items than others
 * While draging, make it visible where it will be placed and add animation when placing item in todo list (like in pudding)
-* Make it feel like you are writing with a hand when adding a new todo
 
 ## Defered
 * Allow user to rename the todo by showing "rename" button when mouse over
