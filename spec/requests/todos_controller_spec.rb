@@ -131,7 +131,15 @@ describe "TodosControllers" do
     end
   end
   
-  it "should place todos with current to next 10months in focus box" 
+  it "should place todos with current to next 10months in focus box" do
+    todo = Todo.create!(:title => "title", :frame => "family", :due_date => Date.today)
+    
+    visit timeline_path
+      
+    within("#current_box") do 
+      page.should have_content("#{todo.title}")
+    end    
+  end 
   
   it "should place todos with more than 10months due date in 10+ box"
   

@@ -18,6 +18,18 @@ class Todo
     past_todos
   end
   
+  def self.current_todos  
+    current_todos = Array.new
+    yesterday = Date.yesterday
+    future = Date.today >> 11
+    Todo.all.each do |todo|
+      if todo.due_date > yesterday && todo.due_date < future
+        current_todos << todo
+      end
+    end
+    current_todos
+  end
+  
   # scope :no_frame_todos, where(:frame => nil)
   # scope :personal_todos, where(:frame => "personal")
   # and then use them in code like:

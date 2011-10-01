@@ -1,9 +1,23 @@
-Timeline
+%h4 Timeline
 
-%ul{:id => "past_box"}
-  - unless @past_todos.nil?
-    - @past_todos.each do |t|
-      %li
-        t.title, 
-        =t.due_date
+%div{:class => "span-5"}
+  Past
+  %ul{:id => "past_box"}
+    - unless @past_todos.nil?
+      - @past_todos.each do |t|
+        %li
+          t.title, 
+          =t.due_date
+
+
+%div{:class => "span-14"}
+  Next 10 months
+  %ul{:id => "current_box"}
+    - unless @current_todos.nil?
+      - @current_todos.each do |t|
+        %li
+          t.title, 
+          =t.due_date
   
+%div{:class => "span-5 last"}
+  Next 10+ years
