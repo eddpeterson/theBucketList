@@ -21,3 +21,10 @@
   
 %div{:class => "span-5 last"}
   Next 10+ years
+  %ul{:id => "future_box"}
+    - unless @future_todos.nil?
+      - @future_todos.each do |t|
+        %li
+          t.title, 
+          =t.due_date
+  

@@ -41,5 +41,15 @@ describe Todo, "Save model" do
     Todo.current_todos.should include(todo_current_last)
     Todo.current_todos.should_not include(todo_future)
   end
+  
+  it "should return future todos" do 
+    todo_current_last = Factory(:todo, :due_date => Date.today >> 10) #next 10 months
+    todo_future = Factory(:todo, :due_date => Date.today >> 11) #next 11 months
+    
+    Todo.stub!(:all).and_return([todo_current_last, todo_future])
+    
+    Todo.future_todos.should_not include(todo_current_last)
+    Todo.future_todos.should include(todo_future)  
+  end
     
 end
