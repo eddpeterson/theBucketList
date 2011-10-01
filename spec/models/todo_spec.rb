@@ -19,7 +19,15 @@ describe Todo, "Save model" do
     todo.save.should be false
   end
   
-  
-  
+  it "should return past todos" do
+    todo = Factory(:todo, :due_date => Date.yesterday)
+    todo_current = Factory(:todo, :due_date => Date.today)
+    Todo.stub!(:all).and_return([todo, todo_current])
+    
+    Todo.past_todos.should include(todo)
+    Todo.past_todos.should_not include(todo_current)
+
+    
+  end
     
 end

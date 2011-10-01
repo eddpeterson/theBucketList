@@ -6,17 +6,18 @@ require 'spec_helper'
 describe "TodosControllers" do
 
   it "Add new item", :js => true do
-    todo = Factory(:todo)
+    title = "Travel to Hawaii"
+    
     visit todos_path
     within("#family") do 
-      fill_in "new_title", :with => todo.title
+      fill_in "new_title", :with => title
       click_button "Add"
-      page.should have_content(todo.title)
+      page.should have_content(title)
     end
 
     visit todos_path
     within("#family") do 
-      page.should have_content("#{todo.title}")
+      page.should have_content(title)
     end
   end
   
@@ -120,6 +121,18 @@ describe "TodosControllers" do
     
   end
   
+  it "should place todos with yesterdays due date in pased box" do
+    todo = Todo.create!(:title => "title", :frame => "family", :due_date => Date.yesterday)
+    
+    visit timeline_path
+      
+    within("#past_box") do 
+      page.should have_content("#{todo.title}")
+    end
+  end
   
+  it "should place todos with current to next 10months in focus box" 
+  
+  it "should place todos with more than 10months due date in 10+ box"
   
 end

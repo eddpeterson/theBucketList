@@ -7,13 +7,13 @@
 * Add unit test for title validation and add appropriate error handling in jquery rename functionality
 * Got test coverage > 95%
 * Jquery drag and drop testing 
+* Remove forcing users to select frame and due date when adding a new todo.
+* Place new todo adding under each frame
 
 # TODO:
 
-# remove forcing users to select frame and due date when adding a new todo.
 # instead provide two different views
-- one when users can add new item and place it frame 
-- other when user can drag and drop items on visible timescale
+* Provide timeline view for user to add todo. The idea of concentrating on current next 10 months and next 10+ years.
 
 ## Beautifying
 * Add blueprint css

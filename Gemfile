@@ -35,6 +35,7 @@ group :test  do
   gem "guard-rspec"
   gem 'rb-fsevent'
   gem 'growl_notify'
+  gem "timecop"
 end
 
 

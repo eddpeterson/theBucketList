@@ -1,0 +1,9 @@
+Timeline
+
+%ul{:id => "past_box"}
+  - unless @past_todos.nil?
+    - @past_todos.each do |t|
+      %li
+        t.title, 
+        =t.due_date
+  
