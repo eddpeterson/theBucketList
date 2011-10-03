@@ -30,6 +30,10 @@
 * Emphasize those frames, that have more items than others
 * While draging, make it visible where it will be placed and add animation when placing item in todo list (like in pudding)
 
+## Security
+* protect_from_forgery
+* sql injection
+
 ## Defered
 * Allow user to rename the todo by showing "rename" button when mouse over
 * Allow user to set status of a todo from none to active, completed wen mouse over
