@@ -17,7 +17,7 @@
 # TODO:
 
 # instead provide two different views
-* Allow user to set due_date in Timeline view
+* Allow user to set due_date, new todo set due_date to today + 10months
 
 ## Become socially aware
 * Use facebook, twitter to authorize
