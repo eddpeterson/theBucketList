@@ -5,7 +5,7 @@ TheBucketList::Application.routes.draw do
   match "timeline" => "timelines#index"
   post 'timelines/set_status' => "timelines#set_status"
   get 'timelines/progress' => "timelines#progress"
-  
+  get 'about' => "application#about"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

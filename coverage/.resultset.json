@@ -9,6 +9,10 @@
       "/Users/edijs/Projects/theBucketList/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/edijs/Projects/theBucketList/app/helpers/application_helper.rb": [
@@ -183,6 +187,6 @@
         null
       ]
     },
-    "timestamp": 1317670914
+    "timestamp": 1317672203
   }
 }
