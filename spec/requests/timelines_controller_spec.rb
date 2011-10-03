@@ -52,7 +52,7 @@ describe "TimelinesController" do
   end
   
   it "should display undone status" do
-    todo_done = Todo.create!(:title => "title", :frame => "family", :status => nil)
+    todo = Todo.create!(:title => "title", :frame => "family", :status => nil)
     
     visit timeline_path
     element = find(".status")
@@ -60,7 +60,7 @@ describe "TimelinesController" do
   end
   
   it "should change undone to done status", :js => true do
-    todo_done = Todo.create!(:title => "title", :frame => "family")
+    todo = Todo.create!(:title => "title", :frame => "family")
     
     visit timeline_path
     element = find(".status")
@@ -75,4 +75,21 @@ describe "TimelinesController" do
     element = find(".status") 
     element.value.should == "done"    
   end
+  
+  it "should display completed todos percentage", :js => true do
+    
+    # 3 done todos
+    Todo.create!(:title => "title", :frame => "family", :status => "done")
+    Todo.create!(:title => "title", :frame => "family", :status => "done")
+    Todo.create!(:title => "title", :frame => "family", :status => "done")
+    # 3 undone todos
+    Todo.create!(:title => "title", :frame => "family")
+    Todo.create!(:title => "title", :frame => "family", :status => "undone")
+    Todo.create!(:title => "title", :frame => "family", :status => "undone")
+    
+    visit root_path
+    
+    page.should have_content("50% goals completeness")
+  end
+  
 end

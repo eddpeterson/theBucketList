@@ -18,4 +18,8 @@ class TimelinesController < ApplicationController
     render :nothing => true
   end
   
+  def progress
+    render :text => Todo.done_todos_percentage
+  end
+  
 end

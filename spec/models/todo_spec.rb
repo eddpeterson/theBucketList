@@ -51,5 +51,26 @@ describe Todo, "Save model" do
     Todo.future_todos.should_not include(todo_current_last)
     Todo.future_todos.should include(todo_future)  
   end
+  
+  it "should return done todos percentage" do
+    Factory(:todo, :status => "done")
+    Factory(:todo, :status => "done")
+    Factory(:todo, :status => nil)
+    Factory(:todo, :status => "undone")
+      
+    Todo.done_todos_percentage.should == 50
+  end
+  
+  it "should return done todos percentage in human readable format" do
+    Factory(:todo, :status => "done")
+    Factory(:todo, :status => nil)
+    Factory(:todo, :status => "undone")
+    
+    Todo.done_todos_percentage.should == 33
+  end
+  
+  it"should return zero progress when empty todos" do 
+    Todo.done_todos_percentage.should == 0    
+  end
     
 end

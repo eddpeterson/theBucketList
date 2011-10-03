@@ -42,6 +42,15 @@ class Todo
     future_todos
   end
   
+  def self.done_todos_percentage 
+    count = Todo.count
+    result = 0
+    if (count > 0)
+      done_count = Todo.where(:status => "done").count
+      result = (done_count * 100 / count) 
+    end
+    result
+  end
   # scope :no_frame_todos, where(:frame => nil)
   # scope :personal_todos, where(:frame => "personal")
   # and then use them in code like:

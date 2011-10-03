@@ -1,4 +1,14 @@
 $(function() {
+  
+  update_progress = function() {
+    $.get("timelines/progress", function(percentage){
+      new_progress = percentage + '%'
+      $('#progress_percentage').text(new_progress)
+      $('.indicator').css('width', percentage)
+    })
+  }
+  update_progress()
+  
   //$('[id$="_status",value="done"]').addClass('todo_is_done')
   $('.status').filter('[value="done"]').addClass('todo_is_done')
   

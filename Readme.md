@@ -12,11 +12,11 @@
 * Provide timeline view for user to add todo. The idea of concentrating on current next 10 months and next 10+ years.
 * Beautifying: Add blueprint css
 * Introduce status done / undone for todos in Timeline 
+* On the top of the page under Timeline link show percentage of done todos and when clicking on it take user to timeline
 
 # TODO:
 
 # instead provide two different views
-* On the top of the page under Timeline link show percentage of done todos and when clicking on it take user to timeline
 * Allow user to set due_date in Timeline view
 
 ## Become socially aware
