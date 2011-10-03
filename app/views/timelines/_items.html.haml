@@ -1,0 +1,5 @@
+- unless items.nil?
+  - items.each do |t|
+    %li{:id => "#{t.id}"}
+      =t.title
+      %span{:class => "status", :value=> "#{t.status}"} status indicator

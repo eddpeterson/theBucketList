@@ -3,25 +3,14 @@
 %div{:class => "span-5"}
   Past
   %ul{:id => "past_box"}
-    - unless @past_todos.nil?
-      - @past_todos.each do |t|
-        %li
-          =t.title
-
+    =render :partial => "items", :locals => {:items => @past_todos}
 
 %div{:class => "span-14"}
   Next 10 months
   %ul{:id => "current_box"}
-    - unless @current_todos.nil?
-      - @current_todos.each do |t|
-        %li
-          =t.title
-  
+    =render :partial => "items", :locals => {:items => @current_todos}
+          
 %div{:class => "span-5 last"}
   Next 10+ years
   %ul{:id => "future_box"}
-    - unless @future_todos.nil?
-      - @future_todos.each do |t|
-        %li
-          =t.title
-  
+    =render :partial => "items", :locals => {:items => @future_todos}  

@@ -4,6 +4,7 @@ class Todo
   field :due_date, type: Date, default: Date.today
   field :frame, type: String
   field :frame_order_number, type: Integer
+  field :status, type: String, default: "undone"
   
   validates_presence_of :title
   

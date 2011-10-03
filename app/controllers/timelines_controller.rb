@@ -7,4 +7,15 @@ class TimelinesController < ApplicationController
     @future_todos = Todo.future_todos
   end
   
+  def set_status
+    status = params[:status]
+    id = params[:id]
+    
+    todo = Todo.find(id)
+    todo.status = status
+    todo.save
+    
+    render :nothing => true
+  end
+  
 end

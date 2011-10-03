@@ -3,6 +3,7 @@ TheBucketList::Application.routes.draw do
   post 'todos/set_sorting'
   post 'todos/rename'
   match "timeline" => "timelines#index"
+  post 'timelines/set_status' => "timelines#set_status"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
