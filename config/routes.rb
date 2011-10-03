@@ -2,7 +2,7 @@ TheBucketList::Application.routes.draw do
   resources :todos
   post 'todos/set_sorting'
   post 'todos/rename'
-  match "timeline" => "todos#timeline"
+  match "timeline" => "timelines#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

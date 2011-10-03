@@ -6,8 +6,7 @@
     - unless @past_todos.nil?
       - @past_todos.each do |t|
         %li
-          t.title, 
-          =t.due_date
+          =t.title
 
 
 %div{:class => "span-14"}
@@ -16,8 +15,7 @@
     - unless @current_todos.nil?
       - @current_todos.each do |t|
         %li
-          t.title, 
-          =t.due_date
+          =t.title
   
 %div{:class => "span-5 last"}
   Next 10+ years
@@ -25,6 +23,5 @@
     - unless @future_todos.nil?
       - @future_todos.each do |t|
         %li
-          t.title, 
-          =t.due_date
+          =t.title
   

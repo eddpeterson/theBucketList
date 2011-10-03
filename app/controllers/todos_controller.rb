@@ -67,16 +67,6 @@ class TodosController < ApplicationController
     render :nothing => true    
   end
   
-  def timeline
-    @past_todos = Todo.past_todos
-    @current_todos = Todo.current_todos
-    @future_todos = Todo.future_todos
-  end
-  
-  def show
-    render :timeline
-  end
-  
 private
   def sort (todos)
     unless todos.nil?
