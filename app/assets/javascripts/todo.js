@@ -90,21 +90,6 @@ $(function() {
   function cancelRenameInProgress(){
     $('#is_rename_in_edit_mode').val("false")
   }
-
-
- 
-  // $(".frame_dude").hoverIntent(
-  //        function(e){ 
-  //          id = e.target.id
-  //          $('.frame_item_mouseover[id="'+ id + '"]').show()
-  //          
-  //        },
-  //        function(e){
-  //          
-  //          id = e.target.id
-  //          $('.frame_item_mouseover[id="'+ id + '"]').hide()
-  //          
-  //        })
    
   $('.remove_todo').live('click', function(){
     var id = $(this).parent().parent().attr('id')
