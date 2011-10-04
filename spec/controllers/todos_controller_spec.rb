@@ -57,6 +57,7 @@ describe TodosController do
 
   end
 
+
   # it "should save with new frame" do
   #     @todo = mock_model(Todo, :frame => "none", :frame_order_number => 1)
   #     Todo.stub!(:find).and_return(@todo)

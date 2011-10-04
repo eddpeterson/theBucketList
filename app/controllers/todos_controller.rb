@@ -8,12 +8,8 @@ class TodosController < ApplicationController
   
   def create 
     frame = params[:frame]
-    todo = Todo.new
-    todo.title = params[:title]
-    todo.frame = frame
-    todo.frame_order_number = 0
-    todo.save
-    
+    title = params[:title]
+    Todo.create_new!(title, frame)
     #render :json => @todo
     #render "_frame", :frame_id => @frame_id
     todos = sort Todo.where(frame: frame)

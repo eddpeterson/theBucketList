@@ -69,8 +69,13 @@ describe Todo, "Save model" do
     Todo.done_todos_percentage.should == 33
   end
   
-  it"should return zero progress when empty todos" do 
+  it "should return zero progress when empty todos" do 
     Todo.done_todos_percentage.should == 0    
+  end
+  
+  it "should set due date to next 10months for new todo" do
+    todo = Todo.create_new!("title 1", "family")
+    todo.due_date.should == Date.today >> 10
   end
     
 end

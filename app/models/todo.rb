@@ -51,6 +51,16 @@ class Todo
     end
     result
   end
+  
+  def self.create_new!(title, frame)
+    todo = Todo.new
+    todo.title = title
+    todo.frame = frame
+    todo.frame_order_number = 0
+    todo.due_date = Date.today >> 10
+    todo.save
+    todo
+  end
   # scope :no_frame_todos, where(:frame => nil)
   # scope :personal_todos, where(:frame => "personal")
   # and then use them in code like:
