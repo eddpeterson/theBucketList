@@ -18,6 +18,17 @@ class TimelinesController < ApplicationController
     render :nothing => true
   end
   
+  def set_due_date
+    id = params[:id]
+    due_date = Date.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
+    
+    todo = Todo.find(id)
+    todo.due_date = due_date
+    
+    todo.save
+    
+    render :nothing => true
+  end
   def progress
     render :text => Todo.done_todos_percentage
   end

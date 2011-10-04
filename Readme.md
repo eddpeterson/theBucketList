@@ -14,9 +14,9 @@
 * Introduce status done / undone for todos in Timeline 
 * On the top of the page under Timeline link show percentage of done todos and when clicking on it take user to timeline
 * For new todo set due_date to today + 10months
+* Allow user to set due_date when in timeline view 
 
 # TODO:
-* Allow user to set due_date when in timeline view 
 
 ## Become socially aware
 * Use facebook, twitter to authorize
@@ -44,6 +44,7 @@
 
 
 ## Defered
+* Test for select date functionality (jasmine?)
 * Allow user to rename the todo by showing "rename" button when mouse over
 * Allow user to set status of a todo from none to active, completed wen mouse over
 * Allow users to remove item on mouse over and show confirmation

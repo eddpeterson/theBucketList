@@ -2,4 +2,7 @@
   - items.each do |t|
     %li{:id => "#{t.id}"}
       =t.title
-      %span{:class => "status", :value=> "#{t.status}"} status indicator
+      =t.due_date
+      %span{:class => "status", :value => "#{t.status}"} status indicator 
+      %input{:class => "due_date"} 
+      
