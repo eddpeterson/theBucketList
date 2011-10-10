@@ -23,6 +23,9 @@ gem 'simplecov', :require => false, :group => :test
 gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git', :group => [:test, :development]
 gem 'launchy', :group => [:test, :development]
 
+gem "oa-oauth", :require => "omniauth/oauth"
+gem "omniauth"
+gem "devise"
 
 group :development do
   gem "cheat"

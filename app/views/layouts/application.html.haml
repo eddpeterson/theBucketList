@@ -11,8 +11,8 @@
   .container
     / HEAD
     %div{:class => "span-4 colborder"}
-      .huxap
-        =link_to "The Bucket List", "/"
+      = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) 
+      =link_to "The Bucket List", "/"
       .quiet
         %i Control your own destiny
     %div{:class => "span-12 menu"}
@@ -26,7 +26,10 @@
 
     / MAIN
     - unless notice.blank?
-      = notice
+      .notice= notice
+    - unless alert.blank?
+      .alert= alert 
+      
     = yield
     / FOOT 
     %hr
