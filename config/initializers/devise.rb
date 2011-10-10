@@ -8,7 +8,11 @@ Devise.setup do |config|
   
   # #config.omniauth :facebook, "APP_ID", "APP_SECRET"
   # # https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview
-  config.omniauth :facebook, "128201343906860", "cace2b978ceb5f9e3de35c645d98630e"
+  config.omniauth :facebook, "128201343906860", "cace2b978ceb5f9e3de35c645d98630e", 
+    {:scope => 'offline_access,email,user_birthday'}
+  
+  # see full list of permissions here: http://developers.facebook.com/docs/reference/api/user/
+  
   # # If you run into an OpenSSL error like this:
   # # OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed):
   # # config.omniauth :facebook, "APP_ID", "APP_SECRET",

@@ -20,8 +20,8 @@
 
 ## Become socially aware
 * Before continuing create feature branch
-* Use facebook, twitter to authorize
-* List facebook, twitter, etc. friends todos (use capped collections)
+* Use facebook to authorize
+* List facebook friends todos (use capped collections)
 * Timeline to integrate with Facebook and show not only past, but future
 
 
