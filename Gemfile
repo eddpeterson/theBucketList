@@ -26,6 +26,7 @@ gem 'launchy', :group => [:test, :development]
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "omniauth"
 gem "devise"
+gem "koala"
 
 group :development do
   gem "cheat"

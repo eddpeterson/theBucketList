@@ -15,12 +15,12 @@
 * On the top of the page under Timeline link show percentage of done todos and when clicking on it take user to timeline
 * For new todo set due_date to today + 10months
 * Allow user to set due_date when in timeline view 
+* Before continuing create feature branch for facebook
+* Use facebook to authorize
 
 # TODO:
 
 ## Become socially aware
-* Before continuing create feature branch
-* Use facebook to authorize
 * List facebook friends todos (use capped collections)
 * Timeline to integrate with Facebook and show not only past, but future
 

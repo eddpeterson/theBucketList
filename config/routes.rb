@@ -8,6 +8,7 @@ TheBucketList::Application.routes.draw do
   get 'timelines/progress' => "timelines#progress"
   get 'about' => "application#about"
   post 'timelines/set_due_date' => 'timelines#set_due_date'
+  get 'friends' => "friends#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
