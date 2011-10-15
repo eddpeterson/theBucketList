@@ -5,7 +5,7 @@ require 'spec_helper'
 
 describe "TodosControllers" do
 
-  it "Add new item", :js => true do
+  it "should add new item", :js => true do
     title = "Travel to Hawaii"
     
     visit todos_path
@@ -14,14 +14,15 @@ describe "TodosControllers" do
       click_button "Add"
       page.should have_content(title)
     end
-
-    visit todos_path
-    within("#family") do 
-      page.should have_content(title)
-    end
   end
   
-  
+  it "should show newly added itme on page reload" do
+    todo = Todo.create!(:title => "Travel to Hawaii", :frame => "family")
+    visit todos_path
+    within("#family") do 
+      page.should have_content("Travel to Hawaii")
+    end
+  end
   
   it "Should remove todo" do
     todo = Todo.create!(:title => "title")
