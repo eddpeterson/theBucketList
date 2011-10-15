@@ -63,32 +63,11 @@
       ],
       "/Users/edijs/Projects/theBucketList/app/controllers/friends_controller.rb": [
         1,
-        null,
+        1,
         1,
         null,
         1,
-        null,
-        null,
         0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null
@@ -293,8 +272,8 @@
         13,
         13,
         13,
-        11,
-        11,
+        9,
+        9,
         null,
         13,
         null,
@@ -424,6 +403,6 @@
         null
       ]
     },
-    "timestamp": 1318706178
+    "timestamp": 1318707092
   }
 }
