@@ -6,6 +6,8 @@ class Todo
   field :frame_order_number, type: Integer
   field :status, type: String, default: "undone"
   
+  embedded_in :user
+  
   validates_presence_of :title
   
   #scope :past_todos, where(:due_date < Date.yesterday)
@@ -59,6 +61,15 @@ class Todo
     todo.frame_order_number = 0
     todo.due_date = Date.today >> 10
     todo.save
+    todo
+  end
+  
+  def self.get_new(title, frame)
+    todo = Todo.new
+    todo.title = title
+    todo.frame = frame
+    todo.frame_order_number = 0
+    todo.due_date = Date.today >> 10
     todo
   end
   # scope :no_frame_todos, where(:frame => nil)

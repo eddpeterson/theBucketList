@@ -6,4 +6,5 @@ FactoryGirl.define do
     frame "family"
   end
   
+  
 end
