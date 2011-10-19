@@ -11,9 +11,15 @@ class User
   
   embeds_many :todos
   
+  # list of devise options
+  # https://github.com/plataformatec/devise
   devise :omniauthable,
-         :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :database_authenticatable, 
+         #:registerable,
+         #:recoverable, 
+         :rememberable, 
+         :trackable, 
+         :validatable
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     

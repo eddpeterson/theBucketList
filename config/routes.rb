@@ -1,5 +1,12 @@
 TheBucketList::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  #match '/auth/:provider/callback' => 'sessions#create'
+  #match '/users/auth/facebook/callback' => 'users/omniauth_callback#facebook'
+  # devise_scope :user do
+  #      match "/users/auth/facebook/callback" => 'users/omniauth_callback#facebook'
+  #   end
+      
+  #get '/users/auth/facebook/callback' 
   resources :todos
   post 'todos/set_sorting'
   post 'todos/rename'

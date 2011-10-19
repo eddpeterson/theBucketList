@@ -21,6 +21,7 @@
 # TODO:
 
 ## Become socially aware
+* Fix devise routes to disallow users/sign_in
 * List facebook friends todos (use capped collections)
 * Timeline to integrate with Facebook and show not only past, but future
 

@@ -2,25 +2,6 @@ require 'spec_helper'
 
 describe TodosController do
 
-  before (:each) do
-    #before(:each) do
-      #puts request.methods.sort
-      #request.env["devise.mapping"] = Devise.mappings[:user]
-      user = User.create!(:id => "1637261457", :token => "token")#Factory.create(:user)
-      #user.confirm!
-      user.save
-      sign_in user 
-    #end
-  end
-
-  it "should have a current_user" do
-    subject.current_user.should_not be_nil
-    puts "id...................."
-    puts subject.current_user.id
-    
-    visit friends_path
-    save_and_open_page
-  end
   #before(:each) do
   #@request.env['HTTP_REFERER'] = 'http://localhost' # otherwise you get error: No HTTP_REFERER was set in the request to this action, so redirect_to :back could not be called successfully. If this is a test, make sure to specify request.env["HTTP_REFERER"].
   #end

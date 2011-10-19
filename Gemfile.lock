@@ -89,9 +89,6 @@ GEM
       thor (~> 0.14)
     json (1.6.1)
     json_pure (1.6.1)
-    koala (1.2.1)
-      faraday (~> 0.7.0)
-      multi_json (~> 1.0)
     launchy (2.0.5)
       addressable (~> 2.2.6)
     log4r (1.1.9)
@@ -264,7 +261,6 @@ DEPENDENCIES
   guard-rspec
   haml
   jquery-rails
-  koala
   launchy
   mongoid (~> 2.0)
   mongoid-rspec
