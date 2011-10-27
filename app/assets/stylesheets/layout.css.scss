@@ -1,0 +1,22 @@
+.menu {
+	padding-top: 0.8em;
+	padding-left: 0.2em;
+		a {
+		font-size:1em;
+		text-decoration:none;
+		color:#888888;
+	}
+	ul li {
+	  padding:0.1em;
+	  list-style:none;
+	  margin-right:32px;
+	}
+	li {
+	  display:inline;
+    margin: 0.8em;
+	}
+}
+
+.bucket_list {
+  font-size: 1.4em;
+}

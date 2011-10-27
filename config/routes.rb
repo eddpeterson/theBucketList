@@ -1,4 +1,12 @@
 TheBucketList::Application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  #match '/auth/:provider/callback' => 'sessions#create'
+  #match '/users/auth/facebook/callback' => 'users/omniauth_callback#facebook'
+  # devise_scope :user do
+  #      match "/users/auth/facebook/callback" => 'users/omniauth_callback#facebook'
+  #   end
+      
+  #get '/users/auth/facebook/callback' 
   resources :todos
   post 'todos/set_sorting'
   post 'todos/rename'
@@ -7,6 +15,8 @@ TheBucketList::Application.routes.draw do
   get 'timelines/progress' => "timelines#progress"
   get 'about' => "application#about"
   post 'timelines/set_due_date' => 'timelines#set_due_date'
+  get 'friends' => "friends#index"
+  post 'fake_log_in' => "application#fake_log_in"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,7 +66,8 @@ TheBucketList::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'todos#index' 
+  root :to => 'todos#index', :constraints => lambda {|r| r.env["warden"].authenticate? }
+  root :to => 'application#about'
   
   # See how all your routes lay out with "rake routes"
 

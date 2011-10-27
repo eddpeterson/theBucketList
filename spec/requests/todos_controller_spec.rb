@@ -3,62 +3,40 @@ require 'spec_helper'
 # Read more on capybara here:
 # https://github.com/jnicklas/capybara
 
-describe "TodosControllers" do
+describe TodosController do
 
-  it "Add new item", :js => true do
-    title = "Travel to Hawaii"
-    
+  include LoginMacros
+  
+  let(:user) { User.create!(:id => "1", :email => "e@e.com", :password => "password") }
+
+  it "should add new item", :js => true do
+    login_facebook user
     visit todos_path
+    
     within("#family") do 
-      fill_in "new_title", :with => title
+      fill_in "new_title", :with => "Travel to Hawaii"
       click_button "Add"
-      page.should have_content(title)
+      page.should have_content("Travel to Hawaii")
     end
-
+  end
+  
+  it "should show newly added itme on page reload" do
+    user.todos << Todo.get_new("Travel to Hawaii", "family")
+    
+    login_facebook user
     visit todos_path
+    
     within("#family") do 
-      page.should have_content(title)
+      page.should have_content("Travel to Hawaii")
     end
   end
-  
-  
-  
-  it "Should remove todo" do
-    todo = Todo.create!(:title => "title")
-    delete "#{todos_path}/#{todo.id}"
-    visit todos_path
-    page.should_not have_content("#{todo.title}")
-  end
-  
-  it "should set sorting and frame" do
-    t1 = Todo.create!(:title => "title 1", :frame_order_number => 1, :frame => "work")
-    t2 = Todo.create!(:title => "title 2", :frame_order_number => 2, :frame => "personal")
-    t3 = Todo.create!(:title => "title 3", :frame_order_number => 3, :frame => "social")
-    
-    post todos_set_sorting_path, {:sorted_todos => [t3.id, t2.id, t1.id], :frame => "family"}
-    
-    Todo.find(t1.id).frame_order_number == 3
-    Todo.find(t2.id).frame_order_number == 2
-    Todo.find(t3.id).frame_order_number == 1
-    Todo.find(t1.id).frame == "family"
-    Todo.find(t2.id).frame == "family"
-    Todo.find(t3.id).frame == "family"
-  end
-  
-  it "should ignore set sorting for empty array" do
-    post todos_set_sorting_path, {:sorted_todos => [], :frame => "family"}
-  end
-  
 
-  
-  # it "Should rename todo" do
-  #   todo = Todo.create!(:title => "title")
-  #   post todos_rename_path, {:id => todo.id, :title => "new title"}
-  #   visit todos_path
-  #   page.should have_content("new title")
-  # end
+
   it "should allow user to edit todo's title when double clicked and save todo with new title", :js => true do
-    todo = Todo.create!(:title => "my todo", :frame => "family")
+    todo = Todo.get_new("Travel to Hawaii", "family") 
+    user.todos << todo
+    
+    login_facebook user
     visit todos_path
     
     within("#family") do 
@@ -75,13 +53,17 @@ describe "TodosControllers" do
     end 
 
     # verify after refreshing the page we stil see newly added title
+    # login_facebook user
     visit todos_path
     within("#family") do 
       page.should have_content("new title")
     end
   end
   it "should allow user to edit todo's title when double clicked, but do not save new title if user cancels operation", :js => true do
-    todo = Todo.create!(:title => "my todo", :frame => "family")
+    todo = Todo.get_new("Travel to Hawaii", "family") 
+    user.todos << todo
+    
+    login_facebook user
     visit todos_path
     
     within("#family") do 
@@ -91,23 +73,27 @@ describe "TodosControllers" do
       fill_in 'rename_title', :with => "new title"
       cancel_element = find('.cancel_rename')
       page.driver.browser.mouse.click(cancel_element.native)
-      page.should have_content("my todo")
+      page.should have_content("Travel to Hawaii")
     end
 
     # verify after refreshing the page we stil see previous title
     visit todos_path
     within("#family") do 
-      page.should have_content("my todo")
+      page.should have_content("Travel to Hawaii")
     end
   end
     
 
   it "should drag todo from family frame to personal frame and remember it when page is reloaded", :js => true do
-    todo = Todo.create!(:title => "title 1", :frame => "family")
-    
+    todo = Todo.get_new("Travel to Hawaii", "family") 
+    user.todos << todo
+
+    login_facebook user
+    visit todos_path
+   
     visit todos_path
     within("#family") do 
-      page.should have_content("title 1")
+      page.should have_content("Travel to Hawaii")
     end
     
     todo_element = find("##{todo.id}") 
@@ -116,12 +102,9 @@ describe "TodosControllers" do
     
     visit todos_path
     within("#personal") do 
-      page.should have_content("title 1")
+      page.should have_content("Travel to Hawaii")
     end
     
   end
-  
-
-  
   
 end

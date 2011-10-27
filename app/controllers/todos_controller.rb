@@ -1,27 +1,20 @@
 class TodosController < ApplicationController
+  before_filter :authenticate_user!
   respond_to :html  
-  
-  def new
-    @todo = Todo.new
-    respond_with(@todo)
-  end
   
   def create 
     frame = params[:frame]
     title = params[:title]
-    Todo.create_new!(title, frame)
+    current_user.todos << Todo.get_new(title, frame)
+    
     #render :json => @todo
     #render "_frame", :frame_id => @frame_id
-    todos = sort Todo.where(frame: frame)
+    todos = sort current_user.todos.where(frame: frame) # sort Todo.where(frame: frame)
     render :partial => "frame", :locals => { :frame_id => frame, :todos => todos }
   end
   
-
-
-  
-  
   def index
-    todos_by_frame = Todo.all.group_by(&:frame)
+    todos_by_frame = current_user.todos.group_by(&:frame) #Todo.all.group_by(&:frame)
     @personal_todos = sort todos_by_frame["personal"]
     @family_todos = sort todos_by_frame["family"]
     @friends_todos = sort todos_by_frame["friends"]
@@ -37,7 +30,7 @@ class TodosController < ApplicationController
       frame = params[:frame]
       order_number = 1
       sorted_todos.each do |id|
-        todo = Todo.find(id)
+        todo = current_user.todos.find(id)
         todo.frame = frame
         todo.frame_order_number = order_number
         order_number += 1
@@ -50,7 +43,7 @@ class TodosController < ApplicationController
   def rename
     id = params[:id]
     title = params[:title]
-    todo = Todo.find(id)
+    todo = current_user.todos.find(id)
     todo.title = title
     todo.save
     render :nothing => true
@@ -58,7 +51,7 @@ class TodosController < ApplicationController
   
   def destroy
     id = params[:id]
-    todo = Todo.find(id)
+    todo = current_user.todos.find(id)
     todo.delete
     render :nothing => true    
   end

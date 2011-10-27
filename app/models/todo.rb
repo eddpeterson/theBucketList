@@ -6,59 +6,18 @@ class Todo
   field :frame_order_number, type: Integer
   field :status, type: String, default: "undone"
   
+  embedded_in :user
+  
   validates_presence_of :title
   
   #scope :past_todos, where(:due_date < Date.yesterday)
-  def self.past_todos
-    past_todos = Array.new
-    Todo.all.each do |todo|
-      if todo.due_date <= Date.yesterday
-        past_todos << todo
-      end
-    end
-    past_todos
-  end
   
-  def self.current_todos  
-    current_todos = Array.new
-    yesterday = Date.yesterday
-    future = Date.today >> 11
-    Todo.all.each do |todo|
-      if todo.due_date > yesterday && todo.due_date < future
-        current_todos << todo
-      end
-    end
-    current_todos
-  end
-  
-  def self.future_todos
-    future_todos = Array.new
-    future = Date.today >> 11
-    Todo.all.each do |todo|
-      if todo.due_date >= future
-        future_todos << todo
-      end
-    end
-    future_todos
-  end
-  
-  def self.done_todos_percentage 
-    count = Todo.count
-    result = 0
-    if (count > 0)
-      done_count = Todo.where(:status => "done").count
-      result = (done_count * 100 / count) 
-    end
-    result
-  end
-  
-  def self.create_new!(title, frame)
+  def self.get_new(title, frame)
     todo = Todo.new
     todo.title = title
     todo.frame = frame
     todo.frame_order_number = 0
     todo.due_date = Date.today >> 10
-    todo.save
     todo
   end
   # scope :no_frame_todos, where(:frame => nil)

@@ -1,13 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 
 # Asset template engines
-gem 'sass-rails', "~> 3.1.0"
+gem 'sass-rails'#, "~> 3.1.0"
 gem 'coffee-script'
 gem 'uglifier'
 
@@ -23,6 +23,9 @@ gem 'simplecov', :require => false, :group => :test
 gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git', :group => [:test, :development]
 gem 'launchy', :group => [:test, :development]
 
+gem "oa-oauth", :require => "omniauth/oauth"
+gem "omniauth"
+gem "devise"
 
 group :development do
   gem "cheat"
@@ -36,6 +39,7 @@ group :test  do
   gem 'rb-fsevent'
   gem 'growl_notify'
   gem "timecop"
+  gem 'mongoid-rspec'
 end
 
 

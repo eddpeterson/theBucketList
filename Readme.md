@@ -15,19 +15,41 @@
 * On the top of the page under Timeline link show percentage of done todos and when clicking on it take user to timeline
 * For new todo set due_date to today + 10months
 * Allow user to set due_date when in timeline view 
+* Before continuing create feature branch for facebook
+* Use facebook to authorize
+* Refactor gui 
+> On left top only name of the website
+If logged in:
+> On middle top display links Goals, Timeline, Friends, About
+> On the right top display % goals completeness
+If not logged in:
+> Merge middle, right top and dipslay facebook login button
+* When not logged in default page should be About, when logged in default page should be todos
 
 # TODO:
 
-## Become socially aware
-* Use facebook, twitter to authorize
-* List facebook, twitter, etc. friends todos (use capped collections)
+* Use facebook login button, it has better UX
+* Logout from application is not in sync with actual Facebook login status
+
+* Fix devise routes to disallow users/sign_in
+
+
+* Rename todos to goals
+
+
+* Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95%
+
+
+## Can we do it in parallel while I send for the design request?
+* Detailed design specification
+* List facebook friends todos with the same concept as your timeline? 
 * Timeline to integrate with Facebook and show not only past, but future
 
-
 ## BUGS
+* When changing date, should automatically move todo to appropriate category
 * Remove button should appear only when mouse over
-* Rename button should appear when mouse over
 * Rename functionality is buggy and need to create alternative
+* Rename button should appear when mouse over
 
 ## Design
 * It needs to be warm
@@ -44,6 +66,7 @@
 
 
 ## Defered
+* Create video of how to use the system
 * Test for select date functionality (jasmine?)
 * Allow user to rename the todo by showing "rename" button when mouse over
 * Allow user to set status of a todo from none to active, completed wen mouse over
@@ -51,3 +74,4 @@
 * Have to look how to place external plugin js and css assets. Maybe something missing in configs because I upgraded from rails 3.1.rc to 3.1
 * Order todos in timeline view by due_date, but for past it should be descending so that on top you see the most recently finished items
 * Limit querying and displaying todos to maximum N number (need to think more about it)
+* Use capped collections in future for facebook friends features, but it requires architecture change
