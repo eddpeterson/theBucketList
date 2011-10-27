@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  before_filter :authenticate_user!
   respond_to :html  
   
   def create 
@@ -29,7 +30,7 @@ class TodosController < ApplicationController
       frame = params[:frame]
       order_number = 1
       sorted_todos.each do |id|
-        todo = Todo.find(id)
+        todo = current_user.todos.find(id)
         todo.frame = frame
         todo.frame_order_number = order_number
         order_number += 1
@@ -42,7 +43,7 @@ class TodosController < ApplicationController
   def rename
     id = params[:id]
     title = params[:title]
-    todo = Todo.find(id)
+    todo = current_user.todos.find(id)
     todo.title = title
     todo.save
     render :nothing => true
@@ -50,7 +51,7 @@ class TodosController < ApplicationController
   
   def destroy
     id = params[:id]
-    todo = Todo.find(id)
+    todo = current_user.todos.find(id)
     todo.delete
     render :nothing => true    
   end

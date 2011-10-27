@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe FriendsController do
-
   it "should display loged in facebook users facebook friends using The Bucket List", :js => true do
     friend = Factory(:user)
     FacebookDude.stub!(:friends).and_return([friend])

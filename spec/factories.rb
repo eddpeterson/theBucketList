@@ -1,10 +1,4 @@
 FactoryGirl.define do
-
-  factory :todo do 
-    title 'todo title'
-    due_date Time.now
-    frame "family"
-  end
   
   factory :user do
     id "123"

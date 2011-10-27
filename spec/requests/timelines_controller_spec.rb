@@ -3,15 +3,28 @@ require 'spec_helper'
 # Read more on capybara here:
 # https://github.com/jnicklas/capybara
 
-describe "TimelinesController" do  
+describe TimelinesController do  
+  
+  include LoginMacros
+  
+  let(:user) { User.create!(:id => "1", :email => "e@e.com", :password => "password") }
   
   context "Timeline boxes" do
     before do 
-        @todo_yesterday = Todo.create!(:title => "title1", :frame => "family", :due_date => Date.yesterday)
-        @todo_today = Todo.create!(:title => "title2", :frame => "family", :due_date => Date.today)
-        @todo_today_last = Todo.create!(:title => "title3", :frame => "family", :due_date => Date.today >> 10)
-        @todo_future = Todo.create!(:title => "title4", :frame => "family", :due_date => Date.today >> 11)
-      
+        @todo_yesterday = Todo.get_new("Travel to Furteventura", "family")
+        @todo_yesterday.due_date = Date.yesterday
+        user.todos << @todo_yesterday
+        @todo_today = Todo.get_new("Travel to Gran Canaria in winter", "family")
+        @todo_today.due_date = Date.today
+        user.todos << @todo_today
+        @todo_today_last = Todo.get_new("Travel to Gran Canaria in summber", "family")
+        @todo_today_last.due_date = Date.today >> 10
+        user.todos << @todo_today_last
+        @todo_future = Todo.get_new("Travel to Hawaii", "family")
+        @todo_future.due_date = Date.today >> 11
+        user.todos << @todo_future
+        
+        login_facebook user
         visit timeline_path
     end
     
@@ -32,7 +45,7 @@ describe "TimelinesController" do
         page.should_not have_content("#{@todo_future.title}")
       end
     end
-
+  
     it "should place todos with more than 10months due date in 10+ box" do
       within("#future_box") do 
         page.should have_content("#{@todo_future.title}")
@@ -44,27 +57,38 @@ describe "TimelinesController" do
   end
   
   it "should display done status" do
-    todo_done = Todo.create!(:title => "title", :frame => "family", :status => "done")
-    
+    todo_done = Todo.get_new("Travel to Fuerteventura", "family")
+    todo_done.status = "done"
+    user.todos << todo_done
+
+    login_facebook user
     visit timeline_path
+    
     element = find(".status")
     element.value.should == "done"
   end
   
   it "should display undone status" do
-    todo = Todo.create!(:title => "title", :frame => "family", :status => nil)
-    
+    todo_done = Todo.get_new("Travel to Gran Canaria", "family")
+    todo_done.status = nil
+    user.todos << todo_done
+
+    login_facebook user
     visit timeline_path
+    
     element = find(".status")
     element.value.should be_empty    
   end
   
   it "should change undone to done status", :js => true do
-    todo = Todo.create!(:title => "title", :frame => "family")
+    todo_done = Todo.get_new("Travel to Gran Canaria", "family")
+    todo_done.status = nil
+    user.todos << todo_done
     
+    login_facebook user
     visit timeline_path
+
     element = find(".status")
-    
     page.driver.browser.mouse.click(element.native)
     
     #verify value is changed on click
@@ -76,17 +100,15 @@ describe "TimelinesController" do
     element.value.should == "done"    
   end
   
-  it "should display completed todos percentage", :js => true do
+  
+  it "should display completed todos percentage", :js => true do   
+    # create one done and one undone task
+    user.todos << Todo.get_new("Travel to Hawaii", "family")
+    todo_done = Todo.get_new("Travel to Fuerteventura", "family")
+    todo_done.status = "done"
+    user.todos << todo_done
     
-    # 3 done todos
-    Todo.create!(:title => "title", :frame => "family", :status => "done")
-    Todo.create!(:title => "title", :frame => "family", :status => "done")
-    Todo.create!(:title => "title", :frame => "family", :status => "done")
-    # 3 undone todos
-    Todo.create!(:title => "title", :frame => "family")
-    Todo.create!(:title => "title", :frame => "family", :status => "undone")
-    Todo.create!(:title => "title", :frame => "family", :status => "undone")
-    
+    login_facebook user
     visit root_path
     
     page.should have_content("50% goals completeness")

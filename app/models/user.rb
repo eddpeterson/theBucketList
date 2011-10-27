@@ -39,6 +39,47 @@ class User
     user
   end
   
+  def past_todos
+    past_todos = Array.new
+    todos.each do |todo|
+      if todo.due_date <= Date.yesterday
+        past_todos << todo
+      end
+    end
+    past_todos
+  end
   
+  def current_todos  
+    current_todos = Array.new
+    yesterday = Date.yesterday
+    future = Date.today >> 11
+    todos.each do |todo|
+      if todo.due_date > yesterday && todo.due_date < future
+        current_todos << todo
+      end
+    end
+    current_todos
+  end
+  
+  def future_todos
+    future_todos = Array.new
+    future = Date.today >> 11
+    todos.each do |todo|
+      if todo.due_date >= future
+        future_todos << todo
+      end
+    end
+    future_todos
+  end
+  
+  def done_todos_percentage
+    count = todos.count
+    result = 0
+    if (count > 0)
+      done_count = todos.where(:status => "done").count
+      result = (done_count * 100 / count) 
+    end
+    result
+  end
   
 end
