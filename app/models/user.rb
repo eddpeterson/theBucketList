@@ -9,7 +9,7 @@ class User
   identity :type => String # overriding id field to be String type
   #key :email
   
-  embeds_many :todos
+  embeds_many :goals
   
   # list of devise options
   # https://github.com/plataformatec/devise
@@ -39,44 +39,44 @@ class User
     user
   end
   
-  def past_todos
-    past_todos = Array.new
-    todos.each do |todo|
-      if todo.due_date <= Date.yesterday
-        past_todos << todo
+  def past_goals
+    past_goals = Array.new
+    goals.each do |goal|
+      if goal.due_date <= Date.yesterday
+        past_goals << goal
       end
     end
-    past_todos
+    past_goals
   end
   
-  def current_todos  
-    current_todos = Array.new
+  def current_goals  
+    current_goals = Array.new
     yesterday = Date.yesterday
     future = Date.today >> 11
-    todos.each do |todo|
-      if todo.due_date > yesterday && todo.due_date < future
-        current_todos << todo
+    goals.each do |goal|
+      if goal.due_date > yesterday && goal.due_date < future
+        current_goals << goal
       end
     end
-    current_todos
+    current_goals
   end
   
-  def future_todos
-    future_todos = Array.new
+  def future_goals
+    future_goals = Array.new
     future = Date.today >> 11
-    todos.each do |todo|
-      if todo.due_date >= future
-        future_todos << todo
+    goals.each do |goal|
+      if goal.due_date >= future
+        future_goals << goal
       end
     end
-    future_todos
+    future_goals
   end
   
-  def done_todos_percentage
-    count = todos.count
+  def done_goals_percentage
+    count = goals.count
     result = 0
     if (count > 0)
-      done_count = todos.where(:status => "done").count
+      done_count = goals.where(:status => "done").count
       result = (done_count * 100 / count) 
     end
     result

@@ -1,4 +1,4 @@
-class Todo
+class Goal
   include Mongoid::Document  
   field :title, type: String
   field :due_date, type: Date, default: Date.today
@@ -10,10 +10,10 @@ class Todo
   
   validates_presence_of :title
   
-  #scope :past_todos, where(:due_date < Date.yesterday)
+  #scope :past_goals, where(:due_date < Date.yesterday)
   
   def self.get_new(title, frame)
-    todo = Todo.new
+    todo = Goal.new
     todo.title = title
     todo.frame = frame
     todo.frame_order_number = 0

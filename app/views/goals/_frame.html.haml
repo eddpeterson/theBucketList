@@ -1,14 +1,14 @@
 %ul{:id => frame_id, :class => "frame"}
-  %li{:id => "new_todo"}
+  %li{:id => "new_goal"}
     %input{:id => "new_title", :class => "new_title", :type => "text"}
-    %button{:class => "new_todo_button"} Add
-  - unless todos.nil?
-    - todos.each do |t|
+    %button{:class => "new_goal_button"} Add
+  - unless goals.nil?
+    - goals.each do |t|
       %li
         %span{:id => t.id, :class => "frame_item"}
           %span{:class => "frame_item_readonly"}
             %span.title= t.title
-            %span.remove_todo Remove
+            %span.remove_goal Remove
           %span{:class => "frame_item_rename"}
             %input{:type => "text", :class => "rename_title", :name => "rename_title", :value => t.title, :size => 55}
             %span.save_rename Save

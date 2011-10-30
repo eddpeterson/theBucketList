@@ -1,14 +1,14 @@
 $(function() {
   $('.new_title').live('keyup', function(e) { 
-    if (e.which == 13) { add_new_todo(frame_context = $(this).parent().parent()) } 
+    if (e.which == 13) { add_new_goal(frame_context = $(this).parent().parent()) } 
   })
-  function add_new_todo(frame_context){
+  function add_new_goal(frame_context){
     frame = frame_context.attr('id')
     //alert(frame)
     title = $("#new_title", frame_context).val()
     //alert(new_title)
     $.post(
-      "todos/", 
+      "goals/", 
       {title: title, frame: frame}, 
       function(data) { 
         //alert(data._id)
@@ -18,8 +18,8 @@ $(function() {
         //$("#"+frame).prepend('<li>wadaaa</li>')
       })
   }
-  $(".new_todo_button").live('click', function() {
-    add_new_todo(frame_context = $(this).parent().parent()) 
+  $(".new_goal_button").live('click', function() {
+    add_new_goal(frame_context = $(this).parent().parent()) 
   })
   
   $("#personal, #family, #friends, #work, #social").livequery(function(){
@@ -31,14 +31,14 @@ $(function() {
        update: function(event, ui) { 
          var frame = event.target.id
          
-         var sorted_todos = new Array(); //$('#'+frame).sortable('toArray')
+         var sorted_goals = new Array(); //$('#'+frame).sortable('toArray')
          frame_context = $('#'+frame)
-         $('.frame_item', frame_context).each(function(index){sorted_todos[index] = ($(this).attr('id'))})
+         $('.frame_item', frame_context).each(function(index){sorted_goals[index] = ($(this).attr('id'))})
          
          //debugger
-         //alert(sorted_todos.count)
-         //alert(sorted_todos[0])
-         $.post("todos/set_sorting", {sorted_todos: sorted_todos, frame: frame})
+         //alert(sorted_goals.count)
+         //alert(sorted_goals[0])
+         $.post("goals/set_sorting", {sorted_goals: sorted_goals, frame: frame})
          
        }
      
@@ -61,7 +61,7 @@ $(function() {
       return
     
     id = frame_item_context.attr('id')
-    $.post("todos/rename", { id: id, title: newTitle})
+    $.post("goals/rename", { id: id, title: newTitle})
     
     $(".frame_item_rename", frame_item_context).toggle()
     $(".frame_item_readonly", frame_item_context).toggle()
@@ -91,7 +91,7 @@ $(function() {
     $('#is_rename_in_edit_mode').val("false")
   }
    
-  $('.remove_todo').live('click', function(){
+  $('.remove_goal').live('click', function(){
     var id = $(this).parent().parent().attr('id')
     $dialog.data('id', id).dialog('open')
   })
@@ -104,7 +104,7 @@ $(function() {
       Delete: function() {
         id = $(this).data('id')
         $.ajax({
-          url: "todos/" + id,
+          url: "goals/" + id,
           global: false,
           type: "DELETE",
           //data: {id : this.getAttribute('id')},

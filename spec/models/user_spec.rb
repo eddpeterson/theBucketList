@@ -5,83 +5,83 @@ describe User do
   let (:user) { Factory(:user) }
   
   
-  it "should save user todos" do
+  it "should save user goals" do
     user.save.should be_true
   end
   
-  it "should return past todos" do
-    todo_past = Todo.get_new("Graduate Master in CS", "personal")
-    todo_past.due_date = Date.yesterday
-    user.todos << todo_past
+  it "should return past goals" do
+    goal_past = Goal.get_new("Graduate Master in CS", "personal")
+    goal_past.due_date = Date.yesterday
+    user.goals << goal_past
      
-    todo_current = Todo.get_new("Travel to Hawaii", "family")
-    todo_current.due_date = Date.today
-    user.todos << todo_current
+    goal_current = Goal.get_new("Travel to Hawaii", "family")
+    goal_current.due_date = Date.today
+    user.goals << goal_current
     
-    user.past_todos.should include(todo_past)
-    user.past_todos.should_not include(todo_current)
+    user.past_goals.should include(goal_past)
+    user.past_goals.should_not include(goal_current)
    end
 
-   it "should return current todos" do
-     todo_past = Todo.get_new("Graduate Master in CS", "personal")
-     todo_past.due_date = Date.yesterday
-     user.todos << todo_past
+   it "should return current goals" do
+     goal_past = Goal.get_new("Graduate Master in CS", "personal")
+     goal_past.due_date = Date.yesterday
+     user.goals << goal_past
      
-     todo_current_first = Todo.get_new("Travel to Gran Canaria in winter", "family") 
-     todo_current_first.due_date = Date.today
-     user.todos << todo_current_first
+     goal_current_first = Goal.get_new("Travel to Gran Canaria in winter", "family") 
+     goal_current_first.due_date = Date.today
+     user.goals << goal_current_first
      
-     todo_current_last = Todo.get_new("Travel to Gran Canaria in summer", "family")
-     todo_current_last.due_date = Date.today >> 10 #next 10 months
-     user.todos << todo_current_last
+     goal_current_last = Goal.get_new("Travel to Gran Canaria in summer", "family")
+     goal_current_last.due_date = Date.today >> 10 #next 10 months
+     user.goals << goal_current_last
      
-     todo_future = Todo.get_new("Travel to Hawaii", "family")
-     todo_future.due_date = Date.today >> 11 #next 11 months
-     user.todos << todo_future
+     goal_future = Goal.get_new("Travel to Hawaii", "family")
+     goal_future.due_date = Date.today >> 11 #next 11 months
+     user.goals << goal_future
      
 
-     user.current_todos.should_not include(todo_past)
-     user.current_todos.should include(todo_current_first)
-     user.current_todos.should include(todo_current_last)
-     user.current_todos.should_not include(todo_future)
+     user.current_goals.should_not include(goal_past)
+     user.current_goals.should include(goal_current_first)
+     user.current_goals.should include(goal_current_last)
+     user.current_goals.should_not include(goal_future)
    end
 
-   it "should return future todos" do 
-     todo_current_last = Todo.get_new("Travel to Gran Canaria in summer", "family")
-     todo_current_last.due_date = Date.today >> 10 #next 10 months
-     user.todos << todo_current_last
+   it "should return future goals" do 
+     goal_current_last = Goal.get_new("Travel to Gran Canaria in summer", "family")
+     goal_current_last.due_date = Date.today >> 10 #next 10 months
+     user.goals << goal_current_last
      
-     todo_future = Todo.get_new("Travel to Hawaii", "family")
-     todo_future.due_date = Date.today >> 11 #next 11 months
-     user.todos << todo_future
+     goal_future = Goal.get_new("Travel to Hawaii", "family")
+     goal_future.due_date = Date.today >> 11 #next 11 months
+     user.goals << goal_future
      
-     user.future_todos.should_not include(todo_current_last)
-     user.future_todos.should include(todo_future)  
+     user.future_goals.should_not include(goal_current_last)
+     user.future_goals.should include(goal_future)  
    end
 
-   it "should return done todos percentage" do
-     user.todos << Todo.get_new("Travel to Gran Canaria in summer", "family")
+   it "should return done goals percentage" do
+     user.goals << Goal.get_new("Travel to Gran Canaria in summer", "family")
      
-     todo_done = Todo.get_new("Travel to Furteventura", "family")
-     todo_done.status = "done"
-     user.todos << todo_done
+     goal_done = Goal.get_new("Travel to Furteventura", "family")
+     goal_done.status = "done"
+     user.goals << goal_done
      
-     user.done_todos_percentage.should == 50
+     user.done_goals_percentage.should == 50
    end
 
-   it "should return done todos percentage in human readable format (2 numbers only)" do
-     user.todos << Todo.get_new("Travel to Gran Canaria in winter", "family")
-     user.todos << Todo.get_new("Travel to Gran Canaria in summer", "family")
+   it "should return done goals percentage in human readable format (2 numbers only)" do
+     user.goals << Goal.get_new("Travel to Gran Canaria in winter", "family")
+     user.goals << Goal.get_new("Travel to Gran Canaria in summer", "family")
      
-     todo_done = Todo.get_new("Travel to Fuerteventura", "family")
-     todo_done.status = "done"
-     user.todos << todo_done
+     goal_done = Goal.get_new("Travel to Fuerteventura", "family")
+     goal_done.status = "done"
+     user.goals << goal_done
      
-     user.done_todos_percentage.should == 33
+     user.done_goals_percentage.should == 33
    end
 
-   it "should return zero progress when empty todos" do 
-     user.done_todos_percentage.should == 0    
+   it "should return zero progress when empty goals" do 
+     user.done_goals_percentage.should == 0    
    end
   
 end

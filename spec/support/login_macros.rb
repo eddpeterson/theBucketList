@@ -7,7 +7,7 @@ module LoginMacros
       "extra"=>{ "user_hash"=>{"id"=>"#{user.id}", "email"=>"eddpeterson@gmail.com", "name"=>"Edijs Petersons", "first_name"=>"Edijs", "last_name"=>"Petersons" }}
     }
     visit root_path
-    click_link "Login"
+    click_link "Log in"
     # Now I am doing hacking. By some reason tests using login_facebook fails time after time. 
     # My guess is that we jump to the next page before we actually have authorized so I force waiting manually
     sleep 0.1 

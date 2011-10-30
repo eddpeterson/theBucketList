@@ -1,0 +1,26 @@
+
+%input{:id => "is_rename_in_edit_mode", :type => "hidden"}
+%div{:id => "dialog-confirm", :title => "Delete permanenly?"}
+  %p
+    %span{:class => "ui-icon ui-icon-alert"} 
+    This item will be permanently deleted and cannot be recovered. Are you sure?
+
+%div{:class => "span-5"}
+  Personal
+  = render :partial => "frame", :locals => {:frame_id => "personal", :goals => @personal_goals }
+
+%div{:class => "span-5"}
+  Family
+  = render :partial => "frame", :locals => {:frame_id => "family", :goals => @family_goals }
+
+%div{:class => "span-5"}
+  Friends
+  = render :partial => "frame", :locals => {:frame_id => "friends", :goals => @friends_goals }
+
+%div{:class => "span-5"}
+  Work
+  = render :partial => "frame", :locals => {:frame_id => "work", :goals => @work_goals }
+
+%div{:class => "span-4 last"}
+  Social
+  = render :partial => "frame", :locals => {:frame_id => "social", :goals => @social_goals }

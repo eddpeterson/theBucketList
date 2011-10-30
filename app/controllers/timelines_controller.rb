@@ -3,18 +3,18 @@ class TimelinesController < ApplicationController
   respond_to :html  
   
   def index
-    @past_todos = current_user.past_todos
-    @current_todos = current_user.current_todos
-    @future_todos = current_user.future_todos
+    @past_goals = current_user.past_goals
+    @current_goals = current_user.current_goals
+    @future_goals = current_user.future_goals
   end
   
   def set_status
     status = params[:status]
     id = params[:id]
     
-    todo = current_user.todos.find(id)
-    todo.status = status
-    todo.save
+    goal = current_user.goals.find(id)
+    goal.status = status
+    goal.save
     
     render :nothing => true
   end
@@ -23,16 +23,16 @@ class TimelinesController < ApplicationController
     id = params[:id]
     due_date = Date.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
     
-    todo = current_user.todos.find(id)
-    todo.due_date = due_date
+    goal = current_user.goals.find(id)
+    goal.due_date = due_date
     
-    todo.save
+    goal.save
     
     render :nothing => true
   end
   
   def progress
-    render :text => current_user.done_todos_percentage
+    render :text => current_user.done_goals_percentage
   end
   
 end

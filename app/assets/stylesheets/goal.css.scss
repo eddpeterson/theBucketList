@@ -9,7 +9,7 @@
   list-style-type: none;
 }
 
-.rename_todo {
+.rename_goal {
   color: blue;
   font-size: 1em;
 }
@@ -20,7 +20,7 @@
 .frame_item_edit { display:none;}
 .frame_item_mouseover { display:none; font-weight:bold;}
 .frame_dude { cursor: pointer;}
-.drag_todo_link { 
+.drag_goal_link { 
   cursor: move; 
  // background-image:url('../assets/drag_icon.gif');
  //  background-repeat:no-repeat;
@@ -31,6 +31,6 @@
 
 .rename_title{}
 .frame_item_rename{display:none;}
-.remove_todo{}
+.remove_goal{}
 
 

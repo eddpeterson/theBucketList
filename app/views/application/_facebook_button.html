@@ -1,10 +1,32 @@
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/all.js#appId=128201343906860&xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+
+
+
+</script>
+
+
+
+<!-- <script src="//connect.facebook.net/en_US/all.js"></script>
+<script>
+FB.Event.subscribe('auth.login',
+    function(response) {
+        alert('login: ' + response);
+    }
+);
+FB.Event.subscribe('auth.logout',
+    function(response) {
+        alert('logout: ' + response);
+    }
+);
+</script> -->
 
 <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>

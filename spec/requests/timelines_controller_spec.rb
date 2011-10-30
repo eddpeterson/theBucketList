@@ -11,55 +11,55 @@ describe TimelinesController do
   
   context "Timeline boxes" do
     before do 
-        @todo_yesterday = Todo.get_new("Travel to Furteventura", "family")
-        @todo_yesterday.due_date = Date.yesterday
-        user.todos << @todo_yesterday
-        @todo_today = Todo.get_new("Travel to Gran Canaria in winter", "family")
-        @todo_today.due_date = Date.today
-        user.todos << @todo_today
-        @todo_today_last = Todo.get_new("Travel to Gran Canaria in summber", "family")
-        @todo_today_last.due_date = Date.today >> 10
-        user.todos << @todo_today_last
-        @todo_future = Todo.get_new("Travel to Hawaii", "family")
-        @todo_future.due_date = Date.today >> 11
-        user.todos << @todo_future
+        @goal_yesterday = Goal.get_new("Travel to Furteventura", "family")
+        @goal_yesterday.due_date = Date.yesterday
+        user.goals << @goal_yesterday
+        @goal_today = Goal.get_new("Travel to Gran Canaria in winter", "family")
+        @goal_today.due_date = Date.today
+        user.goals << @goal_today
+        @goal_today_last = Goal.get_new("Travel to Gran Canaria in summber", "family")
+        @goal_today_last.due_date = Date.today >> 10
+        user.goals << @goal_today_last
+        @goal_future = Goal.get_new("Travel to Hawaii", "family")
+        @goal_future.due_date = Date.today >> 11
+        user.goals << @goal_future
         
         login_facebook user
         visit timeline_path
     end
     
-    it "should place todos with yesterdays due date in past box" do
+    it "should place goals with yesterdays due date in past box" do
       within("#past_box") do 
-        page.should have_content("#{@todo_yesterday.title}")
-        page.should_not have_content("#{@todo_today.title}")
-        page.should_not have_content("#{@todo_today_last.title}")
-        page.should_not have_content("#{@todo_future.title}")   
+        page.should have_content("#{@goal_yesterday.title}")
+        page.should_not have_content("#{@goal_today.title}")
+        page.should_not have_content("#{@goal_today_last.title}")
+        page.should_not have_content("#{@goal_future.title}")   
       end
     end
     
-    it "should place todos with current due date that is not greater than 10 months in current box" do
+    it "should place goals with current due date that is not greater than 10 months in current box" do
       within("#current_box") do 
-        page.should have_content("#{@todo_today.title}")
-        page.should have_content("#{@todo_today_last.title}")      
-        page.should_not have_content("#{@todo_yesterday.title}")
-        page.should_not have_content("#{@todo_future.title}")
+        page.should have_content("#{@goal_today.title}")
+        page.should have_content("#{@goal_today_last.title}")      
+        page.should_not have_content("#{@goal_yesterday.title}")
+        page.should_not have_content("#{@goal_future.title}")
       end
     end
   
-    it "should place todos with more than 10months due date in 10+ box" do
+    it "should place goals with more than 10months due date in 10+ box" do
       within("#future_box") do 
-        page.should have_content("#{@todo_future.title}")
-        page.should_not have_content("#{@todo_yesterday.title}")
-        page.should_not have_content("#{@todo_today.title}")
-        page.should_not have_content("#{@todo_today_last.title}")
+        page.should have_content("#{@goal_future.title}")
+        page.should_not have_content("#{@goal_yesterday.title}")
+        page.should_not have_content("#{@goal_today.title}")
+        page.should_not have_content("#{@goal_today_last.title}")
       end    
     end
   end
   
   it "should display done status" do
-    todo_done = Todo.get_new("Travel to Fuerteventura", "family")
-    todo_done.status = "done"
-    user.todos << todo_done
+    goal_done = Goal.get_new("Travel to Fuerteventura", "family")
+    goal_done.status = "done"
+    user.goals << goal_done
 
     login_facebook user
     visit timeline_path
@@ -69,9 +69,9 @@ describe TimelinesController do
   end
   
   it "should display undone status" do
-    todo_done = Todo.get_new("Travel to Gran Canaria", "family")
-    todo_done.status = nil
-    user.todos << todo_done
+    goal_done = Goal.get_new("Travel to Gran Canaria", "family")
+    goal_done.status = nil
+    user.goals << goal_done
 
     login_facebook user
     visit timeline_path
@@ -81,9 +81,9 @@ describe TimelinesController do
   end
   
   it "should change undone to done status", :js => true do
-    todo_done = Todo.get_new("Travel to Gran Canaria", "family")
-    todo_done.status = nil
-    user.todos << todo_done
+    goal_done = Goal.get_new("Travel to Gran Canaria", "family")
+    goal_done.status = nil
+    user.goals << goal_done
     
     login_facebook user
     visit timeline_path
@@ -101,12 +101,12 @@ describe TimelinesController do
   end
   
   
-  it "should display completed todos percentage", :js => true do   
+  it "should display completed goals percentage", :js => true do   
     # create one done and one undone task
-    user.todos << Todo.get_new("Travel to Hawaii", "family")
-    todo_done = Todo.get_new("Travel to Fuerteventura", "family")
-    todo_done.status = "done"
-    user.todos << todo_done
+    user.goals << Goal.get_new("Travel to Hawaii", "family")
+    goal_done = Goal.get_new("Travel to Fuerteventura", "family")
+    goal_done.status = "done"
+    user.goals << goal_done
     
     login_facebook user
     visit root_path

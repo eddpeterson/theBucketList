@@ -1,21 +1,15 @@
 require 'spec_helper'
 
 describe FriendsController do
+  include LoginMacros
+  let(:user) { User.create!(:id => "1", :email => "e@e.com", :password => "password") }
+  
   it "should display loged in facebook users facebook friends using The Bucket List", :js => true do
     friend = Factory(:user)
     FacebookDude.stub!(:friends).and_return([friend])
     
-    OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:facebook] = {
-      "provider"=>"facebook", 
-      "credentials"=>{ "token"=>"AAAB0mTOQNCwBAKTWXk01tMBAkDWOERp9z7sKkYrJLnsfXBa5mSQzIZAYrPYiImM0Ff4ZAXGWDKknnp2sgBEtc6dfOfITgZD"}, 
-      "extra"=>{ "user_hash"=>{"id"=>"1", "email"=>"eddpeterson@gmail.com", "name"=>"Edijs Petersons", "first_name"=>"Edijs", "last_name"=>"Petersons" }}
-    }
-  
-    visit root_path
-    click_link "Login"
-    page.should have_content("Successfully authorized from Facebook account.")
-
+    login_facebook user
+    
     visit friends_path
     page.should have_content(friend.id)
 

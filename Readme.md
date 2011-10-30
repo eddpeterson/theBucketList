@@ -25,20 +25,18 @@ If logged in:
 If not logged in:
 > Merge middle, right top and dipslay facebook login button
 * When not logged in default page should be About, when logged in default page should be todos
+* Rename todos to goals
 
 # TODO:
 
-* Use facebook login button, it has better UX
-* Logout from application is not in sync with actual Facebook login status
 
 * Fix devise routes to disallow users/sign_in
 
 
-* Rename todos to goals
 
 
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95%
-
+* http://railscasts.com/episodes/104-exception-notifications-revised
 
 ## Can we do it in parallel while I send for the design request?
 * Detailed design specification
@@ -66,6 +64,10 @@ If not logged in:
 
 
 ## Defered
+* Use facebook login button, it has better UX 
+  ? http://developers.facebook.com/docs/reference/javascript/FB.Event.subscribe/
+* Logout from application is not in sync with actual Facebook login status
+
 * Create video of how to use the system
 * Test for select date functionality (jasmine?)
 * Allow user to rename the todo by showing "rename" button when mouse over

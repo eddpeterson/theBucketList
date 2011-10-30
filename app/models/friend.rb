@@ -23,7 +23,7 @@ class Friend
     # data = JSON.parse(response.body)['data'].each  do |friend|
     #       puts friend['id'] + " " + friend['name']
     #     end
-    #puts data        
+    #puts data     goal   
     #url = "https://graph.facebook.com/#{id}/friends?access_token=#{CGI.escape(token)}"
     #response = Net::HTTP.get_response(URI.parse(url))
     #puts response.body

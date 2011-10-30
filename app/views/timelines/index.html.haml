@@ -3,14 +3,14 @@
 %div{:class => "span-5"}
   Past
   %ul{:id => "past_box"}
-    =render :partial => "items", :locals => {:items => @past_todos}
+    =render :partial => "items", :locals => {:items => @past_goals}
 
 %div{:class => "span-14"}
   Next 10 months
   %ul{:id => "current_box"}
-    =render :partial => "items", :locals => {:items => @current_todos}
+    =render :partial => "items", :locals => {:items => @current_goals}
           
 %div{:class => "span-5 last"}
   Next 10+ years
   %ul{:id => "future_box"}
-    =render :partial => "items", :locals => {:items => @future_todos}  
+    =render :partial => "items", :locals => {:items => @future_goals}  
