@@ -1,11 +1,18 @@
 $(function() {
+  
+  //
+  // Add new goal 
+  //
   $('.new_title').live('keyup', function(e) { 
-    if (e.which == 13) { add_new_goal(frame_context = $(this).parent().parent()) } 
+    if (e.which == 13) { add_new_goal(frame_context = $(this).parent()) } 
+  })
+  $(".new_goal_button").live('click', function() {
+    add_new_goal(frame_context = $(this).parent())
   })
   function add_new_goal(frame_context){
-    frame = frame_context.attr('id')
+    frame = frame_context.attr('id').replace('new_goal_', '')
     //alert(frame)
-    title = $("#new_title", frame_context).val()
+    title = $(".new_title", frame_context).val()
     //alert(new_title)
     $.post(
       "goals/", 
@@ -16,12 +23,15 @@ $(function() {
         $("#"+frame).remove()
         parent.append(data)
         //$("#"+frame).prepend('<li>wadaaa</li>')
-      })
+    })
+    
+    $(".new_title", frame_context).val("").focus()
   }
-  $(".new_goal_button").live('click', function() {
-    add_new_goal(frame_context = $(this).parent().parent()) 
-  })
   
+  
+  // 
+  // Working with lists
+  //
   $("#personal, #family, #friends, #work, #social").livequery(function(){
      $(this).sortable({
        connectWith: ".frame",

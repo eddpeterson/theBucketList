@@ -29,11 +29,10 @@ If not logged in:
 
 # TODO:
 
-
+* Fix bugs with adding new goals
 * Fix devise routes to disallow users/sign_in
-
-
-
+* Depoloy to heroku
+* Accept terms of use for the website
 
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95%
 * http://railscasts.com/episodes/104-exception-notifications-revised
@@ -44,6 +43,7 @@ If not logged in:
 * Timeline to integrate with Facebook and show not only past, but future
 
 ## BUGS
+* Do not allow adding empty title goals in jQuery
 * When changing date, should automatically move todo to appropriate category
 * Remove button should appear only when mouse over
 * Rename functionality is buggy and need to create alternative

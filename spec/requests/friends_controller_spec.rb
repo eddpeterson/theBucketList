@@ -11,7 +11,7 @@ describe FriendsController do
     login_facebook user
     
     visit friends_path
-    page.should have_content(friend.id)
+    page.should have_content(friend.name)
 
   end
 

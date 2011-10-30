@@ -13,9 +13,9 @@ describe GoalsController do
     login_facebook user
     visit goals_path
     
+    fill_in "new_title_family", :with => "Travel to Hawaii"
+    click_button "add_new_goal_family"
     within("#family") do 
-      fill_in "new_title", :with => "Travel to Hawaii"
-      click_button "Add"
       page.should have_content("Travel to Hawaii")
     end
   end

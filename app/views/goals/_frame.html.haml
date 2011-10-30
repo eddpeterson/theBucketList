@@ -1,7 +1,4 @@
 %ul{:id => frame_id, :class => "frame"}
-  %li{:id => "new_goal"}
-    %input{:id => "new_title", :class => "new_title", :type => "text"}
-    %button{:class => "new_goal_button"} Add
   - unless goals.nil?
     - goals.each do |t|
       %li
