@@ -29,8 +29,8 @@ If not logged in:
 
 # TODO:
 
-* Fix bugs with adding new goals
-* Fix devise routes to disallow users/sign_in
+* Bug when removing one item and then moving another item from that list to another list
+* Take out facebook applciation id and token not to be included in github
 * Depoloy to heroku
 * Accept terms of use for the website
 

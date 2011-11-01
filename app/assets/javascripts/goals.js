@@ -100,9 +100,22 @@ $(function() {
   function cancelRenameInProgress(){
     $('#is_rename_in_edit_mode').val("false")
   }
-   
+  
+  
+  // 
+  // Delete functionality
+  //
+  $(".frame_item").hover(
+    function () {
+      id = $(this).attr('id')
+      $(this).append($("<span class='remove_goal' id=" + id +  ">Remove</span>"));
+    }, 
+    function () {
+      $(this).find("span:last").remove();
+    }
+  );
   $('.remove_goal').live('click', function(){
-    var id = $(this).parent().parent().attr('id')
+    var id = $(this).attr('id')
     $dialog.data('id', id).dialog('open')
   })
   var $dialog = $( "#dialog-confirm" ).dialog({

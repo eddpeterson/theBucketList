@@ -1,5 +1,20 @@
 TheBucketList::Application.routes.draw do
+  # :omniauth_callbacks => "users/omniauth_callbacks"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  # devise_for :users, :controllers => { :sessions => 'custom_devise/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }, :skip => [:sessions] do
+  #   get '/' => 'custom_devise/sessions#new', :as => :new_user_session
+  #   #  post 'signin' => 'custom_devise/sessions#create', :as => :user_session
+  #   #  get 'signout' => 'custom_devise/sessions#destroy', :as => :destroy_user_session
+  #  end
+  #  devise_scope :user do 
+  #    match '/users/auth/facebook/callback' => 'users/omniauth_callbacks#facebook'
+  #  end
+  # devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+  # devise_for :users, :controllers => {:sessions => 'custom_devise/sessions'}, :skip => [:sessions] do
+  #   get 'signin' => 'custom_devise/sessions#new', :as => :new_user_session
+  #   post 'signin' => 'custom_devise/sessions#create', :as => :user_session
+  #   get 'signout' => 'custom_devise/sessions#destroy', :as => :destroy_user_session
+  # end
   # devise_scope :user do 
   #   match '/users/auth/facebook/callback' => 'users/omniauth_callbacks#facebook'
   #   #match "/some/route" => "some_devise_controller" 

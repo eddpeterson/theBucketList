@@ -91,7 +91,6 @@ describe GoalsController do
     login_facebook user
     visit goals_path
    
-    visit goals_path
     within("#family") do 
       page.should have_content("Travel to Hawaii")
     end
