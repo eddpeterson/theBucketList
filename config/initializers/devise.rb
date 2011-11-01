@@ -10,7 +10,6 @@ Devise.setup do |config|
   # # https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview
   config.omniauth :facebook, "128201343906860", "cace2b978ceb5f9e3de35c645d98630e", 
     {:scope => 'offline_access,email,user_birthday'}
-  
   # see full list of permissions here: http://developers.facebook.com/docs/reference/api/user/
   
   # # If you run into an OpenSSL error like this:

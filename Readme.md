@@ -27,6 +27,7 @@ If not logged in:
 * When not logged in default page should be About, when logged in default page should be todos
 * Rename todos to goals
 * Bug when removing one item and then moving another item from that list to another list
+* Remove button should appear only when mouse over
 
 # TODO:
 
@@ -45,16 +46,34 @@ If not logged in:
 ## BUGS
 * Do not allow adding empty title goals in jQuery
 * When changing date, should automatically move todo to appropriate category
-* Remove button should appear only when mouse over
 * Rename functionality is buggy and need to create alternative
 * Rename button should appear when mouse over
 
 ## Design
-* It needs to be warm
-* Add icons to Personal, Family, Friends, Work, Social
-* Emphasize those frames, that have more items than others
-* While draging, make it visible where it will be placed and add animation when placing item in todo list (like in pudding)
+* LOGO: Things I'd like to do before I kick the bucket
+* Design needs to be warm and simple
 
+### About page
+* Should display facebook friends using the application if you are logged in to facebook
+* Place for video
+
+### Goals page
+* Add icons to Personal, Family, Friends, Work, Social (big icon on top and small icons near each of the goals)
+* Add kind of recycle bin icon instead of Remove button
+* Change "Add" button to something other? 
+* Emphasize those frames, that have more items than others (if Friends have more goals than Work, it should be visible to user)
+
+### Timeline page
+* Use goals small icons
+* Create status indicator (completed or not completed goal). Nice button that slides like here: http://www.heroku.com/pricing#0-0+shared
+
+
+### N% goals completeness
+* Like LinkedIn when you go to edit profile
+
+### Jquery improvements
+* While dragging, make it visible where it will be placed and add animation when placing item in todo list (like in pudding)
+ 
 
 
 ## Security
@@ -64,6 +83,10 @@ If not logged in:
 
 
 ## Defered
+* Wall page displaying latest updates on what is happening with all the stuf, show which of my friends have recently joined the site and their goals added, completed (a lot of logic needs to be built around that to avoid too much data traffic)
+* Friends page should contain list of friends using the site, with status of their accomplished goals, showing distribution among frames and see their timeline
+* use pjax?
+* Strike through goals that are done and place them at the bottom of priority
 * Fix pending test
 * Use facebook login button, it has better UX 
   ? http://developers.facebook.com/docs/reference/javascript/FB.Event.subscribe/
