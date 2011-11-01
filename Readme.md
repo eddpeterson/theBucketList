@@ -26,10 +26,10 @@ If not logged in:
 > Merge middle, right top and dipslay facebook login button
 * When not logged in default page should be About, when logged in default page should be todos
 * Rename todos to goals
+* Bug when removing one item and then moving another item from that list to another list
 
 # TODO:
 
-* Bug when removing one item and then moving another item from that list to another list
 * Take out facebook applciation id and token not to be included in github
 * Depoloy to heroku
 * Accept terms of use for the website

@@ -136,7 +136,7 @@ $(function() {
           dataType: "html",
           async:false,
           success: function(msg){
-            $('.frame_item[id="'+ id + '"]').parent().hide('slow')
+            $('.frame_item[id="'+ id + '"]').parent().remove()
           }
         }) 
 
