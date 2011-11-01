@@ -64,6 +64,7 @@ If not logged in:
 
 
 ## Defered
+* Fix pending test
 * Use facebook login button, it has better UX 
   ? http://developers.facebook.com/docs/reference/javascript/FB.Event.subscribe/
 * Logout from application is not in sync with actual Facebook login status

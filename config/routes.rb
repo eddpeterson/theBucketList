@@ -30,13 +30,12 @@ TheBucketList::Application.routes.draw do
   resources :goals
   post 'goals/set_sorting'
   post 'goals/rename'
+  get 'about' => "application#about"
   match "timeline" => "timelines#index"
   post 'timelines/set_status' => "timelines#set_status"
   get 'timelines/progress' => "timelines#progress"
-  get 'about' => "application#about"
   post 'timelines/set_due_date' => 'timelines#set_due_date'
   get 'friends' => "friends#index"
-  post 'fake_log_in' => "application#fake_log_in"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
