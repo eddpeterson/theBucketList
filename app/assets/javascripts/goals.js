@@ -105,11 +105,13 @@ $(function() {
   // 
   // Delete functionality
   //
-  $(".frame_item").hover(
+  $(".frame_item").live('mouseenter', 
     function () {
       id = $(this).attr('id')
       $(this).append($("<span class='remove_goal' id=" + id +  ">Remove</span>"));
-    }, 
+    }
+  );
+  $(".frame_item").live('mouseleave',  
     function () {
       $(this).find("span:last").remove();
     }
