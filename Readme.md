@@ -33,7 +33,9 @@ If not logged in:
 # TODO:
 
 * Depoloy to heroku
+* Contact Alexander 
 * Accept terms of use for the website
+* Use seeds file to create test data
 
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95%
 * http://railscasts.com/episodes/104-exception-notifications-revised
