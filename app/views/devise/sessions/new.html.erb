@@ -1,5 +1,5 @@
 <%=link_to "Log in", user_omniauth_authorize_path(:facebook) %> to Facebook and join your friends using this website
 </br>
 <iframe src="http://www.facebook.com/plugins/facepile.php? 
-app_id=128201343906860" scrolling="no" frameborder="0" style="border:none;  
-overflow:hidden; width:200px;" allowTransparency="true"></iframe>
+app_id=<%= APP_CONFIG['facebook_app_id'] %>" scrolling="no" frameborder="0" style="border:none;  
+overflow:hidden; width:400px;" allowTransparency="true"></iframe>

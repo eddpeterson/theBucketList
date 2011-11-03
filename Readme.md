@@ -28,10 +28,10 @@ If not logged in:
 * Rename todos to goals
 * Bug when removing one item and then moving another item from that list to another list
 * Remove button should appear only when mouse over
+* Take out facebook applciation id and token not to be excluded from github
 
 # TODO:
 
-* Take out facebook applciation id and token not to be included in github
 * Depoloy to heroku
 * Accept terms of use for the website
 

@@ -8,7 +8,7 @@ Devise.setup do |config|
   
   # #config.omniauth :facebook, "APP_ID", "APP_SECRET"
   # # https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview
-  config.omniauth :facebook, "128201343906860", "cace2b978ceb5f9e3de35c645d98630e", 
+  config.omniauth :facebook, APP_CONFIG['facebook_app_id'], APP_CONFIG['facebook_app_secret'], 
     {:scope => 'offline_access,email,user_birthday'}
   # see full list of permissions here: http://developers.facebook.com/docs/reference/api/user/
   
