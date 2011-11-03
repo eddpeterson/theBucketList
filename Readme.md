@@ -56,6 +56,7 @@ If not logged in:
 ### About page
 * Should display facebook friends using the application if you are logged in to facebook
 * Place for video
+* Note that when user is logged in to facebook in browser, but not in application, he/she sees friends using website
 
 ### Goals page
 * Add icons to Personal, Family, Friends, Work, Social (big icon on top and small icons near each of the goals)
@@ -83,6 +84,7 @@ If not logged in:
 
 
 ## Defered
+* If user has already granted permission to application in facebook and is singed in to facebook in browser, there should be no login required (facebook cookies?)
 * Wall page displaying latest updates on what is happening with all the stuf, show which of my friends have recently joined the site and their goals added, completed (a lot of logic needs to be built around that to avoid too much data traffic)
 * Friends page should contain list of friends using the site, with status of their accomplished goals, showing distribution among frames and see their timeline
 * use pjax?
