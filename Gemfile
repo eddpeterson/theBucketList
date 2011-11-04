@@ -7,25 +7,27 @@ gem 'rails', '3.1.1'
 
 
 # Asset template engines
-gem 'sass-rails'#, "~> 3.1.0"
-gem 'coffee-script'
-gem 'uglifier'
+gem 'sass-rails', "~> 3.1"
+gem 'coffee-script', "~> 2.2"
+gem 'uglifier', "~> 1.0"
 
-gem 'jquery-rails'
+gem 'jquery-rails', "~> 1.0"
 
-gem "haml"
+gem "haml", "~> 3.1"
 gem "mongoid", "~> 2.0"
 gem "bson_ext", "~> 1.2"
+gem "oa-oauth", "~> 0.3", :require => "omniauth/oauth"
+gem "omniauth", "~> 0.3"
+gem "devise", "~> 1.4"
 
 gem "rspec-rails", :group => [:test, :development]
 gem 'simplecov', :require => false, :group => :test
 
-gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git', :group => [:test, :development]
-gem 'launchy', :group => [:test, :development]
+#gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git', :group => [:test, :development]
+gem 'capybara', "~> 1.1", :group => [:test, :development]
+gem 'launchy',  "~> 2.0", :group => [:test, :development]
 
-gem "oa-oauth", :require => "omniauth/oauth"
-gem "omniauth"
-gem "devise"
+
 
 group :development do
   gem "cheat"
