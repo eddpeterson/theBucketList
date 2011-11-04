@@ -15,11 +15,11 @@ gem 'jquery-rails', "~> 1.0"
 
 gem "haml", "~> 3.1"
 
-# gem 'mongo', '= 1.3.1' 
-# gem 'bson', '= 1.3.1' 
-# gem 'bson_ext', '= 1.3.1'
-gem "mongoid", "~> 2.0"
-gem "bson_ext", "~> 1.2"
+gem 'mongo', '= 1.3.1' 
+gem 'bson', '= 1.3.1' 
+gem 'bson_ext', '= 1.3.1'
+# gem "mongoid", "~> 2.0"
+# gem "bson_ext", "~> 1.2"
 
 gem "oa-oauth", "~> 0.3", :require => "omniauth/oauth"
 gem "omniauth", "~> 0.3"
