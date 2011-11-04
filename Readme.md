@@ -95,7 +95,7 @@ If not logged in:
 * Use facebook login button, it has better UX 
   ? http://developers.facebook.com/docs/reference/javascript/FB.Event.subscribe/
 * Logout from application is not in sync with actual Facebook login status
-
+* Update to new Omniauth http://intridea.com/2011/11/2/omniauth-1-0
 * Create video of how to use the system
 * Test for select date functionality (jasmine?)
 * Allow user to rename the todo by showing "rename" button when mouse over
