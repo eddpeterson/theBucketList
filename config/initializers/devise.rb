@@ -8,8 +8,13 @@ Devise.setup do |config|
   
   # #config.omniauth :facebook, "APP_ID", "APP_SECRET"
   # # https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview
-  config.omniauth :facebook, APP_CONFIG['facebook_app_id'], APP_CONFIG['facebook_app_secret'], 
-    {:scope => 'offline_access,email,user_birthday'}
+  if Rails.env.production?
+    config.omniauth :facebook, ENV['facebook_app_id'], ENV['facebook_app_secret'], 
+      {:scope => 'offline_access,email,user_birthday'}
+  else
+    config.omniauth :facebook, APP_CONFIG['facebook_app_id'], APP_CONFIG['facebook_app_secret'], 
+      {:scope => 'offline_access,email,user_birthday', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  end
   # see full list of permissions here: http://developers.facebook.com/docs/reference/api/user/
   
   # # If you run into an OpenSSL error like this:
