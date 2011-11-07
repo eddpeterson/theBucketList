@@ -8,8 +8,6 @@ Devise.setup do |config|
   
   # #config.omniauth :facebook, "APP_ID", "APP_SECRET"
   # # https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview
-  puts "................... id "
-  puts FACEBOOK_APP_ID
   config.omniauth :facebook, FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, 
     {:scope => 'offline_access,email,user_birthday', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   # see full list of permissions here: http://developers.facebook.com/docs/reference/api/user/

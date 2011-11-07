@@ -29,10 +29,11 @@ If not logged in:
 * Bug when removing one item and then moving another item from that list to another list
 * Remove button should appear only when mouse over
 * Take out facebook applciation id and token not to be excluded from github
+* Depoloy to heroku
 
 # TODO:
 
-* Depoloy to heroku
+* How to run rails env in p
 * Contact Alexander 
 * Accept terms of use for the website
 * Use seeds file to create test data
