@@ -46,6 +46,7 @@ If not logged in:
 * Timeline to integrate with Facebook and show not only past, but future
 
 ## BUGS
+* Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp
 * Do not allow adding empty title goals in jQuery
 * When changing date, should automatically move todo to appropriate category
 * Rename functionality is buggy and need to create alternative
