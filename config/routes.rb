@@ -1,6 +1,8 @@
 TheBucketList::Application.routes.draw do
   # :omniauth_callbacks => "users/omniauth_callbacks"
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+    get 'users/sign_in' => 'application#about', :as => :new_user_session
+  end
   # devise_for :users, :controllers => { :sessions => 'custom_devise/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }, :skip => [:sessions] do
   #   get '/' => 'custom_devise/sessions#new', :as => :new_user_session
   #   #  post 'signin' => 'custom_devise/sessions#create', :as => :user_session

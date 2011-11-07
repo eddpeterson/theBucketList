@@ -2,7 +2,6 @@ FactoryGirl.define do
   
   factory :user do
     id "123"
-    password "password"
     email "user@example.com"
     token "token123"
     name "Ryan Nugent-Hopkins"

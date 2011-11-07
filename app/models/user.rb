@@ -14,12 +14,12 @@ class User
   # list of devise options
   # https://github.com/plataformatec/devise
   devise :omniauthable,
-         :database_authenticatable, 
+         #:database_authenticatable, 
          #:registerable,
          #:recoverable, 
          :rememberable, 
-         :trackable, 
-         :validatable
+         :trackable 
+         #:validatable
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     
@@ -31,7 +31,7 @@ class User
       user = User.find(id)
       #user = User.where(email: data["email"]).first
     else # Create a user with a stub password. 
-      user = User.create(:id => id, :email => data['email'], :password => "password", :name => data['name'], :first_name => data['first_name'], :last_name => data['last_name']) 
+      user = User.create(:id => id, :email => data['email'], :name => data['name'], :first_name => data['first_name'], :last_name => data['last_name']) 
     end
     # update token that is used at the moment because I do not know a better way. Need to look into that when trying FBGraph or other facebook lib
     user.token = token
