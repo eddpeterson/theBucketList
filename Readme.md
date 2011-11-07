@@ -33,7 +33,7 @@ If not logged in:
 
 # TODO:
 
-* How to run rails env in p
+* How to plant debugging messages for production 
 * Contact Alexander 
 * Accept terms of use for the website
 * Use seeds file to create test data
