@@ -9,14 +9,14 @@ Time: 07.11.2011 - ...
 # TODO: 100 hours 
 
 * How to plant debugging messages for production # 2 hours
+* Use seeds file to create test data # 2 hours
+* http://railscasts.com/episodes/104-exception-notifications-revised # 2 hours
 * Do not allow adding empty title goals in jQuery # 2 hours
 * When changing date, should automatically move todo to appropriate category # 2 hours
 * List facebook friends todos with the same concept as your timeline? # 8 hours
-* Use seeds file to create test data # 2 hours
 * Use design created by Alexander # 16 hours
 * Accept terms of use for the website # 8 hours
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% # 16 hours
-* http://railscasts.com/episodes/104-exception-notifications-revised # 2 hours
 * Order todos in timeline view by due_date, but for past it should be descending so that on top you see the most recently finished items # 2 hours
 * Automatically update goals completed percentage after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours
 * Friends page should contain list of friends using the site, with status of their accomplished goals (%), showing distribution among frames and see their timeline # 8 hours
