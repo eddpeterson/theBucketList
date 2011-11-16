@@ -24,4 +24,6 @@ TheBucketList::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+  
+  #config.log_level = :info
 end

@@ -3,6 +3,9 @@ class GoalsController < ApplicationController
   respond_to :html  
   
   def create 
+    #logger.info "Create goal: #{params}"
+    logger.debug "Create goal: #{params}"
+    
     frame = params[:frame]
     title = params[:title]
     current_user.goals << Goal.get_new(title, frame)

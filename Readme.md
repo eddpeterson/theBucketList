@@ -5,10 +5,22 @@ TODO
 Time: 07.11.2011 - ...
 
 # What's DONE: 
+* How to plant debugging messages for production # 2 hours
+Use 
+logger.info "Create goal: #{params}"
+logger.debug "Create goal: #{params}"
+And in environments/production.rb use
+config.log_level = :info
+config.log_level = :debug
+Check if the file size is not growing automatically
 
 # TODO: 100 hours 
 
-* How to plant debugging messages for production # 2 hours
+* How do I view mongodb on production (Heroku). 
+from command line
+heroku run console
+Goals.all
+
 * Use seeds file to create test data # 2 hours
 * http://railscasts.com/episodes/104-exception-notifications-revised # 2 hours
 * Do not allow adding empty title goals in jQuery # 2 hours
