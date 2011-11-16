@@ -25,12 +25,14 @@ User.all[0].goals
 * Do not allow adding empty title goals in jQuery # 2 hours estimated, took 15 minutes, but no tests were added
 
 # TODO: 100 hours 
-* When changing date, should automatically move todo to appropriate category # 2 hours
+* Order todos in timeline view by due_date # 2 hours
+* When changing date, should automatically move goal to appropriate category # 2 hours estimated, 1 hour already done
+
 * List facebook friends todos with the same concept as your timeline? # 8 hours
 * Use design created by Alexander # 16 hours
 * Accept terms of use for the website # 8 hours
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% # 16 hours
-* Order todos in timeline view by due_date, but for past it should be descending so that on top you see the most recently finished items # 2 hours
+
 * Automatically update goals completed percentage after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours
 * Friends page should contain list of friends using the site, with status of their accomplished goals (%), showing distribution among frames and see their timeline # 8 hours
 * Timeline to integrate with Facebook and show not only past, but future # 16 hours
@@ -50,6 +52,7 @@ User.all[0].goals
 
 
 ## Defered
+* Timeline should display horizontal line with multiple dots on it or should it be facebook timeline responsibility?
 * While dragging, make it visible where it will be placed and add animation when placing item in todo list (like in pudding)
 * If user has already granted permission to application in facebook and is singed in to facebook in browser, there should be no login required (facebook cookies?)
 * Wall page displaying latest updates on what is happening with all the stuf, show which of my friends have recently joined the site and their goals added, completed (a lot of logic needs to be built around that to avoid too much data traffic)

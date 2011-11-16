@@ -20,10 +20,31 @@ $(function() {
   	  day = inst.currentDay
   	  month = inst.currentMonth + 1
   	  year = inst.currentYear
-  	  id = $(this).parent().attr('id')
+  	  goal = $(this).parent()
+      id = goal.attr('id')
   	  $.post('timelines/set_due_date', {id: id, year: year, month: month, day: day})
+  	  
+  	  return
+  	  goal.animate({
+          opacity: 0.25,
+          left: '+=50',
+          height: 'toggle'
+        }, 500, function() {
+          // debugger
+          //goal.show()
+          //$('#past_box').append(goal)
+          //$('#past_box').prepend(goal)
+          // $.get('get_append_or_prepend_dude').{ appendTo: nil, prependTo: dude }. Call it before hide animation is fired. Right after post
+          $('#4ec3c788667ee713dc000001').append(goal)
+          goal.animate({
+              opacity: 1,
+              left: '+=50',
+              height: 'toggle'
+            }, 500)
+          // Animation complete.
+        })
   	},
-  });
+  })
   
   //$('[id$="_status",value="done"]').addClass('todo_is_done')
   $('.status').filter('[value="done"]').addClass('todo_is_done')
