@@ -21,10 +21,9 @@ from command line
 heroku run console
 User.count
 User.all[0].goals
+* http://railscasts.com/episodes/104-exception-notifications-revised # 2 hours estimated, took 30 minutes
 
 # TODO: 100 hours 
-
-* http://railscasts.com/episodes/104-exception-notifications-revised # 2 hours
 * Do not allow adding empty title goals in jQuery # 2 hours
 * When changing date, should automatically move todo to appropriate category # 2 hours
 * List facebook friends todos with the same concept as your timeline? # 8 hours
@@ -35,6 +34,9 @@ User.all[0].goals
 * Automatically update goals completed percentage after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours
 * Friends page should contain list of friends using the site, with status of their accomplished goals (%), showing distribution among frames and see their timeline # 8 hours
 * Timeline to integrate with Facebook and show not only past, but future # 16 hours
+* Setup production email sender used by exception notificaitons and test it # 1 hour
+:user_name            => ENV['app_email_sender'],
+:password             => ENV['app_email_sender_password'],
 
 ## BUGS 
 * Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours

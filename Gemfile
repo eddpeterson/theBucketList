@@ -38,7 +38,8 @@ gem 'simplecov', :require => false, :group => :test
 gem 'capybara', "~> 1.1", :group => [:test, :development]
 gem 'launchy',  "~> 2.0", :group => [:test, :development]
 
-
+gem 'exception_notification', "~> 2.5"
+gem 'letter_opener', group: :development
 
 group :development do
   gem "cheat"

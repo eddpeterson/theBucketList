@@ -26,4 +26,11 @@ TheBucketList::Application.configure do
   config.assets.compress = false
   
   #config.log_level = :info
+  
+  config.middleware.use ExceptionNotifier,
+    email_prefix: "[TheBucketList Error] ",
+    sender_address: 'noreply@example.com',
+    exception_recpients: 'excepitonrecipient@example.com'
+  config.action_mailer.delivery_method = :letter_opener
+  
 end

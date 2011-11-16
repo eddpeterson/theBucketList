@@ -50,4 +50,19 @@ TheBucketList::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  
+  config.middleware.use ExceptionNotifier,
+    email_prefix: "[TheBucketList Error] ",
+    sender_address: 'noreply@example.com',
+    exception_recpients: 'excepitonrecipient@example.com'
+  config.action_mailer.delivery_method = :smtp #:smtp or :test
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'localhost',
+    :user_name            => ENV['app_email_sender'],
+    :password             => ENV['app_email_sender_password'],
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
 end
