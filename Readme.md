@@ -22,9 +22,9 @@ heroku run console
 User.count
 User.all[0].goals
 * http://railscasts.com/episodes/104-exception-notifications-revised # 2 hours estimated, took 30 minutes
+* Do not allow adding empty title goals in jQuery # 2 hours estimated, took 15 minutes, but no tests were added
 
 # TODO: 100 hours 
-* Do not allow adding empty title goals in jQuery # 2 hours
 * When changing date, should automatically move todo to appropriate category # 2 hours
 * List facebook friends todos with the same concept as your timeline? # 8 hours
 * Use design created by Alexander # 16 hours

@@ -12,7 +12,11 @@ $(function() {
   function add_new_goal(frame_context){
     frame = frame_context.attr('id').replace('new_goal_', '')
     //alert(frame)
-    title = $(".new_title", frame_context).val()
+    title = $.trim($(".new_title", frame_context).val())
+    
+    if (title.length == 0)
+      return
+    
     //alert(new_title)
     $.post(
       "goals/", 
@@ -24,7 +28,7 @@ $(function() {
         parent.append(data)
         //$("#"+frame).prepend('<li>wadaaa</li>')
     })
-    
+  
     $(".new_title", frame_context).val("").focus()
   }
   
@@ -66,7 +70,7 @@ $(function() {
     if (e.which == 27) { cancelHandler(frame_item_context = $(this).parent().parent()) }
   })
   function saveHandler(frame_item_context) { 
-    newTitle = $('.rename_title', frame_item_context).val()
+    newTitle = $.trim($('.rename_title', frame_item_context).val())
     if (newTitle.length == 0)
       return
     
