@@ -16,13 +16,13 @@ Check if the file size is not growing automatically
 * Use seeds file to create test data # 2 hours estimated, took 30 minutes
 modify db/seeds.rb file
 use rake db:seed and rake db:reseed commands
-
-# TODO: 100 hours 
-
 * How do I view mongodb on production (Heroku). # 1 hour
 from command line
 heroku run console
-Goals.all
+User.count
+User.all[0].goals
+
+# TODO: 100 hours 
 
 * http://railscasts.com/episodes/104-exception-notifications-revised # 2 hours
 * Do not allow adding empty title goals in jQuery # 2 hours
