@@ -23,9 +23,9 @@ User.count
 User.all[0].goals
 * http://railscasts.com/episodes/104-exception-notifications-revised # 2 hours estimated, took 30 minutes
 * Do not allow adding empty title goals in jQuery # 2 hours estimated, took 15 minutes, but no tests were added
+* Order todos in timeline view by due_date. Past goals sorted descending, Current and Future goals sorted ascending # 2 hours estimated, took 30 minutes
 
 # TODO: 100 hours 
-* Order todos in timeline view by due_date # 2 hours
 * When changing date, should automatically move goal to appropriate category # 2 hours estimated, 1 hour already done
 
 * List facebook friends todos with the same concept as your timeline? # 8 hours

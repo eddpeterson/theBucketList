@@ -46,7 +46,7 @@ class User
         past_goals << goal
       end
     end
-    past_goals
+    sort_descending past_goals
   end
   
   def current_goals  
@@ -58,7 +58,7 @@ class User
         current_goals << goal
       end
     end
-    current_goals
+    sort current_goals
   end
   
   def future_goals
@@ -69,7 +69,7 @@ class User
         future_goals << goal
       end
     end
-    future_goals
+    sort future_goals
   end
   
   def done_goals_percentage
@@ -80,6 +80,18 @@ class User
       result = (done_count * 100 / count) 
     end
     result
+  end
+  
+  def sort goals
+    unless goals.nil?
+      goals.sort {|a,b| a.due_date <=> b.due_date}
+    end
+  end
+  
+  def sort_descending goals
+    unless goals.nil?
+      goals.sort {|a,b| b.due_date <=> a.due_date}
+    end
   end
   
 end
