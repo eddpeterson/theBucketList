@@ -22,29 +22,19 @@ $(function() {
   	  year = inst.currentYear
   	  goal = $(this).parent()
       id = goal.attr('id')
-  	  $.post('timelines/set_due_date', {id: id, year: year, month: month, day: day})
-  	  
-  	  return
-  	  goal.animate({
-          opacity: 0.25,
-          left: '+=50',
-          height: 'toggle'
-        }, 500, function() {
-          // debugger
-          //goal.show()
-          //$('#past_box').append(goal)
-          //$('#past_box').prepend(goal)
-          // $.get('get_append_or_prepend_dude').{ appendTo: nil, prependTo: dude }. Call it before hide animation is fired. Right after post
-          $('#4ec3c788667ee713dc000001').append(goal)
-          goal.animate({
-              opacity: 1,
-              left: '+=50',
-              height: 'toggle'
-            }, 500)
-          // Animation complete.
-        })
-  	},
-  })
+      $.post('timelines/set_due_date', {id: id, year: year, month: month, day: day}, function(data){ 
+        //alert(data.past)
+        goal.animate({ opacity: 0.25, left: '+=50', height: 'toggle'}, 500, function() {
+            // debugger
+            // if (data.prepend_id) $('#4ec3c788667ee713dc000001').append(goal) etc.
+            if (data.past == true) $('#past_box').prepend(goal)
+            if (data.current == true) $('#current_box').prepend(goal)
+            if (data.future == true) $('#future_box').prepend(goal)
+            goal.animate({ opacity: 1, left: '+=50', height: 'toggle' }, 500)
+        }) // closing all animations
+      }) // closing $.post
+	  }, // closing onSelect
+  }) // closing datePicker
   
   //$('[id$="_status",value="done"]').addClass('todo_is_done')
   $('.status').filter('[value="done"]').addClass('todo_is_done')

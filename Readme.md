@@ -26,7 +26,7 @@ User.all[0].goals
 * Order todos in timeline view by due_date. Past goals sorted descending, Current and Future goals sorted ascending # 2 hours estimated, took 30 minutes
 
 # TODO: 100 hours 
-* When changing date, should automatically move goal to appropriate category # 2 hours estimated, 1 hour already done
+* When changing date, should automatically move goal to appropriate category # 2 hours estimated, 2.5 hours done
 
 * List facebook friends todos with the same concept as your timeline? # 8 hours
 * Use design created by Alexander # 16 hours

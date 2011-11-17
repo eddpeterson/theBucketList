@@ -19,16 +19,19 @@ class TimelinesController < ApplicationController
     render :nothing => true
   end
   
+  
+  
+  
   def set_due_date
     id = params[:id]
     due_date = Date.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
     
     goal = current_user.goals.find(id)
     goal.due_date = due_date
-    
     goal.save
     
-    render :nothing => true
+    render json: { past: goal.past?, current: goal.current?, future: goal.future? }
+    #render :nothing => true
   end
   
   def progress
