@@ -27,15 +27,18 @@ User.all[0].goals
 * When changing date, should automatically move goal to appropriate category # 2 hours estimated, 3.5 hours done
 
 # TODO: 100 hours 
+* Automatically update goals completed percentage by writing it to user field in db after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours
 
-* List facebook friends todos with the same concept as your timeline? # 8 hours
+* Friends page should contain list of friends using the site # 8 hours
+- with their photos # 2 hours
+- with % of accomplished goals # 1 hour
+- leading distribution among frames
+
 * Use design created by Alexander # 16 hours
 * Accept terms of use for the website # 8 hours
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% # 16 hours
-
-* Automatically update goals completed percentage after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours
-* Friends page should contain list of friends using the site, with status of their accomplished goals (%), showing distribution among frames and see their timeline # 8 hours
 * Timeline to integrate with Facebook and show not only past, but future # 16 hours
+* Add facebook like button to site # 1 hour
 * Setup production email sender used by exception notificaitons and test it # 1 hour
 :user_name            => ENV['app_email_sender'],
 :password             => ENV['app_email_sender_password'],
@@ -52,6 +55,9 @@ User.all[0].goals
 
 
 ## Defered
+
+* List facebook friends goals with the same concept as your timeline? # 8 hours estimated, but this functionality should be covered by facebook
+* Users could hack other users goals when logged in if they knew the ids
 * Timeline should display horizontal line with multiple dots on it or should it be facebook timeline responsibility?
 * While dragging, make it visible where it will be placed and add animation when placing item in todo list (like in pudding)
 * If user has already granted permission to application in facebook and is singed in to facebook in browser, there should be no login required (facebook cookies?)
