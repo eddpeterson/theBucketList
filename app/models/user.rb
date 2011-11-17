@@ -42,7 +42,7 @@ class User
   def past_goals
     past_goals = Array.new
     goals.each do |goal|
-      if goal.due_date <= Date.yesterday
+      if goal.past?
         past_goals << goal
       end
     end
@@ -51,10 +51,8 @@ class User
   
   def current_goals  
     current_goals = Array.new
-    yesterday = Date.yesterday
-    future = Date.today >> 11
     goals.each do |goal|
-      if goal.due_date > yesterday && goal.due_date < future
+      if goal.current?
         current_goals << goal
       end
     end
@@ -63,9 +61,8 @@ class User
   
   def future_goals
     future_goals = Array.new
-    future = Date.today >> 11
     goals.each do |goal|
-      if goal.due_date >= future
+      if goal.future?
         future_goals << goal
       end
     end

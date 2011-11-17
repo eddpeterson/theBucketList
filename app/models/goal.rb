@@ -25,4 +25,19 @@ class Goal
   # and then use them in code like:
   # @no_frame_todos = Todo.no_frame_todos
   # @personal_todos = Todo.personal_todos
+  
+  def past?
+    due_date <= Date.yesterday
+  end
+  
+  def current?
+    yesterday = Date.yesterday
+    future = Date.today >> 11
+    due_date > yesterday && due_date < future
+  end
+  
+  def future?
+    future = Date.today >> 11
+    due_date >= future
+  end
 end

@@ -27,5 +27,23 @@ describe Goal do
     goal = Goal.get_new("Travel to Hawaii", "family")
     goal.due_date.should == Date.today >> 10
   end
+  
+  it "should return true for .past? if due date is in past" do
+    goal = Goal.get_new("Travel to Hawaii", "family")
+    goal.due_date = Date.yesterday
+    goal.past?.should be_true
+  end
+  
+  it "should return ture for .current? if due date is today" do
+    goal = Goal.get_new("Travel to Hawaii", "family")
+    goal.due_date = Date.today
+    goal.current?.should be_true    
+  end
+  
+  it "should return true for .future? if due date is greater than 10 months" do
+    goal = Goal.get_new("Travel to Hawaii", "family")
+    goal.due_date = Date.today >> 11
+    goal.future?.should be_true        
+  end
     
 end
