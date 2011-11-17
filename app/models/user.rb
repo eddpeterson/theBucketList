@@ -91,4 +91,26 @@ class User
     end
   end
   
+  def append_to_goal_id goal
+    id = nil
+    if goal.past?
+      past_goals.each do |past_goal|
+        break if goal.due_date > past_goal.due_date || goal == past_goal
+        id = past_goal.id
+      end
+    elsif goal.current?
+      current_goals.each do |current_goal|
+        break if goal.due_date < current_goal.due_date || goal == current_goal
+        id = current_goal.id
+      end    
+    else goal.future?
+      future_goals.each do |future_goal|
+        break if goal.due_date < future_goal.due_date || goal == future_goal
+        id = future_goal.id
+      end
+    end
+    
+    id
+  end
+  
 end

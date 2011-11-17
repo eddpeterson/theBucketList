@@ -101,5 +101,53 @@ describe User do
    it "should return zero progress when empty goals" do 
      user.done_goals_percentage.should == 0    
    end
+   
+   it "should return append to id for past goals" do
+     old_goal = Goal.get_new("Old goal", "family")
+     old_goal.due_date = Date.new(2001, 1, 1)
+     user.goals << old_goal
+     
+     append_to_goal = Goal.get_new("Append to goal", "family")
+     append_to_goal.due_date = Date.yesterday
+     user.goals << append_to_goal
+     
+     goal = Goal.get_new("Goal", "family")
+     goal.due_date = Date.yesterday - 1 # - 1 day
+     user.goals << goal
+     
+     user.append_to_goal_id(goal).should be(append_to_goal.id)
+   end
+   
+   it "should return append to id for current goals" do
+     goal_next_month = Goal.get_new("Goal", "family")
+     goal_next_month.due_date = Date.today >> 1 # + 1 month
+     user.goals << goal_next_month
+
+     append_to_goal = Goal.get_new("Append to goal", "family")
+     append_to_goal.due_date = Date.today
+     user.goals << append_to_goal
+
+     goal = Goal.get_new("Goal", "family")
+     goal.due_date = Date.today + 1 # + 1 day
+     user.goals << goal
+     
+     user.append_to_goal_id(goal).should be(append_to_goal.id)
+   end
+   
+   it "should return append to id for future goals" do
+     goal_next_year = Goal.get_new("Goal", "family")
+     goal_next_year.due_date = Date.today >> 12 # + 12 month
+     user.goals << goal_next_year
+     
+     append_to_goal = Goal.get_new("Append to goal", "family")
+     append_to_goal.due_date = Date.today >> 11 + 1# + 11 month + 1 day
+     user.goals << append_to_goal
+
+     goal = Goal.get_new("Goal", "family")
+     goal.due_date = Date.today >> 11 + 2 # + 11 month + 2 days
+     user.goals << goal
+     
+     user.append_to_goal_id(goal).should be(append_to_goal.id)
+   end
   
 end
