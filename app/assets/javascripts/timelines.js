@@ -1,13 +1,6 @@
 $(function() {
   
-  update_progress = function() {
-    $.get("timelines/progress", function(percentage){
-      new_progress = percentage + '%'
-      $('#progress_percentage').text(new_progress)
-      $('.indicator').css('width', percentage)
-    })
-  }
-  update_progress()
+  update_goals_completeness_percentage()
   
   var $date_picker = $( '.due_date' ).datepicker({
     showOn: "button",
@@ -48,7 +41,7 @@ $(function() {
     current_status = $(this).attr('value')
     new_status = (current_status == 'done') ? 'undone' : 'done'
     $(this).attr('value', new_status)
-    $.post("timelines/set_status", {id: id, status: new_status})       
+    $.post("timelines/set_status", {id: id, status: new_status}, function(){ update_goals_completeness_percentage() })       
     if (new_status == 'done') {
       $(this).addClass('todo_is_done')
     }

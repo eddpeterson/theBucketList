@@ -100,18 +100,4 @@ describe TimelinesController do
     element.value.should == "done"    
   end
   
-  
-  it "should display completed goals percentage", :js => true do   
-    # create one done and one undone task
-    user.goals << Goal.get_new("Travel to Hawaii", "family")
-    goal_done = Goal.get_new("Travel to Fuerteventura", "family")
-    goal_done.status = "done"
-    user.goals << goal_done
-    
-    login_facebook user
-    visit root_path
-    
-    page.should have_content("50% goals completeness")
-  end
-  
 end

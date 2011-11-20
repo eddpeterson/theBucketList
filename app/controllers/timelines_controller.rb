@@ -12,9 +12,7 @@ class TimelinesController < ApplicationController
     status = params[:status]
     id = params[:id]
     
-    goal = current_user.goals.find(id)
-    goal.status = status
-    goal.save
+    current_user.set_goal_status(id, status)
     
     render :nothing => true
   end
@@ -31,7 +29,7 @@ class TimelinesController < ApplicationController
   end
   
   def progress
-    render :text => current_user.done_goals_percentage
+    render :text => current_user.completed_goals_percentage
   end
   
 end

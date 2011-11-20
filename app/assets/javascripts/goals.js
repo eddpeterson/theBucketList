@@ -26,6 +26,7 @@ $(function() {
         parent = $("#"+frame).parent()
         $("#"+frame).remove()
         parent.append(data)
+        update_goals_completeness_percentage()
         //$("#"+frame).prepend('<li>wadaaa</li>')
     })
   
@@ -141,6 +142,7 @@ $(function() {
           async:false,
           success: function(msg){
             $('.frame_item[id="'+ id + '"]').parent().remove()
+            update_goals_completeness_percentage()
           }
         }) 
 

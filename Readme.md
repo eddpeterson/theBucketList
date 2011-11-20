@@ -25,9 +25,10 @@ User.all[0].goals
 * Do not allow adding empty title goals in jQuery # 2 hours estimated, took 15 minutes, but no tests were added
 * Order todos in timeline view by due_date. Past goals sorted descending, Current and Future goals sorted ascending # 2 hours estimated, took 30 minutes
 * When changing date, should automatically move goal to appropriate category # 2 hours estimated, 3.5 hours done
+* Automatically update goals completed percentage by writing it to user field in db after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours estimated, 3h implemented
 
 # TODO: 100 hours 
-* Automatically update goals completed percentage by writing it to user field in db after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours
+
 
 * Friends page should contain list of friends using the site # 8 hours
 - with their photos # 2 hours
@@ -36,12 +37,15 @@ User.all[0].goals
 
 * Use design created by Alexander # 16 hours
 * Accept terms of use for the website # 8 hours
-* Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% # 16 hours
+* Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% and fix pending tests # 16 hours 
 * Timeline to integrate with Facebook and show not only past, but future # 16 hours
 * Add facebook like button to site # 1 hour
 * Setup production email sender used by exception notificaitons and test it # 1 hour
 :user_name            => ENV['app_email_sender'],
 :password             => ENV['app_email_sender_password'],
+* require jquery_ui saw in railscasts, how does it work?
+* Remove .live event and use new jQuery 1.7 .on event
+http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&utm_medium=email
 
 ## BUGS 
 * Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours

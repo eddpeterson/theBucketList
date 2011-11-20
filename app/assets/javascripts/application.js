@@ -7,3 +7,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+update_goals_completeness_percentage = function() {
+  $.get("timelines/progress", function(percentage){
+    new_progress = percentage + '%'
+    $('#progress_percentage').text(new_progress)
+    $('.indicator').css('width', percentage)
+  })
+}

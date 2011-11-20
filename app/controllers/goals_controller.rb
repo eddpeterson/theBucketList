@@ -8,7 +8,8 @@ class GoalsController < ApplicationController
     
     frame = params[:frame]
     title = params[:title]
-    current_user.goals << Goal.get_new(title, frame)
+    goal = Goal.get_new(title, frame)
+    current_user.add_goal(goal)
     
     #render :json => @goal
     #render "_frame", :frame_id => @frame_id
@@ -54,8 +55,7 @@ class GoalsController < ApplicationController
   
   def destroy
     id = params[:id]
-    goal = current_user.goals.find(id)
-    goal.delete
+    current_user.remove_goal(id)
     render :nothing => true    
   end
   

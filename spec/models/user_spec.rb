@@ -77,17 +77,17 @@ describe User do
      user.future_goals.should_not include(goal_current_last)
    end
 
-   it "should return done goals percentage" do
+   it "should calculate goals percentage" do
      user.goals << Goal.get_new("Travel to Gran Canaria in summer", "family")
      
      goal_done = Goal.get_new("Travel to Furteventura", "family")
      goal_done.status = "done"
      user.goals << goal_done
      
-     user.done_goals_percentage.should == 50
+     user.calculate_goals_percentage.should == 50
    end
 
-   it "should return done goals percentage in human readable format (2 numbers only)" do
+   it "should return calculate goals percentage in human readable format (2 numbers only)" do
      user.goals << Goal.get_new("Travel to Gran Canaria in winter", "family")
      user.goals << Goal.get_new("Travel to Gran Canaria in summer", "family")
      
@@ -95,11 +95,11 @@ describe User do
      goal_done.status = "done"
      user.goals << goal_done
      
-     user.done_goals_percentage.should == 33
+     user.calculate_goals_percentage.should == 33
    end
 
    it "should return zero progress when empty goals" do 
-     user.done_goals_percentage.should == 0    
+     user.calculate_goals_percentage.should == 0    
    end
    
    it "should return append to id for past goals" do
@@ -148,6 +148,34 @@ describe User do
      user.goals << goal
      
      user.append_to_goal_id(goal).should be(append_to_goal.id)
+   end
+   
+   describe "should update completed goals satatus" do
+     it "when goal status is changed" do
+       goal = Goal.get_new("Goal", "family")
+       user.goals << goal       
+       user.set_goal_status(goal.id, "done")
+       user.completed_goals_percentage.should == 100
+     end
+     it "when adding new goal" do
+       goal = Goal.get_new("Goal", "family")
+       user.add_goal(goal)
+       goal_done = Goal.get_new("Goal", "family")
+       goal_done.status = "done"
+       user.add_goal(goal_done)
+       
+       user.completed_goals_percentage.should == 50
+     end
+     it "when removing new goal" do
+       goal = Goal.get_new("Goal", "family")
+       user.add_goal(goal)
+       goal_done = Goal.get_new("Goal", "family")
+       goal_done.status = "done"
+       user.add_goal(goal_done)
+       
+       user.remove_goal(goal.id)
+       user.completed_goals_percentage.should == 100
+     end
    end
   
 end

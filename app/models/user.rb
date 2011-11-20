@@ -5,7 +5,7 @@ class User
   field :name, type: String
   field :first_name, type: String
   field :last_name, type: String
-  
+  field :completed_goals_percentage, type: Integer, default: 0
   identity :type => String # overriding id field to be String type
   #key :email
   
@@ -39,6 +39,24 @@ class User
     user
   end
   
+  def set_goal_status(goal_id, new_status)
+    goal = goals.find(goal_id)
+    goal.status = new_status
+    goal.save
+    update_completed_goals_percentage
+  end
+  
+  def add_goal(goal)
+    goals << goal
+    update_completed_goals_percentage
+  end
+  
+  def remove_goal(goal_id)
+    goal = goals.find(goal_id)
+    goal.delete
+    update_completed_goals_percentage
+  end
+  
   def past_goals
     past_goals = Array.new
     goals.each do |goal|
@@ -69,7 +87,11 @@ class User
     sort future_goals
   end
   
-  def done_goals_percentage
+  def update_completed_goals_percentage
+    self.completed_goals_percentage = calculate_goals_percentage
+    save
+  end
+  def calculate_goals_percentage
     count = goals.count
     result = 0
     if (count > 0)
