@@ -1,5 +1,42 @@
-<%=link_to "Log in", user_omniauth_authorize_path(:facebook) %> to Facebook and join your friends using this website
-</br>
-<iframe src="http://www.facebook.com/plugins/facepile.php? 
-app_id=<%= FACEBOOK_APP_ID %>" scrolling="no" frameborder="0" style="border:none;  
-overflow:hidden; width:400px;" allowTransparency="true"></iframe>
+<center>
+<div style="width: 250px;">
+  
+    <div class="loud" style="font-size:1.5em;font-weight:bold">Ready to get started?</div>
+    <div class="quiet">Create a new account and connect to your Facebook friends automatically.</div>
+
+
+    <div id="fb-root"></div>
+    <script>
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: '<%= FACEBOOK_APP_ID %>', 
+          status: true, 
+          cookie: true, 
+          xfbml: true, 
+          oauth: true});
+        FB.Event.subscribe('auth.login', function(response) {
+          window.location = '/users/auth/facebook'
+          if(response.status == 'connected') return;
+          //window.location = '/';
+        });
+      };
+      (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+          '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+      }());
+
+    </script>
+    </br>
+    <fb:login-button v="3" size="large" onlogin="fbconnect('/')" scope="offline_access,email,user_birthday">Sign In with Facebook</fb:login-button>
+    </br>
+    <%=link_to "Log in", user_omniauth_authorize_path(:facebook) %> to Facebook and join your friends using this website
+    </br>
+    <iframe src="http://www.facebook.com/plugins/facepile.php? 
+    app_id=<%= FACEBOOK_APP_ID %>" scrolling="no" frameborder="0" style="border:none;  
+    overflow:hidden; " allowTransparency="true"></iframe>
+
+</div>
+</center>

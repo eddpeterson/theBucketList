@@ -46,6 +46,8 @@ User.all[0].goals
 * require jquery_ui saw in railscasts, how does it work?
 * Remove .live event and use new jQuery 1.7 .on event
 http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&utm_medium=email
+* Create video
+http://www.beatsuite.com/music/category/business-and-technology/351 "On the move"
 
 ## BUGS 
 * Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours
