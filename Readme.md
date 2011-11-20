@@ -31,8 +31,8 @@ User.all[0].goals
 
 
 * Friends page should contain list of friends using the site # 8 hours
-- with their photos # 2 hours
 - with % of accomplished goals # 1 hour
+- with their photos # 2 hours
 - leading distribution among frames
 
 * Use design created by Alexander # 16 hours

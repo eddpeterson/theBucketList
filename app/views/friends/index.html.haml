@@ -1,4 +1,7 @@
 Friends
 - unless @friends.nil?
+  %ul 
   - @friends.each do |friend|
-    =friend.name
+    %li
+      =friend.name
+      =" #{friend.completed_goals_percentage}% completed goals"
