@@ -29,6 +29,8 @@ User.all[0].goals
 
 # TODO: 100 hours 
 
+* Facebook login should work automatically. Improve how login flow works
+
 
 * Friends page should contain list of friends using the site # 8 hours
 - with % of accomplished goals # 1 hour
