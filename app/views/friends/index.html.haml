@@ -2,6 +2,8 @@ Friends
 - unless @friends.nil?
   %ul 
   - @friends.each do |friend|
+    /- (1..10).each do |i| 
     %li
+      %img{src: "https://graph.facebook.com/#{friend.id}/picture", alt: "#{friend.name}", title: "#{friend.name}"} 
       =friend.name
       =" #{friend.completed_goals_percentage}% completed goals"
