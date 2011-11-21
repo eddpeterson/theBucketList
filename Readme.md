@@ -27,10 +27,19 @@ User.all[0].goals
 * When changing date, should automatically move goal to appropriate category # 2 hours estimated, 3.5 hours done
 * Automatically update goals completed percentage by writing it to user field in db after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours estimated, 3h implemented
 
-# TODO: 100 hours 
+# TODO: 100 hours initially estimated
 
-* Facebook login should work automatically. Improve how login flow works
+* Remove .live event and use new jQuery 1.7 .on event
+http://rubydoc.info/gems/jquery-rails/1.0.18/frames
+Get ridd of jquery ui in assets
+Add jquery in application.js
+//= require jquery-ui
+Remove gem dependency in Gemfile ??? Read doc above
+require jquery_ui saw in railscasts, how does it work? if doc is not good enough
 
+* Facebook login should work automatically. Improve how login flow works. # Unplanned and worked already 4 hours
+* Add facebook like button to site on about page when user is logged in (instead of login view) # 1 hour
+* Refine about text # 1 hour
 
 * Friends page should contain list of friends using the site # 8 hours
 - with % of accomplished goals # 1 hour
@@ -41,18 +50,18 @@ User.all[0].goals
 * Accept terms of use for the website # 8 hours
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% and fix pending tests # 16 hours 
 * Timeline to integrate with Facebook and show not only past, but future # 16 hours
-* Add facebook like button to site # 1 hour
 * Setup production email sender used by exception notificaitons and test it # 1 hour
 :user_name            => ENV['app_email_sender'],
 :password             => ENV['app_email_sender_password'],
-* require jquery_ui saw in railscasts, how does it work?
-* Remove .live event and use new jQuery 1.7 .on event
+
+
 * Test production on all browsers and on Mac and Windows
 http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&utm_medium=email
 * Create video
 http://www.beatsuite.com/music/category/business-and-technology/351 "On the move"
 
 ## BUGS 
+* Should call user completed goals percentage only when user is logged in or when the form is being displayed. 
 * Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours
 * Rename functionality is buggy and need to create alternative # 4 hours
 
