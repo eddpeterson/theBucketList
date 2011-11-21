@@ -47,6 +47,7 @@ User.all[0].goals
 :password             => ENV['app_email_sender_password'],
 * require jquery_ui saw in railscasts, how does it work?
 * Remove .live event and use new jQuery 1.7 .on event
+* Test production on all browsers and on Mac and Windows
 http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&utm_medium=email
 * Create video
 http://www.beatsuite.com/music/category/business-and-technology/351 "On the move"
