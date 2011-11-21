@@ -48,8 +48,6 @@ require jquery_ui saw in railscasts, how does it work? if doc is not good enough
 
 * Use design created by Alexander # 16 hours
 * Accept terms of use for the website # 8 hours
-* Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% and fix pending tests # 16 hours 
-* Timeline to integrate with Facebook and show not only past, but future # 16 hours
 * Setup production email sender used by exception notificaitons and test it # 1 hour
 :user_name            => ENV['app_email_sender'],
 :password             => ENV['app_email_sender_password'],
@@ -57,6 +55,9 @@ require jquery_ui saw in railscasts, how does it work? if doc is not good enough
 
 * Test production on all browsers and on Mac and Windows
 http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&utm_medium=email
+
+* Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% and fix pending tests # 16 hours 
+* Timeline to integrate with Facebook and show not only past, but future # 16 hours
 * Create video
 http://www.beatsuite.com/music/category/business-and-technology/351 "On the move"
 
