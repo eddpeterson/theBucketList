@@ -3,10 +3,10 @@ $(function() {
   //
   // Add new goal 
   //
-  $('.new_title').live('keyup', function(e) { 
+  $('.new_goal').on('keyup', '.new_title', function(e) { 
     if (e.which == 13) { add_new_goal(frame_context = $(this).parent()) } 
   })
-  $(".new_goal_button").live('click', function() {
+  $(".new_goal").on('click', '.new_goal_button', function() {
     add_new_goal(frame_context = $(this).parent())
   })
   function add_new_goal(frame_context){
@@ -37,36 +37,34 @@ $(function() {
   // 
   // Working with lists
   //
-  $("#personal, #family, #friends, #work, #social").livequery(function(){
-     $(this).sortable({
+  $("#personal, #family, #friends, #work, #social").sortable({
        connectWith: ".frame",
        opacity: 0.35,
        placeholder: "ui-state-highlight",
        hoverClass: "ui-state-hover",
        update: function(event, ui) { 
-         var frame = event.target.id
-         
+         //debugger
+         var frame = event.target.parentElement.parentElement.parentElement.parentElement.id
          var sorted_goals = new Array(); //$('#'+frame).sortable('toArray')
          frame_context = $('#'+frame)
          $('.frame_item', frame_context).each(function(index){sorted_goals[index] = ($(this).attr('id'))})
          
          //debugger
          //alert(sorted_goals.count)
-         //alert(sorted_goals[0])
          $.post("goals/set_sorting", {sorted_goals: sorted_goals, frame: frame})
          
        }
      
      }).disableSelection()
-  });
+  
 
 
   //
   // Rename functionality
   //
-  $('.save_rename').live('click', function(){ saveHandler(frame_item_context = $(this).parent().parent())})
-  $('.cancel_rename').live('click', function(){ cancelHandler(frame_item_context = $(this).parent().parent())})
-  $('.rename_title').live('keyup', function(e) { 
+  $('.frame_item_rename').on('click', '.save_rename', function(){ saveHandler(frame_item_context = $(this).parent().parent())})
+  $('.frame_item_rename').on('click', '.cancel_rename', function(){ cancelHandler(frame_item_context = $(this).parent().parent())})
+  $('.frame_item_rename').on('keyup', '.rename_title', function(e) { 
     if (e.which == 13) { saveHandler(frame_item_context = $(this).parent().parent()) } 
     if (e.which == 27) { cancelHandler(frame_item_context = $(this).parent().parent()) }
   })
@@ -88,7 +86,7 @@ $(function() {
     $(".frame_item_rename", frame_item_context).toggle()
     cancelRenameInProgress()
   }
-  $(".frame_item").live('dblclick', function() {
+  $('.frame').on('dblclick', '.frame_item', function() {
     if (isRenameInProgress())
       return
     setRenameInProgress()   
@@ -110,18 +108,18 @@ $(function() {
   // 
   // Delete functionality
   //
-  $(".frame_item").live('mouseenter', 
+  $('.frame_item').on('mouseenter', '.frame_item_readonly',
     function () {
-      id = $(this).attr('id')
+      id = $(this).parent().attr('id')
       $(this).append($("<span class='remove_goal' id=" + id +  ">Remove</span>"));
     }
   );
-  $(".frame_item").live('mouseleave',  
+  $('.frame_item').on('mouseleave', '.frame_item_readonly',
     function () {
       $(this).find("span:last").remove();
     }
   );
-  $('.remove_goal').live('click', function(){
+  $('.frame_item').on('click', '.remove_goal', function(){
     var id = $(this).attr('id')
     $dialog.data('id', id).dialog('open')
   })

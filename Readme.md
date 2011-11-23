@@ -35,8 +35,7 @@ http://rubydoc.info/gems/jquery-rails/1.0.18/frames
 Get ridd of jquery ui in assets
 Add jquery in application.js
 //= require jquery-ui
-Remove gem dependency in Gemfile ??? Read doc above
-require jquery_ui saw in railscasts, how does it work? if doc is not good enough
+http://stackoverflow.com/questions/8238553/i-updated-to-the-latest-jquery-rails-1-0-18-but-did-not-get-the-new-jquery
 
 * Facebook login should work automatically. Improve how login flow works. # Unplanned and worked already 4 hours
 * Add facebook like button to site on about page when user is logged in (instead of login view) # 1 hour
