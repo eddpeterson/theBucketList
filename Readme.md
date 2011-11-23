@@ -27,15 +27,15 @@ User.all[0].goals
 * When changing date, should automatically move goal to appropriate category # 2 hours estimated, 3.5 hours done
 * Automatically update goals completed percentage by writing it to user field in db after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours estimated, 3h implemented
 * Refine about text # 1 hour estimated, took 2 hours
-
-# TODO: 100 hours initially estimated
-
-* Remove .live event and use new jQuery 1.7 .on event
+* Remove .live event and use new jQuery 1.7 .on event # Spent about 2 hours
 http://rubydoc.info/gems/jquery-rails/1.0.18/frames
 Get ridd of jquery ui in assets
 Add jquery in application.js
 //= require jquery-ui
 http://stackoverflow.com/questions/8238553/i-updated-to-the-latest-jquery-rails-1-0-18-but-did-not-get-the-new-jquery
+
+# TODO: 100 hours initially estimated
+
 
 * Facebook login should work automatically. Improve how login flow works. # Unplanned and worked already 4 hours
 * Add facebook like button to site on about page when user is logged in (instead of login view) # 1 hour
@@ -62,7 +62,10 @@ https://developers.facebook.com/docs/beta/opengraph/
 * Should not allow hacking other user goals # 2 h
 
 * Create video
-http://www.beatsuite.com/music/category/business-and-technology/351 "On the move"
+Search for Royalty free music
+http://www.beatsuite.com/
+
+* Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
 ## BUGS 
 * Should call user completed goals percentage only when user is logged in or when the form is being displayed. 

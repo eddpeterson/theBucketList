@@ -5,7 +5,7 @@ Goals page!!!
 Personal time, family, friends, career and social life and you got only 24 hours. 
 6h a day you sleep. (If you sleep more than Arnold Schwartn would recommend you sleep faster)
 
-8h or more a day you work (If you work less - congratulations, you are probably from Norway) 
+8h or more a day you work (If you work less - congratulations, you must be from Norway) 
 2h a day you eat.
 2h a day you travel from work to home.
 
