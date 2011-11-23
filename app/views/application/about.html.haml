@@ -1,18 +1,37 @@
 
-Every day we focus on urgent and very important activities.
-We are so much occupied with details that we need to remind ourselves to focus on the big picture.
-Inspired by great people who have achieved a lot in their lives we intend to assist you.
-Control your own destiny!
+%div{:class => "span-16 colborder"}
+  Commit 
+  %u to yourself [TODO: IN BIG TEXT]
+  %br
+  .quiet Commit your goals and keep track of your accomplishments 
+  
+  %div{style: "height: 300px; background-color: gray"}
+    video
+  %div 
+    %br 
+    Managing priorities can be challenging.
+    %br
+    Personal time, family, friends, career and social life are all important aspects. 
+    %br
+    %a{href: goals_path} Commit to your goals
+    and visualize the center of your attention and how you are perceived. 
 
-%p
-Frame allows to visualize what is the center of your attention and compare it to what you would want it to be.
+    %p
+    Once committed to goals you set expectations of when.
+    %br
+    %a{href: timeline_path} Manage goals
+    to verify past, stay focused on today and keep dreaming future.
 
-%p
-Timeline assists you to keep focus on your goals as months passes by. You first look at the next 10 months important goals you want to achieve. You also set your future goals for the next 10+ years and as the time passes history will be made. Would not it be interesting to see your grandfathers timeline of his most important accomplished and unreached goals? To see king of the pop goals that helped him become popular?  
+    %p
+    Seek inspiration from your 
+    %a{href: friends_path} friends
+    
+    %p
+    
+%div{:class => "span-7 last"}
+  - unless user_signed_in?
+    =render "facebook_friends_using_site"
+  - else
+    =render "facebook_like"
+    / <div class="fb-like" data-send="false" data-width="450" data-show-faces="true"></div>
 
-%p
-video
-
-%p
-- unless user_signed_in?
-  =render "facebook_friends_using_site"

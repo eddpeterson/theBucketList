@@ -26,6 +26,7 @@ User.all[0].goals
 * Order todos in timeline view by due_date. Past goals sorted descending, Current and Future goals sorted ascending # 2 hours estimated, took 30 minutes
 * When changing date, should automatically move goal to appropriate category # 2 hours estimated, 3.5 hours done
 * Automatically update goals completed percentage by writing it to user field in db after 1. changing goals status, 2. adding new goal, 3. removing goal # 3 hours estimated, 3h implemented
+* Refine about text # 1 hour estimated, took 2 hours
 
 # TODO: 100 hours initially estimated
 
@@ -39,7 +40,6 @@ require jquery_ui saw in railscasts, how does it work? if doc is not good enough
 
 * Facebook login should work automatically. Improve how login flow works. # Unplanned and worked already 4 hours
 * Add facebook like button to site on about page when user is logged in (instead of login view) # 1 hour
-* Refine about text # 1 hour
 
 * Friends page should contain list of friends using the site # 8 hours
 - with % of accomplished goals # 1 hour
@@ -58,6 +58,10 @@ http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&ut
 
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% and fix pending tests # 16 hours 
 * Timeline to integrate with Facebook and show not only past, but future # 16 hours
+https://developers.facebook.com/docs/beta/opengraph/
+
+* Should not allow hacking other user goals # 2 h
+
 * Create video
 http://www.beatsuite.com/music/category/business-and-technology/351 "On the move"
 
