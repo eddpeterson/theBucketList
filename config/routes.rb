@@ -87,7 +87,8 @@ TheBucketList::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'goals#index', :constraints => lambda {|r| r.env["warden"].authenticate? }
+  # uncomment this line when will fix the delay with facebook login
+  # root :to => 'goals#index', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'application#about'
   
   # See how all your routes lay out with "rake routes"
