@@ -71,6 +71,7 @@ http://www.beatsuite.com/
 
 * Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
+* How to send the db logger to console logger with rails s and get more colors from console
 
 ## BUGS 
 * Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours

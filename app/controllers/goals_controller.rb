@@ -13,8 +13,7 @@ class GoalsController < ApplicationController
     
     #render :json => @goal
     #render "_frame", :frame_id => @frame_id
-    goals = sort current_user.goals.where(frame: frame) # sort Goal.where(frame: frame)
-    render :partial => "frame", :locals => { :frame_id => frame, :goals => goals }
+    render :partial => "goal", :locals => { :goal_id => goal.id, :goal_title => title }
   end
   
   def index

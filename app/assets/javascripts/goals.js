@@ -23,9 +23,10 @@ $(function() {
       {title: title, frame: frame}, 
       function(data) { 
         //alert(data._id)
-        parent = $("#"+frame).parent()
-        $("#"+frame).remove()
-        parent.append(data)
+        // parent = $("#"+frame).parent()
+        // $("#"+frame).remove()
+        // parent.append(data)
+        $("#"+frame).prepend(data)
         update_goals_completeness_percentage()
         //$("#"+frame).prepend('<li>wadaaa</li>')
     })

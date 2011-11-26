@@ -1,11 +1,4 @@
 %ul{:id => frame_id, :class => "frame"}
   - unless goals.nil?
     - goals.each do |t|
-      %li
-        %span{:id => t.id, :class => "frame_item"}
-          %span{:class => "frame_item_readonly"}
-            %span.title= t.title
-          %span{:class => "frame_item_rename"}
-            %input{:type => "text", :class => "rename_title", :name => "rename_title", :value => t.title}
-            %span.save_rename Save
-            %span.cancel_rename Cancel
+      =render :partial => "goal", :locals => {:goal_id => t.id, :goal_title => t.title}
