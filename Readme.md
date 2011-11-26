@@ -33,12 +33,17 @@ Get ridd of jquery ui in assets
 Add jquery in application.js
 //= require jquery-ui
 http://stackoverflow.com/questions/8238553/i-updated-to-the-latest-jquery-rails-1-0-18-but-did-not-get-the-new-jquery
+* Add facebook like button to site on about page when user is logged in (instead of login view) # 1 hour
+Test users:
+Carol id: 100003030401022
+David id: 100003038021110
+Make Carol and David friends
+https://graph.facebook.com/TEST_USER_1_ID/friends/TEST_USER_2_ID?access_token=<get carrols acces token>&method=post
+After you need to login as David and accept the friendship
 
 # TODO: 100 hours initially estimated
 
-
 * Facebook login should work automatically. Improve how login flow works. # Unplanned and worked already 4 hours
-* Add facebook like button to site on about page when user is logged in (instead of login view) # 1 hour
 
 * Friends page should contain list of friends using the site # 8 hours
 - with % of accomplished goals # 1 hour
