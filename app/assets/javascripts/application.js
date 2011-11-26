@@ -10,6 +10,9 @@
 //= require_tree .
 
 update_goals_completeness_percentage = function() {
+  if (!$('#goal_completeness_percentage_view').is(':visible'))
+    return
+    
   $.get("timelines/progress", function(percentage){
     new_progress = percentage + '%'
     $('#progress_percentage').text(new_progress)

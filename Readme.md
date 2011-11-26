@@ -40,6 +40,7 @@ David id: 100003038021110
 Make Carol and David friends
 https://graph.facebook.com/TEST_USER_1_ID/friends/TEST_USER_2_ID?access_token=<get carrols acces token>&method=post
 After you need to login as David and accept the friendship
+* Should call user completed goals percentage only when user is logged in or when the form is being displayed. 
 
 # TODO: 100 hours initially estimated
 
@@ -64,18 +65,14 @@ http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&ut
 * Timeline to integrate with Facebook and show not only past, but future # 16 hours
 https://developers.facebook.com/docs/beta/opengraph/
 
-* Should not allow hacking other user goals # 2 h
-
 * Create video
 Search for Royalty free music
 http://www.beatsuite.com/
 
 * Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
-* Show next/previous 25 in goals view
 
 ## BUGS 
-* Should call user completed goals percentage only when user is logged in or when the form is being displayed. 
 * Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours
 * Rename functionality is buggy and need to create alternative # 4 hours
 
@@ -87,6 +84,7 @@ http://www.beatsuite.com/
 
 
 ## Defered
+* Show next/previous 25 in goals view
 * When adding new goal use .effect("highlight")
 * Allow friends to facebook like specific goals
 * List facebook friends goals with the same concept as your timeline? # 8 hours estimated, but this functionality should be covered by facebook
