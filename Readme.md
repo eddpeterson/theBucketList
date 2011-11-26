@@ -67,6 +67,8 @@ http://www.beatsuite.com/
 
 * Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
+* Show next/previous 25 in goals view
+
 ## BUGS 
 * Should call user completed goals percentage only when user is logged in or when the form is being displayed. 
 * Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours
@@ -80,7 +82,8 @@ http://www.beatsuite.com/
 
 
 ## Defered
-
+* When adding new goal use .effect("highlight")
+* Allow friends to facebook like specific goals
 * List facebook friends goals with the same concept as your timeline? # 8 hours estimated, but this functionality should be covered by facebook
 * Users could hack other users goals when logged in if they knew the ids
 * Timeline should display horizontal line with multiple dots on it or should it be facebook timeline responsibility?

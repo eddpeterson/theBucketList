@@ -1,3 +1,9 @@
+Explain what is The Bucket List during video!!!
+
+Explain the goals priorities with drag and drop.
+
+Explain the timeline feature.
+
 Commitment!!!
 Make a commitment, work hard on it and the accomplishment of what matters to you will be the ultimate prize there is!
 
