@@ -1,0 +1,41 @@
+$(function() {
+
+  function sign_in(user_id, access_token) {
+    console.log('entered sign_in')
+    var data = {remote: true, user_id: user_id, access_token: access_token};
+    $.post('/users/sign_in', data, function(resp) {
+      if (resp.success) { console.log('successfully signed in')} 
+      else { console.log('failed to sign in') }
+    });
+  };
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: '<%= FACEBOOK_APP_ID %>', 
+      status: true, 
+      cookie: true, 
+      xfbml: true, 
+      oauth: true});
+    FB.Event.subscribe('auth.login', function(response) {
+      $('#facebook_faces').show()
+      console.log('auth.login returned')
+
+      sign_in(response.authResponse.userID, response.authResponse.accessToken)
+      // alert(response.authResponse.accessToken)
+      // alert(response.authResponse.userID)
+      // alert('in')
+      //           $.get('/users/auth/facebook', function(){alert('done')})
+      //$.post('/login')
+      //window.location = '/users/auth/facebook'
+
+      if(response.status == 'connected') return;
+      //window.location = '/';
+    });
+  };
+  if ($('#fb-root').is(':visible'))
+  {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    $('#fb-root').append(e);
+  }
+  
+})

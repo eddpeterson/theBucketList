@@ -41,16 +41,17 @@ Make Carol and David friends
 https://graph.facebook.com/TEST_USER_1_ID/friends/TEST_USER_2_ID?access_token=<get carrols acces token>&method=post
 After you need to login as David and accept the friendship
 * Should call user completed goals percentage only when user is logged in or when the form is being displayed. 
-
-# TODO: 100 hours initially estimated
-
 * Facebook login should work automatically. Improve how login flow works. # Unplanned and worked already 10 hours
 http://jessehowarth.com/2011/04/27/ajax-login-with-devise
 http://stackoverflow.com/questions/5794926/login-with-devise-via-jquery-mobile
 http://stackoverflow.com/questions/5081322/devise-asks-authentication-for-ajax-request
-Now need to update user name, email correctly
 Remove omniauth sign in functionality from views
+* Put all javascript code to javascript files from facebook related functionality
 
+# TODO: 100 hours initially estimated
+* If user is logged-in do not display Log in view. Do something after you sign in user
+
+* Need to update user name, email for new users and existing ones as well (because now new users will have only id and token fields)
 
 * Friends page should contain list of friends using the site # 8 hours
 - with % of accomplished goals # 1 hour
@@ -76,6 +77,7 @@ Search for Royalty free music
 http://www.beatsuite.com/
 
 * Create production apps for facebook, heroku and map 101todos dns # 2 hours
+
 
 
 ## BUGS 
