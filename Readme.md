@@ -47,9 +47,9 @@ http://stackoverflow.com/questions/5794926/login-with-devise-via-jquery-mobile
 http://stackoverflow.com/questions/5081322/devise-asks-authentication-for-ajax-request
 Remove omniauth sign in functionality from views
 * Put all javascript code to javascript files from facebook related functionality
+* If user is logged-in do not display Log in view
 
 # TODO: 100 hours initially estimated
-* If user is logged-in do not display Log in view. Do something after you sign in user
 
 * Need to update user name, email for new users and existing ones as well (because now new users will have only id and token fields)
 

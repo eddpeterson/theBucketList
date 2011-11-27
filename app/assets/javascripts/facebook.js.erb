@@ -4,8 +4,14 @@ $(function() {
     console.log('entered sign_in')
     var data = {remote: true, user_id: user_id, access_token: access_token};
     $.post('/users/sign_in', data, function(resp) {
-      if (resp.success) { console.log('successfully signed in')} 
-      else { console.log('failed to sign in') }
+      if (resp.success) { 
+        console.log('successfully signed in')
+        //user_signed_in?
+        window.location = '/about'
+        
+      } else { 
+        console.log('failed to sign in') 
+      }
     });
   };
   window.fbAsyncInit = function() {
