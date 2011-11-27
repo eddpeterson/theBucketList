@@ -1,8 +1,14 @@
 TheBucketList::Application.routes.draw do
   # :omniauth_callbacks => "users/omniauth_callbacks"
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+  # devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+  #     get 'users/sign_in' => 'application#about', :as => :new_user_session
+  #   end
+  #devise_for :users, :path => '/', :controllers => { :sessions => "sessions" }
+  devise_for :users, :controllers => {:sessions => 'sessions', :omniauth_callbacks => "users/omniauth_callbacks" }, :skip => [:sessions]  do
     get 'users/sign_in' => 'application#about', :as => :new_user_session
+    post '/users/sign_in' => 'sessions#create'
   end
+  
   # devise_for :users, :controllers => { :sessions => 'custom_devise/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }, :skip => [:sessions] do
   #   get '/' => 'custom_devise/sessions#new', :as => :new_user_session
   #   #  post 'signin' => 'custom_devise/sessions#create', :as => :user_session
@@ -87,8 +93,7 @@ TheBucketList::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # uncomment this line when will fix the delay with facebook login
-  # root :to => 'goals#index', :constraints => lambda {|r| r.env["warden"].authenticate? }
+  root :to => 'goals#index', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'application#about'
   
   # See how all your routes lay out with "rake routes"

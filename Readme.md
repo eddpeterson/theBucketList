@@ -45,7 +45,14 @@ After you need to login as David and accept the friendship
 # TODO: 100 hours initially estimated
 
 * Facebook login should work automatically. Improve how login flow works. # Unplanned and worked already 4 hours
+
+http://jessehowarth.com/2011/04/27/ajax-login-with-devise
+
 http://stackoverflow.com/questions/5794926/login-with-devise-via-jquery-mobile
+
+http://stackoverflow.com/questions/5081322/devise-asks-authentication-for-ajax-request
+
+
 
 * Friends page should contain list of friends using the site # 8 hours
 - with % of accomplished goals # 1 hour

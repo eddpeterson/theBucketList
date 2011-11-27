@@ -20,7 +20,12 @@ class User
          :rememberable, 
          :trackable 
          #:validatable
-
+  def self.find_or_create(id, access_token)
+    user = User.find_or_create_by(id: id)
+    user.token = access_token
+    user.save
+    user
+  end
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     
     data = access_token['extra']['user_hash']
