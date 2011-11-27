@@ -54,9 +54,8 @@
       <fb:login-button show-faces="true" max-rows="1" width="185"></fb:login-button>
     </div>
     
- </br> </br> </br> </br> </br> </br> </br> </br>
-    <%=link_to "Log in", user_omniauth_authorize_path(:facebook) %> to Facebook and join your friends using this website
-         </br>
-         
+    <% if Rails.env.test? %>
+      <%=link_to "Log in", user_omniauth_authorize_path(:facebook) %> to Facebook and join your friends using this website
+    <% end %>     
 </div>
 </center>
