@@ -59,7 +59,7 @@ Remove omniauth sign in functionality from views
 - leading distribution among frames
 
 * Use design created by Alexander # 16 hours
-* Accept terms of use for the website # 8 hours
+* Accept terms of use for the website. Read about different software licenses # 8 hours
 * Setup production email sender used by exception notificaitons and test it # 1 hour
 :user_name            => ENV['app_email_sender'],
 :password             => ENV['app_email_sender_password'],
