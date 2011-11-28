@@ -6,9 +6,7 @@ $(function() {
     $.post('/users/sign_in', data, function(resp) {
       if (resp.success) { 
         console.log('successfully signed in')
-        //user_signed_in?
         window.location = '/about'
-        
       } else { 
         console.log('failed to sign in') 
       }
@@ -24,17 +22,7 @@ $(function() {
     FB.Event.subscribe('auth.login', function(response) {
       $('#facebook_faces').show()
       console.log('auth.login returned')
-
       sign_in(response.authResponse.userID, response.authResponse.accessToken)
-      // alert(response.authResponse.accessToken)
-      // alert(response.authResponse.userID)
-      // alert('in')
-      //           $.get('/users/auth/facebook', function(){alert('done')})
-      //$.post('/login')
-      //window.location = '/users/auth/facebook'
-
-      if(response.status == 'connected') return;
-      //window.location = '/';
     });
   };
   if ($('#fb-root').is(':visible'))

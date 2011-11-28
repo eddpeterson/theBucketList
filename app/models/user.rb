@@ -1,5 +1,6 @@
 class User
-  include Mongoid::Document  
+  include Mongoid::Document
+  include FacebookInfo  
   field :email, type: String
   field :token, type: String
   field :name, type: String
@@ -20,12 +21,20 @@ class User
          :rememberable, 
          :trackable 
          #:validatable
+         
   def self.find_or_create(id, access_token)
-    user = User.find_or_create_by(id: id)
-    user.token = access_token
-    user.save
+    if User.exists?(conditions: { id: id })
+      user = User.find(id)
+      user.token = access_token
+      user.save
+    else
+      user = User.create(id: id, token: access_token)
+      user.update_facebook_info
+    end
+    
     user
   end
+  
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     
     data = access_token['extra']['user_hash']
@@ -42,6 +51,15 @@ class User
     user.token = token
     user.save
     user
+  end
+  
+  def update_facebook_info
+    info = facebook_info(self.id, self.token)
+    self.email = info['email']
+    self.name = info['name']
+    self.first_name = info['first_name']
+    self.last_name = info['last_name']
+    save
   end
   
   def set_goal_status(goal_id, new_status)

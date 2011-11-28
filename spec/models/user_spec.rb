@@ -177,5 +177,22 @@ describe User do
        user.completed_goals_percentage.should == 100
      end
    end
+   
+   it "should update facebook info" do
+     facebook_info = {
+       'email' => 'updated@gmail.com',
+       'name' => 'updated name',
+       'last_name' => 'updated last name',
+       'first_name' => 'updated first name'
+     }
+     user.stub!(:facebook_info).with(user.id, user.token).and_return facebook_info
+     
+     user.update_facebook_info
+     
+     user.email.should == 'updated@gmail.com'
+     user.name.should == 'updated name'
+     user.last_name.should == 'updated last name'
+     user.first_name.should == 'updated first name'
+   end
   
 end

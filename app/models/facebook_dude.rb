@@ -11,4 +11,6 @@ class FacebookDude
     friends = User.any_in("_id" => facebook_friend_ids)
     friends
   end
+  
+
 end
