@@ -194,5 +194,13 @@ describe User do
      user.last_name.should == 'updated last name'
      user.first_name.should == 'updated first name'
    end
+   
+   it "should return facebook friends" do
+     friend = Factory(:user)
+     
+     user.stub!(:friends_ids).with(user.id, user.token).and_return [friend.id]
+     
+     user.friends.should include(friend)
+   end
   
 end

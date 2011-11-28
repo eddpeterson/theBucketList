@@ -62,6 +62,12 @@ class User
     save
   end
   
+  def friends
+    facebook_friends = friends_ids(self.id, self.token)
+    friends = User.any_in("_id" => facebook_friends)
+    friends
+  end
+  
   def set_goal_status(goal_id, new_status)
     goal = goals.find(goal_id)
     goal.status = new_status

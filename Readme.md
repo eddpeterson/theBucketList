@@ -49,10 +49,9 @@ Remove omniauth sign in functionality from views
 * Put all javascript code to javascript files from facebook related functionality
 * If user is logged-in do not display Log in view
 * Need to update user name, email for new users and existing ones as well (because now new users will have only id and token fields)
+* Refactor FacebookDude to FacebookInfo
 
 # TODO: 100 hours initially estimated
-
-* Refactor FacebookDude to FacebookInfo
 
 * Friends page should contain list of friends using the site # 8 hours
 - with % of accomplished goals # 1 hour
@@ -70,6 +69,7 @@ Remove omniauth sign in functionality from views
 http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&utm_medium=email
 
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% and fix pending tests # 16 hours 
+* Fix friends request specs, by actually logging in with one of test users?
 * Timeline to integrate with Facebook and show not only past, but future # 16 hours
 https://developers.facebook.com/docs/beta/opengraph/
 
