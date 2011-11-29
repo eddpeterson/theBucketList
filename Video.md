@@ -4,6 +4,9 @@ Explain the goals priorities with drag and drop.
 
 Explain the timeline feature.
 
+Ideja, par iekljaut vairaaku slavenu cilveeku quotes kas attiecas uz tasku prioratizeeshanu:
+http://gettingreal.37signals.com/ch06_Rinse_and_Repeat.php
+
 Commitment!!!
 Make a commitment, work hard on it and the accomplishment of what matters to you will be the ultimate prize there is!
 

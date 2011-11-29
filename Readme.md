@@ -78,6 +78,7 @@ https://developers.facebook.com/docs/beta/opengraph/
 * Create video
 Search for Royalty free music
 http://www.beatsuite.com/
+Panjemt dziesmu no albuma
 
 * Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
@@ -95,6 +96,7 @@ http://www.beatsuite.com/
 
 
 ## Defered
+* Draw center of attention circle in separate view (distribution among frames). Historgram?
 * Show next/previous 25 in goals view
 * When adding new goal use .effect("highlight")
 * Allow friends to facebook like specific goals
