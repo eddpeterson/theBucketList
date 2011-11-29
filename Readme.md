@@ -65,6 +65,8 @@ Remove omniauth sign in functionality from views
 :password             => ENV['app_email_sender_password'],
 
 
+* Check inline editing as it is done in best_in_place demo on github and rename functionality with once click
+
 * Test production on all browsers and on Mac and Windows
 http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&utm_medium=email
 
