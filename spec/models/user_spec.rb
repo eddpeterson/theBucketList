@@ -202,5 +202,13 @@ describe User do
      
      user.friends.should include(friend)
    end
+   
+   it "should set new goal on top with frame_order_number equals to 1" do
+     user.add_goal(Goal.get_new("Goal 1", "family"))
+     goal = Goal.get_new("Goal 2", "family")
+     user.add_goal(goal)
+     goal.frame_order_number.should == 1
+   end
+   
   
 end

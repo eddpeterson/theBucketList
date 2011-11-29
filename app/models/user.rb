@@ -78,6 +78,23 @@ class User
   def add_goal(goal)
     goals << goal
     update_completed_goals_percentage
+    set_goal_on_top(goal) 
+  end
+  
+  def set_goal_on_top(goal)
+    framed_goals = goals.where(frame: goal.frame)
+    unless framed_goals.nil?
+      order_number = 2
+      goal.frame_order_number = 1
+      goal.save
+      framed_goals.each do |framed_goal|
+        unless framed_goal == goal
+          framed_goal.frame_order_number = order_number
+          order_number += 1
+          framed_goal.save
+        end
+      end
+    end
   end
   
   def remove_goal(goal_id)
