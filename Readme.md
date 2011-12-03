@@ -72,8 +72,13 @@ http://www.andismith.com/blog/2011/11/on-and-off/?utm_source=javascriptweekly&ut
 
 * Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% and fix pending tests # 16 hours 
 * Fix friends request specs, by actually logging in with one of test users?
+Moxy could help? http://jondot.github.com/moxy/
+
 * Timeline to integrate with Facebook and show not only past, but future # 16 hours
 https://developers.facebook.com/docs/beta/opengraph/
+
+* Three state solution: Regular, Blank, Error
+http://gettingreal.37signals.com/ch09_Three_State_Solution.php
 
 * Create video
 Search for Royalty free music
@@ -83,6 +88,8 @@ Panjemt dziesmu no albuma
 * Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
 
+* Create changelog. See how other open source projects does it.
+* Jquery UI themese, how to include them in the rails 
 
 ## BUGS 
 * Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours

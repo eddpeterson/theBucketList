@@ -27,9 +27,10 @@ gem "tzinfo", "~> 0.3.22"
 gem "bson", "~> 1.3.1"
 gem "bson_ext", "~> 1.3.1"
 
-gem "oa-oauth", "~> 0.3", :require => "omniauth/oauth"
-gem "omniauth", "~> 0.3"
-gem "devise", "~> 1.4"
+#gem "oa-oauth", "~> 0.3", :require => "omniauth/oauth"
+#gem "omniauth", "~> 1.0"
+gem "devise", "~> 1.5"
+gem 'omniauth-facebook'
 
 gem "rspec-rails", :group => [:test, :development]
 gem 'simplecov', :require => false, :group => :test
@@ -40,6 +41,8 @@ gem 'launchy',  "~> 2.0", :group => [:test, :development]
 
 gem 'exception_notification', "~> 2.5"
 gem 'letter_opener', group: :development
+
+#gem 'sparklines'
 
 group :development do
   gem "cheat"

@@ -7,3 +7,4 @@ Friends
       %img{src: "https://graph.facebook.com/#{friend.id}/picture", alt: "#{friend.name}", title: "#{friend.name}"} 
       =friend.name
       =" #{friend.completed_goals_percentage}% completed goals"
+      /= sparkline_tag [1,2,3,4,5,6], :type => 'discrete', :height => 10, :upper => 80, :above_color => 'green', :below_color => 'blue'
