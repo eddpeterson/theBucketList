@@ -1,8 +1,8 @@
 %li{:class => "ui-state-default goals"}
   %span{:id => goal_id, :class => "frame_item"}
     %div{:class => "frame_item_readonly"}
-      %span{:class => "ui-icon ui-icon-trash remove_goal", :style => "visibility:hidden"}
-      %span{:class => "ui-icon ui-icon-pencil rename_goal", :style => "visibility:hidden"}
+      %span{:class => "ui-icon ui-icon-trash remove_goal", :style => "visibility:hidden", :title => "Remove"}
+      %span{:class => "ui-icon ui-icon-pencil rename_goal", :style => "visibility:hidden", :title => "Rename"}
       %span.title= goal_title
     %span{:class => "frame_item_rename"}
       %input{:type => "text", :class => "rename_title", :name => "rename_title", :value => goal_title}
