@@ -108,7 +108,7 @@ TODO
     
     >leading distribution among frames # could not get sparklines gem to run
 
-*   Create changelog. See how other open source projects does it.
+*   Create changelog. See how other open source projects does it. # 2 hours
 
 ## The Bucket List 1.0.0  (July 25 - November 7, 2011) ##
 
