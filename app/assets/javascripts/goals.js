@@ -111,17 +111,19 @@ $(function() {
   //
   $('.frame').on('mouseenter', '.frame_item_readonly',
     function () {
+      $('.remove_goal', $(this)).css('visibility', 'visible')
       id = $(this).parent().attr('id')
-      $(this).append($("<span class='remove_goal' id=" + id +  ">Remove</span>"));
+      //$(this).append($("<span class='remove_goal' id=" + id +  ">Remove</span>"));
     }
   );
   $('.frame').on('mouseleave', '.frame_item_readonly',
     function () {
-      $(this).find("span:last").remove();
+      $('.remove_goal', $(this)).css('visibility', 'hidden')
+      //$(this).find("span:last").remove();
     }
   );
   $('.frame').on('click', '.remove_goal', function(){
-    var id = $(this).attr('id')
+    var id = $(this).parent().parent().attr('id')
     $dialog.data('id', id).dialog('open')
   })
   var $dialog = $( "#dialog-confirm" ).dialog({

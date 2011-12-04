@@ -1,12 +1,15 @@
-.frame { 
+ul.frame { 
+  list-style:none;
   background-color: #eee;
-  padding: 10px; 
+  padding: 0px;
   cursor: pointer;
 }
-
+li.goals span.ui-icon {
+  display:inline-block;
+  vertical-align: top;
+}
 .frame_item {
   color: green;
-  list-style-type: none;
 }
 
 .rename_goal {
@@ -31,9 +34,7 @@
 
 .rename_title{}
 .frame_item_rename{display:none;}
-.remove_goal{}
-
-li.one span.ui-icon {
-    display:inline-block;
-    vertical-align: top;
+.remove_goal{
+  
 }
+

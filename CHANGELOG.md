@@ -110,6 +110,12 @@ TODO
 
 *   Create changelog. See how other open source projects does it. # 2 hours
 
+*   BUG: Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours
+    
+    Use jquery ui trash icon in front
+    
+    http://stackoverflow.com/questions/5626830/make-ui-icon-appear-on-same-line-as-other-text-within-li
+
 ## The Bucket List 1.0.0  (July 25 - November 7, 2011) ##
 
 Initial version of the Bucket List deployed in the cloud.
