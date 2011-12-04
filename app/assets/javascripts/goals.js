@@ -87,14 +87,20 @@ $(function() {
     $(".frame_item_rename", frame_item_context).toggle()
     cancelRenameInProgress()
   }
+  $('.frame').on('click', '.rename_goal', function(){
+    switchToRename($(this).parent().parent())
+  })
   $('.frame').on('dblclick', '.frame_item', function() {
+    switchToRename($(this))
+  })  
+  function switchToRename(context) {
     if (isRenameInProgress())
       return
     setRenameInProgress()   
-    $(".frame_item_readonly", this).toggle()
-    $(".frame_item_rename", this).toggle()
-    $('.rename_title').select()     
-  })  
+    $(".frame_item_readonly", context).toggle()
+    $(".frame_item_rename", context).toggle()
+    $('.rename_title').select()
+  }
   function isRenameInProgress(){
     return $('#is_rename_in_edit_mode').val() == "true"    
   } 
@@ -112,6 +118,7 @@ $(function() {
   $('.frame').on('mouseenter', '.frame_item_readonly',
     function () {
       $('.remove_goal', $(this)).css('visibility', 'visible')
+      $('.rename_goal', $(this)).css('visibility', 'visible')
       id = $(this).parent().attr('id')
       //$(this).append($("<span class='remove_goal' id=" + id +  ">Remove</span>"));
     }
@@ -119,6 +126,7 @@ $(function() {
   $('.frame').on('mouseleave', '.frame_item_readonly',
     function () {
       $('.remove_goal', $(this)).css('visibility', 'hidden')
+      $('.rename_goal', $(this)).css('visibility', 'hidden')
       //$(this).find("span:last").remove();
     }
   );
