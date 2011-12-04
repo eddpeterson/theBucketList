@@ -42,7 +42,6 @@ gem 'launchy',  "~> 2.0", :group => [:test, :development]
 gem 'exception_notification', "~> 2.5"
 gem 'letter_opener', group: :development
 
-#gem 'sparklines'
 
 group :development do
   gem "cheat"

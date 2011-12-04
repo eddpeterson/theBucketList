@@ -50,13 +50,13 @@ Remove omniauth sign in functionality from views
 * If user is logged-in do not display Log in view
 * Need to update user name, email for new users and existing ones as well (because now new users will have only id and token fields)
 * Refactor FacebookDude to FacebookInfo
-
-# TODO: 100 hours initially estimated
-
 * Friends page should contain list of friends using the site # 8 hours
 - with % of accomplished goals # 1 hour
 - with their photos # 2 hours
-- leading distribution among frames
+- leading distribution among frames # could not get sparklines gem to run
+* Create changelog. See how other open source projects does it.
+
+# TODO: 100 hours initially estimated
 
 * Use design created by Alexander # 16 hours
 * Accept terms of use for the website. Read about different software licenses # 8 hours
@@ -88,7 +88,6 @@ Panjemt dziesmu no albuma
 * Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
 
-* Create changelog. See how other open source projects does it.
 * Jquery UI themese, how to include them in the rails 
 
 ## BUGS 
