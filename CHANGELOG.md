@@ -1,7 +1,7 @@
 ## The Bucket List 1.1.0 (unreleased) ##
 
 
-## The Bucket List 1.0.0  (November 7, 2011) ## 
+## The Bucket List 1.0.0  (July 25 - November 7, 2011) ##
 
 Initial version of the Bucket List deployed in the cloud.
 Helps organizing your life goals by framing your activities to personal, family, friends, work or social interests.
