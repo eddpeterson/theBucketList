@@ -1,7 +1,7 @@
 ## The Bucket List 1.1.0 (unreleased) ##
 
 *   How to plant debugging messages for production # 2 hours estimated, took 30 minutes 
-    *In code use:
+    *In code use:*
     `logger.info "Create goal: #{params}"`
     `logger.debug "Create goal: #{params}"`
     In environments/production.rb use:
