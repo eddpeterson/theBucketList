@@ -1,26 +1,42 @@
 ## The Bucket List 1.1.0 (unreleased) ##
 
+TODO
+
 *   How to plant debugging messages for production # 2 hours estimated, took 30 minutes 
-    *In code use:*
-    `logger.info "Create goal: #{params}"`
-    `logger.debug "Create goal: #{params}"`
-    In environments/production.rb use:
-    `config.log_level = :info`
-    `config.log_level = :debug`
-    Check if the file size is not growing automatically
+    
+    >In code use:
+    
+    >>`logger.info "Create goal: #{params}"`
+    
+    >>`logger.debug "Create goal: #{params}"`
+    
+    >In environments/production.rb use:
+    
+    >>`config.log_level = :info`
+    
+    >>`config.log_level = :debug`
+    
+    >Check if the file size is not growing automatically
 
 *   Use seeds file to create test data # 2 hours estimated, took 30 minutes
-    modify db/seeds.rb file
-    use rake db:seed and rake db:reseed commands
+
+    >modify db/seeds.rb file
+    
+    >use `rake db:seed` and `rake db:reseed` commands
 
 *   How do I view mongodb on production (Heroku). # 1 hour
-    from command line
-    `heroku run console`
-    `User.count`
-    `User.all[0].goals`
+
+    >from command line
+    
+    >`heroku run console`
+    
+    >`User.count`
+    
+    >`User.all[0].goals`
 
 *   Exception handling in rails # 2 hours estimated, took 30 minutes
-    [Railscasts 104-exception-notifications-revised](http://railscasts.com/episodes/104-exception-notifications-revised)
+    
+    >[Railscasts 104-exception-notifications-revised](http://railscasts.com/episodes/104-exception-notifications-revised)
 
 *   Do not allow adding empty title goals in jQuery # 2 hours estimated, took 15 minutes, but no tests were added
 
@@ -29,34 +45,52 @@
 *   When changing date, should automatically move goal to appropriate category # 2 hours estimated, 3.5 hours done
 
 *   Automatically update goals completed percentage by writing it to user field in db after # 3 hours estimated, 3h implemented
+    
     1. changing goals status 
+    
     2. adding new goal 
+    
     3. removing goal 
 
 *   Refine about text # 1 hour estimated, took 2 hours
 
 *   Remove .live event and use new jQuery 1.7 .on event # Spent about 2 hours
-    http://rubydoc.info/gems/jquery-rails/1.0.18/frames
-    Get ridd of jquery ui in assets
-    Add jquery in application.js
-    //= require jquery-ui
-    http://stackoverflow.com/questions/8238553/i-updated-to-the-latest-jquery-rails-1-0-18-but-did-not-get-the-new-jquery
+    
+    >http://rubydoc.info/gems/jquery-rails/1.0.18/frames
+    
+    >Get ridd of jquery ui in assets
+    
+    >Add jquery in application.js
+    
+    >`//= require jquery-ui`
+    
+    >http://stackoverflow.com/questions/8238553/i-updated-to-the-latest-jquery-rails-1-0-18-but-did-not-get-the-new-jquery
 
 *   Add facebook like button to site on about page when user is logged in (instead of login view) # 1 hour
-    Test users:
-    Carol id: 100003030401022
-    David id: 100003038021110
-    Make Carol and David friends
-    https://graph.facebook.com/TEST_USER_1_ID/friends/TEST_USER_2_ID?access_token=<get carrols acces token>&method=post
-    After you need to login as David and accept the friendship
+    
+    >Test users:
+    
+    >Carol id: 100003030401022
+    
+    >David id: 100003038021110
+    
+    >Make Carol and David friends
+    
+    >https://graph.facebook.com/TEST_USER_1_ID/friends/TEST_USER_2_ID?access_token=<get carrols acces token>&method=post
+    
+    >After you need to login as David and accept the friendship
     
 *   Should call user completed goals percentage only when user is logged in or when the form is being displayed. 
 
 *   Facebook login should work automatically. Improve how login flow works. # Unplanned and worked already 10 hours
-    http://jessehowarth.com/2011/04/27/ajax-login-with-devise
-    http://stackoverflow.com/questions/5794926/login-with-devise-via-jquery-mobile
-    http://stackoverflow.com/questions/5081322/devise-asks-authentication-for-ajax-request
-    Remove omniauth sign in functionality from views
+    
+    >http://jessehowarth.com/2011/04/27/ajax-login-with-devise
+    
+    >http://stackoverflow.com/questions/5794926/login-with-devise-via-jquery-mobile
+    
+    >http://stackoverflow.com/questions/5081322/devise-asks-authentication-for-ajax-request
+    
+    >Remove omniauth sign in functionality from views
 
 *   Put all javascript code to javascript files from facebook related functionality
 
@@ -67,9 +101,12 @@
 *   Refactor FacebookDude to FacebookInfo
 
 *   Friends page should contain list of friends using the site # 8 hours
-    with % of accomplished goals # 1 hour
-    with their photos # 2 hours
-    leading distribution among frames # could not get sparklines gem to run
+    
+    >with % of accomplished goals # 1 hour
+    
+    >with their photos # 2 hours
+    
+    >leading distribution among frames # could not get sparklines gem to run
 
 *   Create changelog. See how other open source projects does it.
 
@@ -117,11 +154,12 @@ Use facebook to authorize through application and see your friends using the app
 *   Use facebook to authorize
 
 *   Refactor gui 
-    *On left top only name of the website if logged in:*
-    *On middle top display links Goals, Timeline, Friends, About*
-    *On the right top display % goals completeness*
-    *If not logged in:*
-    *Merge middle, right top and dipslay facebook login button*
+    
+    >On left top only name of the website if logged in:
+    >On middle top display links Goals, Timeline, Friends, About
+    >On the right top display % goals completeness
+    >If not logged in:
+    >Merge middle, right top and dipslay facebook login button
 
 *   When not logged in default page should be About, when logged in default page should be todos
 
