@@ -1,28 +1,20 @@
 # TODO: 100 hours initially estimated
 
-*   Timeline to integrate with Facebook and show not only past, but future # 16 hours
-    
-    https://developers.facebook.com/docs/beta/opengraph/
-     
-*   Use design created by Alexander # 16 hours
-
 *   Accept terms of use for the website. Read about different software licenses # 8 hours
 
-*   Setup production email sender used by exception notificaitons and test it # 1 hour
-    
-    >:user_name            => ENV['app_email_sender']
-    
-    >:password             => ENV['app_email_sender_password']
-
-*   Test production on all browsers and on Mac and Windows
+*   Use design created by Alexander # 16 hours
 
 *   [Three state solution: Regular, Blank, Error](http://gettingreal.37signals.com/ch09_Three_State_Solution.php) # Not planned, but super importants. Need to be done after the complete design is in place
     
-    For blank when moving to  goals add Watermark for new goal.
+    >For blank when moving to  goals add Watermark for new goal.
     
-    For Timeline tell that there is no goals added and display special link to add goals. Also during timeline is visible.
+    >For Timeline tell that there is no goals added and display special link to add goals. Also during timeline is visible.
     
-    For Friends page show that there are no frineds, but allow to invite facebook friends
+    >For Friends page show that there are no frineds, but allow to invite facebook friends
+
+*   Timeline to integrate with Facebook and show not only past, but future # 16 hours
+
+    https://developers.facebook.com/docs/beta/opengraph/
 
 *   Create video
 
@@ -31,6 +23,14 @@
     Panjemt dziesmu no albuma
  
 *   Create production apps for facebook, heroku and map 101todos dns # 2 hours
+
+*   Setup production email sender used by exception notificaitons and test it # 1 hour
+    
+    >:user_name            => ENV['app_email_sender']
+    
+    >:password             => ENV['app_email_sender_password']
+
+*   Test production on all browsers and on Mac and Windows
 
 *   BUGS:
     
