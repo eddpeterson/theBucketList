@@ -34,8 +34,8 @@
 
 *   BUGS:
     
-    > On Mac on Google chrome does not show remove/rename buttons for goals
-
+    > Zero found. That is scary.
+    
 ## Security # 8 hours
 
 *   protect_from_forgery
