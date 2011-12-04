@@ -32,6 +32,10 @@
  
 *   Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
+*   BUGS:
+    
+    > On Mac on Google chrome does not show remove/rename buttons for goals
+
 ## Security # 8 hours
 
 *   protect_from_forgery
