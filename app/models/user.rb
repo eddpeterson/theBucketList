@@ -82,7 +82,7 @@ class User
   end
   
   def set_goal_on_top(goal)
-    framed_goals = goals.where(frame: goal.frame)
+    framed_goals = goals.where(frame: goal.frame).order_by([:frame_order_number, :asc])
     unless framed_goals.nil?
       order_number = 2
       goal.frame_order_number = 1

@@ -210,5 +210,17 @@ describe User do
      goal.frame_order_number.should == 1
    end
    
+   it "should not forget previously set goals order when adding new goal to top" do
+     goal1 = Goal.get_new("Goal 1", "family")
+     user.add_goal(goal1)
+     goal2 = Goal.get_new("Goal 2", "family")
+     user.add_goal(goal2)
+     goal3 = Goal.get_new("Goal 3", "family")
+     user.add_goal(goal3)
+    
+     user.goals[0].frame_order_number.should == 3
+     user.goals[1].frame_order_number.should == 2
+     user.goals[2].frame_order_number.should == 1
+   end
   
 end

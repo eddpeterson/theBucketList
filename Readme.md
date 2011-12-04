@@ -35,10 +35,10 @@ Search for Royalty free music
 http://www.beatsuite.com/
 Panjemt dziesmu no albuma
 
+* Jquery UI themese, how to include them in the rails 
 * Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
 
-* Jquery UI themese, how to include them in the rails 
 
 ## BUGS 
 * Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours
