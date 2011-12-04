@@ -1,7 +1,11 @@
 # TODO: 100 hours initially estimated
 
 *   BUG: Rename button is not accessible for longer texts when Rename is wrapped on the second line. Bug is reproducible only if Rename is the only word on last line. Should place it on the left side as it was for Basecamp # 2 hours
-
+    
+    Use jquery ui trash icon in front
+    
+    http://stackoverflow.com/questions/5626830/make-ui-icon-appear-on-same-line-as-other-text-within-li
+    
 *   Timeline to integrate with Facebook and show not only past, but future # 16 hours
     
     https://developers.facebook.com/docs/beta/opengraph/
