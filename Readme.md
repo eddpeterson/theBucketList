@@ -1,6 +1,24 @@
 # TODO: 100 hours initially estimated
 
-*   Accept terms of use for the website. Read about different software licenses # 8 hours
+*   Terms of Service. Create site with two aliases: # 4 hours
+
+    >/terms-of-service
+
+    User must accept it before using the site. Create before action filter on application controller and redirect to page.
+
+    http://tekpub.com/terms
+
+    http://help.github.com/terms-of-service/
+    
+    http://basecamphq.com/terms
+
+* Create software license and put it on the bottom of Readme.md: # 4 hours
+
+    MIT allows to use software whoever you want to
+
+    http://en.wikipedia.org/wiki/MIT_License
+
+*   Track user browsers etc data to build some understanding from where the users are coming from 
 
 *   Use design created by Alexander # 16 hours
 

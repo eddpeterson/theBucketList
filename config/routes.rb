@@ -40,6 +40,7 @@ TheBucketList::Application.routes.draw do
   post 'goals/rename'
   
   get 'about' => "application#about"
+  get 'terms-of-service' => 'application#terms'
   
   match "timeline" => "timelines#index"
   post 'timelines/set_status' => "timelines#set_status"

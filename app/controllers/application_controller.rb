@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
     #raise "Oh no Mr. Bill!"
   end
   
+  def terms
+    
+  end
+  
 end
