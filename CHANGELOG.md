@@ -116,6 +116,18 @@ TODO
     
     http://stackoverflow.com/questions/5626830/make-ui-icon-appear-on-same-line-as-other-text-within-li
 
+*   Terms of Service. Create site with two aliases: # 4 hours
+
+    >/terms-of-service
+
+    User must accept it before using the site. Create before action filter on application controller and redirect to page.
+
+    http://tekpub.com/terms
+
+    http://help.github.com/terms-of-service/
+
+    http://basecamphq.com/terms
+
 ## The Bucket List 1.0.0  (July 25 - November 7, 2011) ##
 
 Initial version of the Bucket List deployed in the cloud.

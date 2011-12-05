@@ -1,16 +1,6 @@
 # TODO: 100 hours initially estimated
 
-*   Terms of Service. Create site with two aliases: # 4 hours
 
-    >/terms-of-service
-
-    User must accept it before using the site. Create before action filter on application controller and redirect to page.
-
-    http://tekpub.com/terms
-
-    http://help.github.com/terms-of-service/
-    
-    http://basecamphq.com/terms
 
 * Create software license and put it on the bottom of Readme.md: # 4 hours
 
@@ -47,6 +37,8 @@
     >:user_name            => ENV['app_email_sender']
     
     >:password             => ENV['app_email_sender_password']
+    
+*   Setup link to Terms and Services for production app in facebook app
 
 *   Test production on all browsers and on Mac and Windows
 
