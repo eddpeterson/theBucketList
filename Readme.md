@@ -2,7 +2,7 @@
 
 *   Use design created by Alexander # 16 hours
 
-*   [Three state solution: Regular, Blank, Error](http://gettingreal.37signals.com/ch09_Three_State_Solution.php) # Not planned, but super importants. Need to be done after the complete design is in place
+*   [Three state solution: Regular, Blank, Error](http://gettingreal.37signals.com/ch09_Three_State_Solution.php) # Not planned, but super important. Need to be done after the complete design is in place
     
     >For blank when moving to  goals add Watermark for new goal.
     
