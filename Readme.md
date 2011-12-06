@@ -1,15 +1,5 @@
 # TODO: 100 hours initially estimated
 
-
-
-* Create software license and put it on the bottom of Readme.md: # 4 hours
-
-    MIT allows to use software whoever you want to
-
-    http://en.wikipedia.org/wiki/MIT_License
-
-*   Track user browsers etc data to build some understanding from where the users are coming from 
-
 *   Use design created by Alexander # 16 hours
 
 *   [Three state solution: Regular, Blank, Error](http://gettingreal.37signals.com/ch09_Three_State_Solution.php) # Not planned, but super importants. Need to be done after the complete design is in place
@@ -42,6 +32,10 @@
 
 *   Test production on all browsers and on Mac and Windows
 
+*   Track user browsers etc data to build some understanding from where the users are coming from by adding NewRelic add-on
+    
+    http://addons.heroku.com/newrelic
+
 *   BUGS:
     
     > Zero found. That is scary.
@@ -53,6 +47,12 @@
 *   sql injection
 
 ## Defered
+
+*   Create software license and put it on the bottom of Readme.md: # 4 hours
+
+    MIT allows to use software whoever you want to
+
+    http://en.wikipedia.org/wiki/MIT_License
 
 *   Fix friends request specs, by actually logging in with one of test users?
     
