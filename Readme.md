@@ -42,7 +42,7 @@
 
 *   BUGS:
     
-    > Zero found. That is scary.
+    > When frame has zero goals you cannot drag to it any other frame's goal
     
 ## Security # 8 hours
 

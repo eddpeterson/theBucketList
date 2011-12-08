@@ -6,6 +6,10 @@ class TimelinesController < ApplicationController
     @past_goals = current_user.past_goals
     @current_goals = current_user.current_goals
     @future_goals = current_user.future_goals
+    
+    unless current_user.goals.count != 0
+      render "empty_timeline"
+    end
   end
   
   def set_status

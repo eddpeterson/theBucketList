@@ -99,5 +99,9 @@ describe TimelinesController do
     element = find(".status") 
     element.value.should == "done"    
   end
-  
+  it "sould return empty timeline view when user has no goals" do
+    login_facebook user
+    visit timeline_path
+    page.should have_content("To view timeline you need to add some goals")
+  end
 end
