@@ -2,17 +2,7 @@
 
 *   Use design created by Alexander # 16 hours
 
-*   [Three state solution: Regular, Blank, Error](http://gettingreal.37signals.com/ch09_Three_State_Solution.php) # Not planned, but super important. Need to be done after the complete design is in place
-    
-    >Redesign abut page to include step type design with screen shots. Check out Dropbox 3.step solotuion http://www.hanselman.com/blog/GoodUXInTheWildDropboxsAttentionToDetailOnTheirDownloadPage.aspx
-    
-    >For blank when moving to goals add Watermark for new goal.
-    
-    >For Timeline tell that there is no goals added and display special link to add goals. Also during timeline is visible.
-    
-    >For Friends page show that there are no frineds, but allow to invite facebook friends
-
-*   Inconsistency between goals and commitments. 
+*   Inconsistency between goals and commitments
 
 *   Timeline to integrate with Facebook and show not only past, but future # 16 hours
 
