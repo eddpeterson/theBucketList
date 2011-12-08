@@ -14,7 +14,8 @@ describe GoalsController do
     visit goals_path
     
     fill_in "new_title_family", :with => "Travel to Hawaii"
-    click_button "add_new_goal_family"
+    page.driver.browser.mouse.click(find('#add_new_goal_family').native)
+    
     within("#family") do 
       page.should have_content("Travel to Hawaii")
     end

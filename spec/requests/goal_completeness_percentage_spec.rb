@@ -34,8 +34,8 @@ describe "Goals Completeness Percentage" do
       visit goals_path
 
       fill_in "new_title_family", :with => "Travel to Hawaii"
-      click_button "add_new_goal_family"
-
+      page.driver.browser.mouse.click(find('#add_new_goal_family').native)
+      
       # verify that after adding new goal and setting it status to done goal completeness percentage is updated
       page.should have_content("50% goals completeness")
     end

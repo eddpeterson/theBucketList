@@ -19,3 +19,4 @@ update_goals_completeness_percentage = function() {
     $('.indicator').css('width', percentage)
   })
 }
+

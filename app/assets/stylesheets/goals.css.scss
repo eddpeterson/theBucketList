@@ -11,12 +11,17 @@ li.goals span.ui-icon {
 .frame_item {
   color: green;
 }
-
+.new_goal_button {
+//  display:inline-block;
+//  vertical-align: middle;  
+}
 .rename_goal {
   color: blue;
   font-size: 1em;
 }
-
+.new_title {
+  //text-color:red;
+}
 
 
 .rename_button_hidden { display:none; }

@@ -5,3 +5,9 @@
  *= require_self
  *= require_tree . 
 */
+/*input::-webkit-input-placeholder {
+    color:    #999;
+}
+input:-moz-placeholder {
+    color:    #999;
+}*/
