@@ -12,6 +12,8 @@
     
     >For Friends page show that there are no frineds, but allow to invite facebook friends
 
+*   Inconsistency between goals and commitments. 
+
 *   Timeline to integrate with Facebook and show not only past, but future # 16 hours
 
     https://developers.facebook.com/docs/beta/opengraph/
