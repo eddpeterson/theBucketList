@@ -13,6 +13,20 @@
     Search for Royalty free music
     http://www.beatsuite.com/
     Panjemt dziesmu no albuma
+
+*   Test production on all browsers and on Mac and Windows
+
+*   Track user browsers etc data to build some understanding from where the users are coming from. Which one to use:
+
+    http://addons.heroku.com/newrelic
+
+    http://get.gaug.es/
+
+*   BUGS:
+
+    > When frame has zero goals you cannot drag to it any other frame's goal
+
+*   Run FAT: TestSpec.md
  
 *   Create production apps for facebook, heroku and map 101todos dns # 2 hours
 
@@ -24,17 +38,7 @@
     
 *   Setup link to Terms and Services for production app in facebook app
 
-*   Test production on all browsers and on Mac and Windows
-
-*   Track user browsers etc data to build some understanding from where the users are coming from. Which one to use:
-    
-    http://addons.heroku.com/newrelic
-    
-    http://get.gaug.es/
-
-*   BUGS:
-    
-    > When frame has zero goals you cannot drag to it any other frame's goal
+*   Run FAT on production: TestSpec.md
     
 ## Security # 8 hours
 
