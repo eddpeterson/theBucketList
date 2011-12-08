@@ -62,7 +62,9 @@
 
 *   Fix friends request specs, by actually logging in with one of test users?
     
-    Moxy could help? http://jondot.github.com/moxy/
+    >Moxy could help? http://jondot.github.com/moxy/
+    
+    >Add tests to empty friends view as well
 
 *   Refactor spec/controllers/todos_controller_spec.rb to bring code coverage back to > 95% and fix pending tests # 16 hours 
 

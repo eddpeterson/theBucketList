@@ -4,6 +4,9 @@ class FriendsController < ApplicationController
   
   def index
     @friends = current_user.friends
+    unless @friends.count != 0
+      render "empty_friends"
+    end
   end
   
 end
