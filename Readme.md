@@ -32,9 +32,11 @@
 
 *   Test production on all browsers and on Mac and Windows
 
-*   Track user browsers etc data to build some understanding from where the users are coming from by adding NewRelic add-on
+*   Track user browsers etc data to build some understanding from where the users are coming from. Which one to use:
     
     http://addons.heroku.com/newrelic
+    
+    http://get.gaug.es/
 
 *   BUGS:
     
