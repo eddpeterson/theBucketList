@@ -1,32 +1,42 @@
 %div{:class => "span-16 colborder"}
+  
   .about_title 
     Commit yourself to action
-  
   .quiet Commit your goals and keep track of your accomplishments 
   
-  %div 
-    %br 
-    Managing priorities can be challenging.
-    %br
-    Personal time, family, friends, career and social life are all important aspects. 
-    %br
-    %a{href: goals_path} Commit to your goals
-    and visualize the center of your attention - how you are perceived by others. 
-
-    %p
-    Once committed to goals you set the timescale of your expectations.
-    %br
-    %a{href: timeline_path} Manage goals
-    to resume in retrospect past, stay focused on today and keep dreaming future.
-
-    %p
-    Seek inspiration from your 
-    %a{href: friends_path} friends
+  %hr.space  
+  
+  /%div{:class => "span-1"}
+  %div{:class => "span-5"}
+    .dropshadow
+      =image_tag("goals.png")
+    %b
+      %a{href: goals_path} 1. Make a commitment
+    .quiet
+      Managing priorities can be challenging.
+      Personal time, family, friends, career and social life are all important aspects. 
+      Commit and prioritize your goals to visualize the center of your attention - how you are perceived by others.
     
-    %p
+  %div{:class => "span-5"}
+    .dropshadow
+      =image_tag("goals.png")
+    %b
+      %a{href: timeline_path} 2. Set expectations
+    .quiet
+      Once committed to goals you set the timescale of your expectations.
+      Manage goals to resume in retrospect past, stay focused on today and keep dreaming future.
+  
+  %div{:class => "span-5 last"}
+    .dropshadow
+      =image_tag("goals.png")
+    %b
+      %a{href: friends_path} 3. Get inpired and motivated
+    .quiet
+      Seek inspiration from your friends.
     
-  %div{style: "height: 300px; background-color: gray"}
-    %p
+  %hr.space  
+  
+  %div{:class => "span-15 last", style: "height: 300px; background-color: gray"}
     video
     
 %div{:class => "span-7 last"}
