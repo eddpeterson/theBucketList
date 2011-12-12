@@ -85,10 +85,13 @@ describe GoalsController do
   end   
 
   it "should drag goal from family frame to personal frame and remember it when page is reloaded", :js => true do
-    pending("Somehow this stopped working. Worked befor though!")
+    
+    
+    pending("Mayby .js event.target is the problem in sortable")
+    
     
     goal = Goal.get_new("Travel to Hawaii", "family") 
-    user.goals << goal
+    user.add_goal(goal)
 
     login_facebook user
     visit goals_path
