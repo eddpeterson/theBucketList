@@ -1,12 +1,14 @@
 # TODO: 100 hours initially estimated
 
+*   BUGS:
+
+    > When frame has zero goals you cannot drag to it any other frame's goal (on Firefox)
+    
+    > On Firefox cannot move goal from one frame to another
+
 *   Use design created by Alexander # 16 hours
 
 *   Inconsistency between goals and commitments
-
-*   Timeline to integrate with Facebook and show not only past, but future # 16 hours
-
-    https://developers.facebook.com/docs/beta/opengraph/
 
 *   Create video
 
@@ -21,10 +23,6 @@
     http://addons.heroku.com/newrelic
 
     http://get.gaug.es/
-
-*   BUGS:
-
-    > When frame has zero goals you cannot drag to it any other frame's goal
 
 *   Run FAT: TestSpec.md
  
@@ -47,6 +45,10 @@
 *   sql injection
 
 ## Defered
+
+*   Timeline to integrate with Facebook and show not only past, but future. Timeline is not yet publicly available 
+
+    https://developers.facebook.com/docs/beta/opengraph/
 
 *   Create software license and put it on the bottom of Readme.md: # 4 hours
 

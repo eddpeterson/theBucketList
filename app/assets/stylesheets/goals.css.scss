@@ -1,8 +1,9 @@
 ul.frame { 
   list-style:none;
-  background-color: #eee;
   padding: 0px;
   cursor: pointer;
+  min-height: 150px;
+  background-color: #eee;
 }
 li.goals span.ui-icon {
   display:inline-block;
