@@ -41,7 +41,22 @@ describe "Goals Completeness Percentage" do
     end
 
     it "when removing new goal", :js => true do
-      pending "TODO"
+      goal_done = Goal.get_new("Travel to Fuerteventura", "family")
+      goal_done.status = "done"
+      user.add_goal(goal_done)
+
+      login_facebook user
+      visit goals_path
+      
+      # move mouse over the item to make trach icon visible
+      puts page.driver.browser.mouse.up(find('.frame_item_readonly').native)
+      
+      trash_icon = find('.remove_goal')
+      page.driver.browser.mouse.click(trash_icon.native)
+      click_button "Delete"
+      
+      # verify that after adding new goal and setting it status to done goal completeness percentage is updated
+      page.should have_content("0% goals completeness")
     end 
 
     it "when goal status is changed", :js => true do   
