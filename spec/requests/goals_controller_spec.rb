@@ -107,4 +107,29 @@ describe GoalsController do
     
   end
   
+  it "should allow to remove goal", :js => true do
+    goal = Goal.get_new("Travel to Fuerteventura", "family")
+    user.add_goal(goal)
+
+    login_facebook user
+    visit goals_path
+    
+    # move mouse over the item to make trach icon visible
+    page.driver.browser.mouse.up(find('.frame_item_readonly').native)    
+    trash_icon = find('.remove_goal')
+    page.driver.browser.mouse.click(trash_icon.native)
+    click_button "Delete"
+    
+    # verify that the goal is removed imediately from the view
+    within("#family") do 
+      page.should_not have_content("Travel to Hawaii")
+    end
+    # veify goal is gone on page reload
+    visit goals_path
+    within("#family") do 
+      page.should_not have_content("Travel to Hawaii")
+    end
+    
+  end
+  
 end

@@ -2,12 +2,6 @@
 
 *   Based on the jQuery videos I got tip not to use string html at all, use jQuery to create html elements. Refactor!!!
 
-*   BUGS:
-
-    > When frame has zero goals you cannot drag to it any other frame's goal (on Firefox)
-    
-    > On Firefox cannot move goal from one frame to another
-
 *   Use design created by Alexander # 16 hours
 
 *   Inconsistency between goals and commitments

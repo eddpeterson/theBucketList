@@ -49,7 +49,7 @@ describe "Goals Completeness Percentage" do
       visit goals_path
       
       # move mouse over the item to make trach icon visible
-      puts page.driver.browser.mouse.up(find('.frame_item_readonly').native)
+      page.driver.browser.mouse.up(find('.frame_item_readonly').native)
       
       trash_icon = find('.remove_goal')
       page.driver.browser.mouse.click(trash_icon.native)
