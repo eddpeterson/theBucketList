@@ -45,9 +45,9 @@ $(function() {
        hoverClass: "ui-state-hover",
        update: function(event, ui) { 
          //debugger
-         var frame = $(event.target).parent().parent().parent().attr('id')
+         var frame = this.id;
          var sorted_goals = new Array(); //$('#'+frame).sortable('toArray')
-         frame_context = $('#'+frame)
+         frame_context = $('#' + frame)
          $('.frame_item', frame_context).each(function(index){sorted_goals[index] = ($(this).attr('id'))})
          
          //debugger
