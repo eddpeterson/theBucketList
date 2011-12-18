@@ -1,6 +1,8 @@
 # TODO: 100 hours initially estimated
 
-*   Based on the jQuery videos I got tip not to use string html at all, use jQuery to create html elements. Refactor!!!
+*   Based on the jQuery videos I got tip not to use string html at all, use jQuery to create html elements. 
+
+    Refactor to use data-* attribute
 
 *   Use design created by Alexander # 16 hours
 
