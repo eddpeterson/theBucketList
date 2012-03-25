@@ -1,19 +1,21 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.2.2'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 
-# Asset template engines
-gem 'sass-rails', "~> 3.1"
-gem 'coffee-script', "~> 2.2"
-gem 'uglifier', "~> 1.0"
+group :assets do
+  gem 'sass-rails',   '~> 3.2.5'
+  gem 'coffee-rails', '~> 3.2.2'
+  gem 'uglifier', '>= 1.2.3'
+end
 
-gem 'jquery-rails', "~> 1.0"
 
-gem "haml", "~> 3.1"
+gem 'jquery-rails', "~> 2.0.1"
+
+gem "haml", "~> 3.1.4"
 
 # gem 'mongo', '= 1.3.1' 
 # gem 'bson', '= 1.3.1' 

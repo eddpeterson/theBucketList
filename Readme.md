@@ -3,6 +3,8 @@
 *   Based on the jQuery videos I got tip not to use string html at all, use jQuery to create html elements. 
 
     Refactor to use data-* attribute
+    
+    Use var keyword to avoid global scope issues (learn closures my friend, closures)
 
 *   Use design created by Alexander # 16 hours
 

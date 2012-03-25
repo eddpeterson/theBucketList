@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
   
-  let (:user) { Factory(:user) }
+  let (:user) { FactoryGirl.create(:user) }
   
   
   it "should save user goals" do
@@ -196,7 +196,7 @@ describe User do
    end
    
    it "should return facebook friends" do
-     friend = Factory(:user)
+     friend = FactoryGirl.create(:user)
      
      user.stub!(:friends_ids).with(user.id, user.token).and_return [friend.id]
      

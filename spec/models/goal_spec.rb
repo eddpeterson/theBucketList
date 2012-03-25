@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Goal do
   
-  let (:user) { Factory(:user) }
+  let (:user) { FactoryGirl.create(:user) }
   
   it { should validate_presence_of(:title) }
   
