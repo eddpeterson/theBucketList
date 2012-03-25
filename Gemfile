@@ -22,7 +22,7 @@ gem "haml", "~> 3.1.4"
 # gem 'bson_ext', '= 1.3.1'
 # gem "mongoid", "~> 2.0"
 # gem "bson_ext", "~> 1.2"
-gem "mongoid", "~> 2.3.3"
+gem "mongoid", "~> 2.4.7"
 gem "activemodel", "~> 3.1"
 gem "mongo", "~> 1.3"
 gem "tzinfo", "~> 0.3.22"
