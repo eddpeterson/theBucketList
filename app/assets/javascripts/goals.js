@@ -26,6 +26,9 @@ $(function() {
         // parent = $("#"+frame).parent()
         // $("#"+frame).remove()
         // parent.append(data)
+        // console.log(data)
+        // $("#"+frame).prepend(data)
+        // debugger;
         $("#"+frame).prepend(data)
         update_goals_completeness_percentage()
         //$("#"+frame).prepend('<li>wadaaa</li>')

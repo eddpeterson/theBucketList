@@ -13,7 +13,7 @@ class GoalsController < ApplicationController
     
     #render :json => @goal
     #render "_frame", :frame_id => @frame_id
-    render :partial => "goal", :locals => { :goal_id => goal.id, :goal_title => title }
+    render :partial => "goal", :locals => { :goal_id => goal.id, :goal_title => title }, content_type: "text/html"
   end
   
   def index
